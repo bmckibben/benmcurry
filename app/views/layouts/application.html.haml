@@ -1,0 +1,17 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %title Ben M Curry
+    %meta{:content => "Author Science Fiction Novel", :name => "keywords"}/
+    %meta{:content => "Promoting World Peace through Socially Responsible Pizza", :name => "description"}/
+    %meta{:content => "Ben McKibben", :name => "author"}/
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+    %link{:href => "http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300", :rel => "stylesheet", :type => "text/css"}/
+  %body
+    = yield
+

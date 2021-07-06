@@ -1,0 +1,248 @@
+#page-top{"data-spy" => "scroll", "data-target" => ".navbar-fixed-top"}
+  #preloader
+    #status
+      = image_tag("preloader.gif", size: "64", alt: "")
+  / Navigation
+  %nav.navbar.navbar-custom.navbar-fixed-top{:role => "navigation"}
+    .container
+      .navbar-header
+        %button.navbar-toggle{"data-target" => ".navbar-main-collapse", "data-toggle" => "collapse", :type => "button"}
+          %i.fa.fa-bars
+        = link_to image_tag("worldpizText.png"), "#page-top", class: "navbar-brand page-scroll"
+      / Collect the nav links, forms, and other content for toggling
+      .collapse.navbar-collapse.navbar-right.navbar-main-collapse
+        %ul.nav.navbar-nav
+          / Hidden li included to remove active class from about link when scrolled up past about section
+          %li.hidden
+            %a{:href => "#page-top"}
+          %li
+            %a.page-scroll{:href => "#about"} About
+          %li
+            %a.page-scroll{:href => "#testimonials"} Quotes
+          %li
+            %a.page-scroll{:href => "#merch"} Merch
+          %li
+            %a.page-scroll{:href => "#recipes"} Recipes
+          %li
+            %a.page-scroll{:href => "#blog-display"} Blog
+          %li
+            %a.page-scroll{:href => "#team"} Team
+          %li
+            %a.page-scroll{:href => "#contact"} Contact
+
+      / /.navbar-collapse
+    / /.container
+  / Header
+  #intro
+    .intro-body
+      .container
+        .row
+          .col-md-12
+            %h1 Ben M Curry
+            %p.banner-down 
+
+            %a.page-scroll{:href => "#about"}= image_tag("downward.gif", alt: "World Piz", class: "banner-down-link")
+  / About Section
+  #about
+    .container
+      .section-title.text-center.center
+        %h2 About
+        %hr/
+      .row
+        .col-md-2
+        .col-md-4
+          = image_tag("34.jpg", class: "img-responsive author-pic" )
+        .col-md-4
+          .about-text
+            %p I am an aspiring author in  the middle of the second draft of my first novel. During the day-time I work as an Internet Application Developer. I reside in the United States but I am a world traveler and lived in Malaysia for ten years during my earlier adulthood.
+            %p Details of my current work is available below. 
+        .col-md-4
+          .about-text
+  / World Peace Section
+  #testimonials.text-center
+    .container
+      .section-title.center.testimonial-well
+        %h2 A few favorite quotes
+      .row
+        .col-md-12
+          .row.testimonials
+            .col-sm-4
+              %blockquote.testimonial-well
+                %i.fa.fa-quote-left
+                %p People say nothing is impossible. Yet I do nothing all day.
+                .clients-name
+                  %p
+                    %strong Winnie the Pooh
+            .col-sm-4
+              %blockquote.testimonial-well
+                %i.fa.fa-quote-left
+                %p You truely can make the world a better place. Teach your children how to love.
+                .clients-name
+                  %p
+                    %strong Paxxa
+            .col-sm-4
+              %blockquote.testimonial-well
+                %i.fa.fa-quote-left
+                %p An eye for an eye only ends up making the whole world blind.
+                .clients-name
+                  %p
+                    %strong Mahatma Gandhi
+  / merch Section
+  #merch
+    .container
+      / Container
+      .section-title.text-center.center
+        %h2 Merch
+        %hr/
+        .clearfix
+        %h4 Get on the Pz Train!
+        %p All profits go to charity!
+      .categories
+        %ul.cat
+          %li
+            %ol.type
+              %li
+                %a.active{"data-filter" => "*", :href => "#"} All
+              %li
+                %a{"data-filter" => ".lorem", :href => "#"} Shirts
+              %li
+                %a{"data-filter" => ".consectetur", :href => "#"} Stickers
+              %li
+                %a{"data-filter" => ".dapibus", :href => "#"} Pins
+        .clearfix
+      .row
+        .merch-items
+          .col-xs-12.col-md-4.lorem
+            .merch-item
+              .hover-bg
+                %a{:href => "#{path_to_image('merch/02.png')}", :rel => "prettyPhoto", :title => "Be there. Do that. Get the t-shirt!"}
+                  .hover-text
+                    %h4 World Piz T
+                    %p Shirt
+                  = image_tag("merch/02.png",  class: "img-responsive center-block", alt: "T Shirt")
+          .col-xs-12.col-md-4.consectetur
+            .merch-item
+              .hover-bg
+                %a{:href => "#{path_to_image('merch/01.png')}", :rel => "prettyPhoto", :title => "Keep your ride together."}
+                  .hover-text
+                    %h4 Bumper Sticker
+                    %p Sticker
+                  = image_tag("merch/01.png",  class: "img-responsive center-block", alt: "Bumper Sticker")
+          .col-xs-12.col-md-4.dapibus
+            .merch-item
+              .hover-bg
+                %a{:href => "#{path_to_image('merch/04.png')}", :rel => "prettyPhoto", :title => "Stick it to the man."}
+                  .hover-text
+                    %h4 Peace Sign
+                    %p Pin
+                  = image_tag("merch/04.png",  class: "img-responsive center-block", alt: "Pin")
+          .col-xs-12.col-md-4.consectetur
+            .merch-item
+              .hover-bg
+                %a{:href => "#{path_to_image('merch/05.png')}", :rel => "prettyPhoto", :title => "Removes dings!"}
+                  .hover-text
+                    %h4 Bumper Sticker
+                    %p Sticker
+                  = image_tag("merch/05.png",  class: "img-responsive center-block", alt: "Bumper Sticker")
+  / Recipes Section
+  #recipes.text-center{:style => "background-position: 50% 110px"}
+    .container
+      .section-title.center
+        %h2 Recipes
+        %hr/
+      .space
+      .row
+        .col-md-3.col-sm-6.col-xs-12
+          .service
+
+        .col-md-3.col-sm-6.col-xs-12
+          .service
+
+  / Recipe Dialog
+  #mdlRecipe.modal.fade{"aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+    .modal-dialog{:role => "document"}
+      .modal-content
+        .modal-header
+          %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+            %span{"aria-hidden" => "true"} ×
+          .float-left
+            %i.glyphicon.glyphicon-print{"aria-hidden" => "false", :onclick => "printMe('mdlRecipe-body')", :style => "cursor:pointer;"}
+        #mdlRecipe-body.modal-body
+          Content here.
+        .modal-footer
+          %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+  / Team Section
+  #team.text-center
+    .container
+      .section-title.center
+        %h2 Who's Responsible For This?
+        %hr/
+        %h4 These are a few of the people who make this possible.
+      #row
+        .col-xs-12.col-md-3.col-sm-6
+          .thumbnail
+            = image_tag("team/01.jpg",  class: "img-thumbnail team-img", alt: "...")
+            .caption
+              %h3 Mad Genius Pizzaiolo
+        .col-xs-12.col-md-3.col-sm-6
+          .thumbnail
+            = image_tag("team/02.png",  class: "img-thumbnail team-img", alt: "...")
+            .caption
+              %h3 Code Monkey
+        .col-xs-12.col-md-3.col-sm-6
+          .thumbnail
+            = image_tag("team/03.jpg",  class: "img-thumbnail team-img", alt: "...")
+            .caption
+              %h3 ウルトラマン
+        .col-xs-12.col-md-3.col-sm-6
+          .thumbnail
+            = image_tag("team/04.png",  class: "img-thumbnail team-img", alt: "...")
+            .caption
+              %h3 Barrak
+  %div{"data-ng-app" => "appHome"}
+    / Blog Section
+    #blog-display
+      .container
+        .section-title.center
+          %h2{:style => "text-align:center;"} Blog
+          %hr/
+          %p{:style => "text-align:center;"} This is a moderated blog. Comments and replies will be published at the descretion of the owner.
+    / Contact Section
+    #contact.text-center
+      .container
+        .section-title.center
+          %h2 Contact us
+          %hr/
+        .col-md-8.col-md-offset-2
+          %h3 Use this form to send me a message.
+          %div{"ng-controller" => "ctlrContact"}
+            %form{"ng-class" => "form", "ng-submit" => "sendEmail(email_name,email_address,email_message)"}
+            %form#contactForm{:name => "sentMessage", :novalidate => ""}
+              .row
+                .col-md-6
+                  .form-group
+                    %input#contactName.form-control{:name => "email_name", "ng-model" => "email_name", :placeholder => "Name", :required => "required", :type => "text"}/
+                    %p.help-block.text-danger
+                .col-md-6
+                  .form-group
+                    %input#contactEmail.form-control{:name => "email_address", "ng-model" => "email_address", :placeholder => "Email", :required => "required", :type => "email"}/
+                    %p.help-block.text-danger
+              .form-group
+                %textarea#contactMessage.form-control{:name => "email_message", "ng-model" => "email_message", :placeholder => "Message", :required => "", :rows => "4"}
+                %p.help-block.text-danger
+              #success
+              %button.btn.btn-primary{:type => "submit"} Send Message
+          .social
+            %h3 Follow Ben M Curry
+            %ul
+              %li
+                %a{:href => "https://www.facebook.com/1worldpiz"}
+                  %i.fa.fa-facebook
+              %li
+                %a{:href => "https://twitter.com/1WorldPiz"}
+                  %i.fa.fa-twitter
+              %li
+                %a{:href => "https://github.com/bmckibben/worldpz"}
+                  %i.fa.fa-github
+  / ng
+  = render 'layouts/footer'
