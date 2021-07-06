@@ -33,6 +33,9 @@ gem 'rails-assets-tether'
 
 gem "haml-rails"
 
+# per heroku
+gem 'rails_12factor'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
