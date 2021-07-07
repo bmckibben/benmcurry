@@ -44,7 +44,7 @@
               = image_tag "author.jpg",  class: "author-img"
 
 
-#our-story.parallax-content.tabs-content
+#our-story.tabs-content
   .container
     .row
       .col-md-6
@@ -76,64 +76,27 @@
 #portfolio.parallax-content.projects-content
   .container
     .row
-      .col-md-12
-        #owl-testimonials.owl-carousel.owl-theme
-          .item
-            .testimonials-item
-              %a{"data-lightbox" => "image-1", :href => "img/1st-big-item.jpg"}
-                %img{:alt => "", :src => "img/1st-item.jpg"}/
-              .text-content
-                %h4 Awesome Note Book
-                %span $18.00
-          .item
-            .testimonials-item
-              %a{"data-lightbox" => "image-1", :href => "img/2nd-big-item.jpg"}
-                %img{:alt => "", :src => "img/2nd-item.jpg"}/
-              .text-content
-                %h4 Antique Decoration Photo
-                %span $27.00
-          .item
-            .testimonials-item
-              %a{"data-lightbox" => "image-1", :href => "img/3rd-big-item.jpg"}
-                %img{:alt => "", :src => "img/3rd-item.jpg"}/
-              .text-content
-                %h4 Work Hand Bag
-                %span $36.00
-          .item
-            .testimonials-item
-              %a{"data-lightbox" => "image-1", :href => "img/4th-big-item.jpg"}
-                %img{:alt => "", :src => "img/4th-item.jpg"}/
-              .text-content
-                %h4 Smart Watch
-                %span $45.00
-          .item
-            .testimonials-item
-              %a{"data-lightbox" => "image-1", :href => "img/5th-big-item.jpg"}
-                %img{:alt => "", :src => "img/5th-item.jpg"}/
-              .text-content
-                %h4 PC Tablet Draw
-                %span $63.00
-          .item
-            .testimonials-item
-              %a{"data-lightbox" => "image-1", :href => "img/6th-big-item.jpg"}
-                %img{:alt => "", :src => "img/6th-item.jpg"}/
-              .text-content
-                %h4 Healthy Milkshake
-                %span $77.00
-          .item
-            .testimonials-item
-              %a{"data-lightbox" => "image-1", :href => "img/2nd-big-item.jpg"}
-                %img{:alt => "", :src => "img/2nd-item.jpg"}/
-              .text-content
-                %h4 Antique Decoration Photo
-                %span $84.50
-          .item
-            .testimonials-item
-              %a{"data-lightbox" => "image-1", :href => "img/1st-big-item.jpg"}
-                %img{:alt => "", :src => "img/1st-item.jpg"}/
-              .text-content
-                %h4 Awesome Notes Book
-                %span $96.75
+      .col-md-4
+        .service-item 
+          %i.fa.fa-quote-left
+          %p 
+            = "If we are to have peace on earth, our loyalties must become ecumenical rather than sectional. Our loyalties must transcend our race, our tribe, our class, and our nation; and this means we must develop a world perspective."
+            .line-dec
+            %p Martin Luther King, Jr.
+      .col-md-4
+        .service-item
+          %i.fa.fa-quote-left
+          %p 
+            = "You truely can make the world a better place. Teach your children how to love."
+            .line-dec
+            %p Paxxa
+      .col-md-4
+        .service-item
+          %i.fa.fa-quote-left
+          %p 
+            = "An eye for an eye only ends up making the whole world blind."
+            .line-dec
+            %p Mahatma Gandhi               
 #contact-us.parallax-content.contact-content
   .container
     .row
