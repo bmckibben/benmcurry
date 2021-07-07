@@ -12,12 +12,5 @@
 //
 //= require rails-ujs
 //= require jquery
-//= require jquery-ui
-//= require bootstrap-sprockets
-//= require isotope
-//= require jqBootstrapValidation
-//= require parallax.min
-//= require SmoothScroll
-//= require z.isotope
-//= require z.prettyPhoto
-//= require home
+//= require main
+//= require plugins
