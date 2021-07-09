@@ -25,9 +25,7 @@ gem 'jquery-rails'
 gem 'jquery-validation-rails'
 
 # Markup and design related libraries
-gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
-gem 'bootstrap-sass'
-gem 'bootstrap-select-rails'
+gem 'bootstrap', '~> 5.0.1'
 gem 'font-awesome-sass'
 gem 'rails-assets-tether'
 

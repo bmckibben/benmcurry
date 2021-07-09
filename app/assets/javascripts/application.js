@@ -12,5 +12,6 @@
 //
 //= require rails-ujs
 //= require jquery
+//= require bootstrap.min
 //= require main
 //= require plugins

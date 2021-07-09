@@ -24,7 +24,6 @@ jQuery(document).ready(function($) {
         offset: 200
     });
       
-      // smoothscroll on sidenav click
 
     $('.tabgroup > div').hide();
         $('.tabgroup > div:first-of-type').show();
