@@ -1,5 +1,5 @@
 class HomeMailer < ActionMailer::Base
-def new_message(name, email, message)
+  def new_message(name, email, message)
     @email = email
     @message = message
     @name = name
