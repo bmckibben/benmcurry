@@ -73,17 +73,17 @@
       .col-md-6
         .contact-form
           .row
-            %form#contact{:action => "", :method => "post"}
+            =simple_form_for :contact, url: contact_path, remote: true, html: {class: "my_form", id: "contact",  role: "form"} do |f|
               .row
                 .col-md-12
                   %fieldset
-                    %input#name.form-control{:name => "name", :placeholder => "Your name...", :required => "", :type => "text"}/
+                    =f.input :name, class:"form-control", placeholder: "Your name...",  required: true, label: false
                 .col-md-12
                   %fieldset
-                    %input#email.form-control{:name => "email", :placeholder => "Your email...", :required => "", :type => "email"}/
+                    =f.input :email, class:"form-control", as: :email, placeholder: "Your email...",  required: true, label: false
                 .col-md-12
                   %fieldset
-                    %textarea#message.form-control{:name => "message", :placeholder => "Your message...", :required => "", :rows => "6"}
+                    =f.input :message, class:"form-control",  placeholder: "Your message...",  required: true, label: false
                 .col-md-12
                   %fieldset
                     %button#form-submit.btn{:type => "submit"} Send Message
@@ -100,3 +100,4 @@
           %a{:href => "https://templatemo.com", :rel => "nofollow noopener"}
             %em TemplateMo
 
+#snackbar

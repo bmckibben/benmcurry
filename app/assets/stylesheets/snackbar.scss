@@ -1,0 +1,25 @@
+#snackbar {
+	display: none;
+	min-width: 400px;
+	margin-left: -210px;
+	background-color: #f4fcff;
+	color: #000;
+	text-align: left;
+	border-radius: 4px;
+	border: 3px solid #e0f7ff;
+	padding: 0.5rem 2rem;
+	position: fixed;
+	z-index: 13;
+	left: 50%;
+	top: 50%;
+	bottom: auto;
+	box-shadow: 5px 10px 18px #coc;
+	font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+	#snackbar {
+		bottom: 50px;
+		top: auto;
+	}
+}

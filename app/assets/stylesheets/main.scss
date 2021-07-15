@@ -486,20 +486,8 @@ section {
   margin-bottom: 30px;
 }
 
-#contact textarea {
-  border-radius: 3px;
-  padding-left: 15px;
-  padding-top: 10px;
-  font-size: 13px;
-  color: #232323;
-  background-color: rgba(250, 250, 250, 1);
-  outline: none;
-  border: none;
-  box-shadow: none;
-  height: 165px;
-  max-height: 220px;
-  width: 100%;
-  margin-bottom: 25px;
+#contact_message {
+  height: 165px !important;
 }
 
 #contact button {

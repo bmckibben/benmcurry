@@ -1,0 +1,5 @@
+$("#snackbar").html('<%= @message %>').fadeIn();
+
+setTimeout(function(){
+	$("#snackbar").fadeOut();
+}, 5000);

@@ -30,7 +30,7 @@ gem 'font-awesome-sass'
 gem 'rails-assets-tether'
 
 gem "haml-rails"
-
+gem 'simple_form'
 # per heroku
 gem 'rails_12factor'
 
