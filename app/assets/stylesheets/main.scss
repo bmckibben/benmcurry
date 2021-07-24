@@ -838,3 +838,22 @@ body.lb-disable-scrolling {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
+
+@media (max-width: 480px) {
+  .service-item {
+    margin-bottom: 0;
+    margin-top: 20px;
+    padding-bottom: 0;
+    .line-dec {
+      background-color: #ccc !important;
+    }
+    p {
+      margin-bottom: 0;
+    }
+  }
+  .projects-content{
+    .col-md-4{
+      margin-bottom: 2rem;
+    }
+  }
+}
