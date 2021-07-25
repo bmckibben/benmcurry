@@ -71,8 +71,10 @@
     .row
       .col-md-3
       .col-md-6
-        .contact-form
+
+        .contact-form.service-item
           .row
+            %h4 Contact Me
             =simple_form_for :contact, url: contact_path, remote: true, html: {class: "my_form", id: "contact",  role: "form"} do |f|
               .row
                 .col-md-12
