@@ -280,7 +280,7 @@ h4, .h4 {
   font-size: 18px;
 }
 
-.service-content, .tabs-content, .projects-content{
+.service-content, .projects-content{
   .left-text{
     h4 {
       font-size: 24px;
@@ -330,6 +330,58 @@ h4, .h4 {
       height: auto;
     }
   }
+}
+
+.tabs-content{
+  .left-text{
+    h4 {
+      font-size: 24px;
+      font-weight: 500;
+      color: #000;
+    }
+    .line-dec {
+      width: 45px;
+      height: 3px;
+      background-color: #ccc;
+      margin: 20px 0px 20px 0px;
+    }  
+    p {
+      color: #000;
+    }
+    ul {
+      padding: 0;
+      margin-top: 30px;
+      list-style: none;
+      li {
+        margin: 15px 0px;
+        font-weight: 600;
+        color: #fff;
+      }      
+    }
+    .primary-button {
+      margin: 30px 0px;
+    }
+  }
+  .service-item {
+    // height: 100%;
+    background-color: rgba(150, 150, 150, 0.5);
+    padding: 25px 30px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    .line-dec {
+      width: 45px;
+      height: 3px;
+      background-color: #ccc;
+      margin: 20px auto 15px auto;
+    }
+    img {
+      max-width: 80%;
+      height: auto;
+    }
+  }  
 }
 
 .projects-content {
