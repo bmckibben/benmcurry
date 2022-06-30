@@ -636,6 +636,10 @@ footer em {
 
 @media (max-width: 767px){
   
+  .fixed-side-navbar h3 {
+    display: none;
+  }
+  
   .baner-content {
     padding-top: 30vh;
   }
