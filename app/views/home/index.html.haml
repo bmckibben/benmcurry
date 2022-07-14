@@ -1,4 +1,5 @@
 .fixed-side-navbar
+  %h3 nav
   %ul.nav.flex-column
     %li.nav-item
       %a.nav-link{:href => "#home"}
@@ -20,8 +21,6 @@
     .first-content
       %h1 Ben M Curry
       %span Author
-      .primary-button
-        %a{:href => "#about"} Discover More
 #about.service-content
   .container
     .row
@@ -91,7 +90,7 @@
         .primary-button
           %a{:href => "#home"} Back To Top
         %p
-          Copyright © 2021 Ben M Curry
+          Copyright © #{Time.now.year} Ben M Curry
           
           \- Design:
           %a{:href => "https://templatemo.com", :rel => "nofollow noopener"}

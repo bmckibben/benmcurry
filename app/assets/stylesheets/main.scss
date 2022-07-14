@@ -131,6 +131,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bcbdc4', end
   
 }
 
+.fixed-side-navbar h3{
+   margin-top: 0px;
+  font-size: 36px;
+  color: #fff;
+  font-weight: normal;
+  margin-bottom: 0px;
+  font-family: Syncopate;
+  padding-right: 1rem;
+}
+
 .fadeInRight {
   -webkit-animation-name: fadeInRight;
           animation-name: fadeInRight;
@@ -626,6 +636,10 @@ footer em {
 }
 
 @media (max-width: 767px){
+  
+  .fixed-side-navbar h3 {
+    display: none;
+  }
   
   .baner-content {
     padding-top: 30vh;
