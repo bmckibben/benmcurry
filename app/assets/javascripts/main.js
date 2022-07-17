@@ -79,7 +79,7 @@ jQuery(document).ready(function($) {
       } // End if
     });
 
-    $(".fixed-side-navbar").on("mouseenter" function(){
+    $(".fixed-side-navbar").on("mouseenter", function(){
         $(".nav-label").hide();
     });
 	
