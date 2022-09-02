@@ -12,6 +12,7 @@
     %li.nav-item
       %a.nav-link{:href => "#contact-us"}Contact
 #home.parallax-content.baner-content
+  #readout
   .container
     .first-content
       %h1 Ben M Curry
@@ -91,3 +92,47 @@
           %a{:href => "https://templatemo.com", :rel => "nofollow noopener"}
             %em TemplateMo
 
+:javascript
+  $(document).ready(function () {
+    var line_count = 0
+    setInterval(gen_random, 500);
+    function gen_random() {
+      
+      previous_display = $("#readout").html();
+      if (line_count > 40){
+        previous_display = previous_display.slice(28)
+      }else{
+        line_count += 1;
+      }
+      rand1 = generate(11)
+      rand2 = generate(11)
+      $("#readout").html(previous_display+"</br>"+rand1+" "+rand2+".")
+    };
+
+    function randomDigit(l) {
+      return Math.floor(Math.random() * Math.floor(l));
+    }
+
+    function generateRandomBinary(binaryLength) {
+      let binary = "";
+      for(let i = 0; i < binaryLength; ++i) {
+        binary += randomDigit();
+      }
+      return binary;
+    }
+
+    function generate(n) {
+            var add = 1, max = 12 - add;   // 12 is the min safe number Math.random() can generate without it starting to pad the end with zeros.   
+            
+            if ( n > max ) {
+                    return generate(max) + generate(n - max);
+            }
+            
+            max        = Math.pow(10, n+add);
+            var min    = max/10; // Math.pow(10, n) basically
+            var number = Math.floor( Math.random() * (max - min + 1) ) + min;
+            
+            return ("" + number).substring(add); 
+    }
+
+  })
