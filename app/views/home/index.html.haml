@@ -100,13 +100,14 @@
       
       previous_display = $("#readout").html();
       if (line_count > 40){
-        previous_display = previous_display.slice(28)
+        delete_pos = previous_display.indexOf(">");
+        previous_display = previous_display.slice(delete_pos+1)
       }else{
         line_count += 1;
       }
       rand1 = generate(11)
       rand2 = generate(11)
-      $("#readout").html(previous_display+"</br>"+rand1+" "+rand2+".")
+      $("#readout").html(previous_display+"</br>"+rand1+" "+rand2)
     };
 
     function randomDigit(l) {
