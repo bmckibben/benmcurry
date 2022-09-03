@@ -37,7 +37,7 @@
         .row
           .col-md-12
             .service-item{id: "author-pic"}
-              / = image_tag "author.jpg",  class: "author-img"
+              = image_tag "author.jpg",  class: "author-img"
             }
 #novel.tabs-content
   .container
@@ -100,7 +100,6 @@
   $(document).ready(function () {
     var line_count = 0;
     var readout_height = $("#readout").height();
-    $("#author-pic").html(readout_height);
     setInterval(gen_random, 500);
     function gen_random() {
       
