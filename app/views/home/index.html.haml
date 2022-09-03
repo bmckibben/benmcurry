@@ -2,21 +2,18 @@
   %h3.nav-label nav
   %ul.nav.flex-column
     %li.nav-item
-      %a.nav-link{:href => "#home"}
-        %span Intro
+      %a.nav-link{:href => "#home"}Home
     %li.nav-item
-      %a.nav-link{:href => "#about"}
-        %span About
+      %a.nav-link{:href => "#about"}About
     %li.nav-item
-      %a.nav-link{:href => "#novel"}
-        %span Novel
+      %a.nav-link{:href => "#novel"}Novel
     %li.nav-item
-      %a.nav-link{:href => "#quotes"}
-        %span Quotes        
+      %a.nav-link{:href => "#quotes"}Quotes        
     %li.nav-item
-      %a.nav-link{:href => "#contact-us"}
-        %span Contact
+      %a.nav-link{:href => "#contact-us"}Contact
 #home.parallax-content.baner-content
+  #readout
+    %span{id: "num_list"}
   .container
     .first-content
       %h1 Ben M Curry
@@ -28,7 +25,9 @@
         .left-text
           %h4 More About Ben M Curry
           .line-dec
-          %p I am an aspiring author in the middle of the second draft of my first novel. During the day-time I work as an Internet Application Developer. I reside in the United States but I am a world traveler and lived in Malaysia for ten years during my earlier adulthood.
+          %p I am an aspiring author in the middle of the second draft of my first novel. During the day-time I work as an Internet Application Developer.
+          %p As a child I lived in several different places. My father was in the US Army so we found ourselves in a new locatin every four years. I now reside in the United States but I am a world traveler and lived in Malaysia for ten years during my earlier adulthood.
+          %p More than getting to change as a child, learned to embrace it. Change is an integral part of my psyche and because or that I embrace diversity in all its forms.
           %p I have a passion for Science Fiction. Details of my current work is available below.
           %p
             Please share my
@@ -96,3 +95,48 @@
           %a{:href => "https://templatemo.com", :rel => "nofollow noopener"}
             %em TemplateMo
 
+:javascript
+  $(document).ready(function () {
+    var line_count = 0
+    setInterval(gen_random, 500);
+    function gen_random() {
+      
+      previous_display = $("#num_list").html();
+      if (line_count > 50){
+        delete_pos = previous_display.indexOf(">");
+        previous_display = previous_display.slice(delete_pos+1);
+      }else{
+        line_count += 1;
+      }
+      rand1 = generate(11)
+      rand2 = generate(11)
+      $("#num_list").html(previous_display+"</br>"+rand1+" "+rand2)
+    };
+
+    function randomDigit(l) {
+      return Math.floor(Math.random() * Math.floor(l));
+    }
+
+    function generateRandomBinary(binaryLength) {
+      let binary = "";
+      for(let i = 0; i < binaryLength; ++i) {
+        binary += randomDigit();
+      }
+      return binary;
+    }
+
+    function generate(n) {
+            var add = 1, max = 12 - add;   // 12 is the min safe number Math.random() can generate without it starting to pad the end with zeros.   
+            
+            if ( n > max ) {
+                    return generate(max) + generate(n - max);
+            }
+            
+            max        = Math.pow(10, n+add);
+            var min    = max/10; // Math.pow(10, n) basically
+            var number = Math.floor( Math.random() * (max - min + 1) ) + min;
+            
+            return ("" + number).substring(add); 
+    }
+
+  })

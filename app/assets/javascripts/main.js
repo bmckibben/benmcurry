@@ -79,8 +79,4 @@ jQuery(document).ready(function($) {
       } // End if
     });
 
-    $(".fixed-side-navbar").on("mouse-in" function(){
-        $(".nav-label").hide();
-    });
-
 });
