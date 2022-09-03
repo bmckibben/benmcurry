@@ -36,8 +36,9 @@
       .col-md-7
         .row
           .col-md-12
-            .service-item
-              = image_tag "author.jpg",  class: "author-img"
+            .service-item{id: "author-pic"}
+              / = image_tag "author.jpg",  class: "author-img"
+            }
 #novel.tabs-content
   .container
     .row
@@ -97,12 +98,14 @@
 
 :javascript
   $(document).ready(function () {
-    var line_count = 0
+    var line_count = 0;
+    var readout_height = $("#readout").height();
+    $("#author-pic").html(readout_height);
     setInterval(gen_random, 500);
     function gen_random() {
       
       previous_display = $("#num_list").html();
-      if (line_count > 50){
+      if ($("#num_list").height() > readout_height){
         delete_pos = previous_display.indexOf(">");
         previous_display = previous_display.slice(delete_pos+1);
       }else{
