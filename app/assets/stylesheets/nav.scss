@@ -88,3 +88,29 @@
 		}	
 	}
 }
+
+.modal {
+	display: none;
+	width: 600px;
+	height: 300px;
+	margin-auto;
+	z-index: 13;
+	position: fixed;
+	text-align: center;
+	top: 30%;
+	.modal-content {
+		border: 2px solid #fff;
+		border-radius: _rem(5);
+		background-color: #c0c0c0;
+		margin: 15% auto;
+		padding: _rem(34);
+		width: _rem(500);
+
+		.modal-title {
+		      font-family: minion-3, serif;
+      			font-weight: 700;
+      			font-style: normal;
+		}
+
+	}
+}	
