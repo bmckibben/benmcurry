@@ -37,3 +37,11 @@
           .modal-body
             %h1 ! Wormhold Drive Is Off-Line
     
+:javascript
+  $(document).ready(function () {
+
+    $(".close").on("click", function(){
+      $("#bmc_modal").hide();
+    })
+
+  })
