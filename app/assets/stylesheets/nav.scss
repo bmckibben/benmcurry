@@ -12,6 +12,9 @@
 .nav>li{
 	position:relative;
 }
+.nav-link {
+	cursor: pointer;
+}
 .fixed-side-navbar .nav>li a{
 	color:#fff;
 	min-height:24px;
