@@ -98,6 +98,7 @@
 	position: fixed;
 	text-align: center;
 	top: 30%;
+	left: 40%;
 	font-family: Syncopate;
 	
 	.modal-content {
@@ -109,10 +110,27 @@
 		width: _rem(500);
 
 		.modal-title {
-		      font-family: minion-3, serif;
+		      font-family: syncopate, serif;
       			font-weight: 700;
       			font-style: normal;
+			font-size: 14pt;
 		}
 
+	}
+	.close {
+		color: #ccc;
+		float: right;
+		font-size: _rem(28);
+		font-weight: 600;
+		z-index: 2;
+    		margin-top: -15px;
+    		margin-right: -5px;
+    		cursor: pointer;
+		&:hover,
+		&:focus {
+			color: $gray;
+			text-decoration: none;
+			cursor: pointer;
+		}
 	}
 }	
