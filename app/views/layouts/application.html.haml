@@ -28,12 +28,12 @@
     = yield
 
     .modal.fade{ role: "dialog", id: "bmc_modal" }
-    .modal-dialog.pop-up-modal{:role => "document"}
-      .modal-content
-        %span.close{"aria-label" => "Close", "data-dismiss" => "modal" }
-          &times;
-        .modal-header.modal-title
-          = "System Message" 
-        .modal-body
-          %h1 ! Wormhold Drive Is Off-Line
+      .modal-dialog.pop-up-modal{:role => "document"}
+        .modal-content
+          %span.close{"aria-label" => "Close", "data-dismiss" => "modal" }
+            &times;
+          .modal-header.modal-title
+            = "System Message" 
+          .modal-body
+            %h1 ! Wormhold Drive Is Off-Line
     
