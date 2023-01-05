@@ -1,0 +1,24 @@
+default: &default
+
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+
+
+development:
+  <<: *default
+  adapter: postgresql
+  encoding: utf8
+  host: localhost
+  port: 5432
+  database: paxxa_development
+  username: paxxa
+  password: paxxa
+
+
+production:
+  <<: *default
+  database: paxxa_production
+  username: paxxa
+  adapter: postgresql
+  password: <%= ENV['PAXXA_DATABASE_PASSWORD'] %>
