@@ -1,24 +1,9 @@
-# README
+# benmcurry
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The Ben M Curry homepage (Current production version of www.benmcurry.com)
 
-Things you may want to cover:
+origin  https://github.com/bmckibben/benmcurry.git
 
-* Ruby version
+Branches: Main
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Produciton DB: no DB
