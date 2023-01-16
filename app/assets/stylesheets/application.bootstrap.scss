@@ -2,4 +2,10 @@
 @import 'bootstrap-icons/font/bootstrap-icons';
 
 @import 'vendor/jquery-ui';
-@import 'config/reset'
+@import 'config/reset';
+
+@import "vendor/hero-slider";
+@import "modules/main";
+@import "vendor/owl-carousel";
+@import "components/snackbar";
+@import "components/nav";

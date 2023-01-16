@@ -1,52 +1,158 @@
-.container	
-	%h1 Home#index
-	%p Find me in app/views/home/index.html.haml
-	.row
-		.col-md-6
-			= "col-md-6"
-		.col-md-6
-			= "col-md-6"
-	.row
-		.col-md-12
-			= "col-md-12"	
-	%h2 Icons			
-	.row
-		.col-md-3
-			= ".bi.bi-alarm : "
-			%i.bi.bi-alarm
-		.col-md-3
-			= ".bi.bi-check-square : "
-			%i.bi.bi-check-square
-		.col-md-3
-			= ".bi.bi-plus : "
-			%i.bi.bi-plus
-		.col-md-3
-			= ".bi.bi-pencil-fill : "
-			%i.bi.bi-pencil-fill
-	.row
-		.col-md-3
-			= ".bi.bi-file-earmark-text : "
-			%i.bi.bi-file-earmark-text
-		.col-md-3
-			= ".bi.bi-house-door-fill : "
-			%i.bi.bi-house-door-fill
-		.col-md-3
-			= ".bi.bi-x-circle : "
-			%i.bi.bi-x-circle
-		.col-md-3
-			= ".bi.bi-x-square : "
-			%i.bi.bi-x-square		
-	.row
-		.col-md-3
-			= ".bi.bi-trash-fill : "
-			%i.bi.bi-trash-fill
-		.col-md-3
-			= ".bi.bi-search	 : "
-			%i.bi.bi-search	
-		.col-md-3
-			= ".bi.bi-file-plus : "
-			%i.bi.bi-file-plus	
+.fixed-side-navbar
+  %h3.nav-label nav
+  %ul.nav.flex-column
+    %li.nav-item
+      %a.nav-link{:href => "#home"}Home
+    %li.nav-item
+      %a.nav-link{:href => "#about"}About
+    %li.nav-item
+      %a.nav-link{:href => "#novel"}Novel
+    %li.nav-item
+      %a.nav-link{:href => "#quotes"}Quotes        
+    %li.nav-item
+      %a.nav-link{:href => "#contact-us"}Contact
+    %li.nav-item
+      %a.nav-link{:href => wikis_path}Wiki       
+    %li.nav-item
+      %a.nav-link{:id => "whd"}WHD      
+#home.parallax-content.baner-content
+  #readout    
+    #num_list
 
+  .container
+    .first-content
+      %h1 Ben M Curry
+      %span Author
+#about.service-content
+  .container
+    .row
+      .col-md-5
+        .left-text
+          %h4 More About Ben M Curry
+          .line-dec
+          %p I am an aspiring author in the middle of the second draft of my first novel. During the day-time I work as an Internet Application Developer.
+          %p As a child I lived in several different places. My father was in the US Army so we found ourselves in a new locatin every four years. I now reside in the United States but I am a world traveler and lived in Malaysia for ten years during my earlier adulthood.
+          %p More than getting to change as a child, learned to embrace it. Change is an integral part of my psyche and because or that I embrace diversity in all its forms.
+          %p I have a passion for Science Fiction. Details of my current work is available below.
+          %p
+            Please share my
+            %a{:href => "https://www.benmcurry.com", :rel => "nofollow"} website
+            with your friends or collegues. Thank you.
+      .col-md-7
+        .row
+          .col-md-12
+            .service-item{id: "author-pic"}
+              = image_tag "author.jpg",  class: "author-img"
+            }
+#novel.tabs-content
+  .container
+    .row
+      .col-md-6
+        .row
+          .col-md-12
+            .service-item
+              = image_tag "book.png"    
+      .col-md-6
+        .left-text
+          %h4 The Science of Miracles
+          .line-dec
+          %p Paxxa was abducted by extraterrestrials as a toddler and taken to be raised in the culture of the Raquesti. Paxxa will return to earth as a emissary for the alien culture. Paxxa’s mission is to teach Raquesti science to the people of earth in the hope of recreating knowledge the Raquesti lost in a devastating war.
+          %p Greg Macsen is a former physics professor with a theory of hyper-dimensional energy.  A totalitarian regime has forced him to work in a secret weapons laboratory.  He has been broken by the sadistic head of national security who is using the memory of his ex-girlfriend to taunt him.
+          %p Greg is rescued and meets Paxxa in the sanctuary of an underground resistance movement. Together they  create a device that can help the resistance battle the corrupt government. What will happen when the government tries to thwart their plans?
+
+          
+
+= render "quotes"               
+
+#contact-us.parallax-content.contact-content
+  .container
+    .row
+      .col-md-3
+      .col-md-6
+
+        .contact-form.service-item
+          .row
+            %h4 Contact Me
+            =simple_form_for :contact, url: contact_path, remote: true, html: {class: "my_form", id: "contact",  role: "form"} do |f|
+              .row
+                .col-md-12
+                  %fieldset
+                    =f.input :name, class:"form-control", placeholder: "Your name...",  required: true, label: false
+                .col-md-12
+                  %fieldset
+                    =f.input :email, class:"form-control", as: :email, placeholder: "Your email...",  required: true, label: false
+                .col-md-12
+                  %fieldset
+                    =f.input :message, class:"form-control",  placeholder: "Your message...",  required: true, label: false
+                .col-md-12
+                  %fieldset
+                    %button#form-submit.btn{:type => "submit"} Send Message
+                    #snackbar
+
+%footer
+  .container
+    .row
+      .col-md-12
+        .primary-button
+          %a{:href => "#home"} Back To Top
+        %p
+          Copyright © #{Time.now.year} Ben M Curry
+          
+          \- Design:
+          %a{:href => "https://templatemo.com", :rel => "nofollow noopener"}
+            %em TemplateMo 
 :javascript
-	$(document).ready(function(){
-	})			
+  $(document).ready(function () {
+    var line_count = 0;
+    var readout_height = $("#readout").height();
+    var arSVG = get_svg();
+    previous_display = $("#num_list").html();
+
+
+    //gen_random();
+    setInterval(gen_random, 500);
+    function gen_random() {
+      
+      if ($("#num_list").height() > (readout_height-10)){
+        delete_pos = previous_display.indexOf("<br>");
+        previous_display = previous_display.slice(delete_pos+1);
+        $('#readout').find('span').first().remove();
+      }else{
+        line_count += 1;
+      }
+      new_line = "<span>"
+      for (let i=0; i < arSVG.length; i++) {
+        r = randomDigit(11);
+        new_line = new_line + arSVG[r];
+
+      }
+      newline = new_line + "</span>"
+      $("#num_list").append(newline)
+    };
+
+    function randomDigit(l) {
+      return Math.floor(Math.random() * Math.floor(l));
+    }
+
+
+    function get_svg() {
+      var svgs = [];
+      svgs.push('<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="100.000000pt" height="100.000000pt" viewBox="0 0 100.000000 100.000000" preserveAspectRatio="xMidYMid meet"> <g transform="translate(0.000000,100.000000) scale(0.100000,-0.100000)" fill="#ffffff" stroke="none"> <path d="M130 500 l0 -500 385 0 385 0 0 500 0 500 -50 0 -50 0 0 -450 0 -450 -285 0 -285 0 0 240 0 239 79 3 78 3 -76 207 -76 208 -52 0 -53 0 0 -500z"/> </g></svg>');
+      svgs.push('<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="100.000000pt" height="100.000000pt" viewBox="0 0 100.000000 100.000000" preserveAspectRatio="xMidYMid meet"> <g transform="translate(0.000000,100.000000) scale(0.100000,-0.100000)" fill="#ffffff" stroke="none"> <path d="M260 950 l0 -50 90 0 90 0 0 -450 0 -450 130 0 130 0 -33 67 c-19 38 -39 90 -46 117 -7 26 -26 78 -44 115 l-32 66 -3 318 -3 317 -140 0 -139 0 0 -50z"/> </g> </svg>');
+      svgs.push('<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="100.000000pt" height="100.000000pt" viewBox="0 0 100.000000 100.000000"  preserveAspectRatio="xMidYMid meet"> <g transform="translate(0.000000,100.000000) scale(0.100000,-0.100000)" fill="#ffffff" stroke="none"> <path d="M510 950 l0 -50 145 0 145 0 0 -140 0 -140 -345 0 -345 0 0 -45 0 -45 345 0 345 0 0 -64 c0 -46 -15 -120 -50 -253 -28 -103 -52 -194 -55 -200 -3 -10 21 -13 100 -13 l105 0 0 500 0 500 -195 0 -195 0 0 -50z"/></g></svg>');
+      svgs.push('<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="100.000000pt" height="100.000000pt" viewBox="0 0 100.000000 100.000000" preserveAspectRatio="xMidYMid meet"><g transform="translate(0.000000,100.000000) scale(0.100000,-0.100000)" fill="#ffffff" stroke="none"> <path d="M183 863 c52 -76 190 -277 306 -448 l212 -310 -145 -3 -145 -3 -151 76 -150 75 0 -125 0 -125 390 0 c369 0 390 1 381 18 -6 9 -158 233 -339 497 l-328 480 -63 3 -62 3 94 -138z"/></g></svg>');
+      svgs.push('<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="100.000000pt" height="100.000000pt" viewBox="0 0 100.000000 100.000000"  preserveAspectRatio="xMidYMid meet"> <g transform="translate(0.000000,100.000000) scale(0.100000,-0.100000)" fill="#ffffff" stroke="none"> <path d="M102 983 c4 -19 31 -42 325 -266 l202 -154 -259 -8 -260 -7 0 -274 0 -274 360 0 360 0 0 48 0 47 -163 66 -162 67 -3 -69 -3 -69 -144 0 -145 0 0 178 0 179 113 6 c61 4 199 7 305 7 l192 0 0 38 c0 48 9 41 -327 296 l-272 206 -61 0 c-53 0 -61 -2 -58 -17z"/> </g> </svg>');
+      svgs.push('<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="100.000000pt" height="100.000000pt" viewBox="0 0 100.000000 100.000000" preserveAspectRatio="xMidYMid meet"><g transform="translate(0.000000,100.000000) scale(0.100000,-0.100000)"fill="#ffffff" stroke="none"> <path d="M130 875 l0 -125 23 9 c12 5 99 41 194 80 l172 71 126 0 125 0 0 -175 0 -175 -320 0 -320 0 0 -280 0 -280 370 0 370 0 0 50 0 50 -320 0 -320 0 0 180 0 180 320 0 320 0 0 270 0 270 -370 0 -370 0 0 -125z"/></g></svg>');      
+      svgs.push('<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="100.000000pt" height="100.000000pt" viewBox="0 0 100.000000 100.000000" preserveAspectRatio="xMidYMid meet"><g transform="translate(0.000000,100.000000) scale(0.100000,-0.100000)"fill="#ffffff" stroke="none"> <path d="M80 950 l0 -50 360 0 360 0 0 -165 0 -165 -360 0 -360 0 0 -49 0 -49 159 -118 c158 -119 158 -119 236 -237 l78 -117 159 0 160 0 -108 83 c-60 46 -199 150 -308 233 l-199 149 321 3 322 2 0 265 0 265 -410 0 -410 0 0 -50z"/></g></svg>');
+      svgs.push('<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="100.000000pt" height="100.000000pt" viewBox="0 0 100.000000 100.000000" preserveAspectRatio="xMidYMid meet"><g transform="translate(0.000000,100.000000) scale(0.100000,-0.100000)"fill="#ffffff" stroke="none"> <path d="M91 748 l0 -253 315 -248 315 -248 78 3 77 3 -343 270 -342 270 -1 178 0 177 144 0 144 0 208 -70 c115 -38 210 -70 211 -70 2 0 3 54 3 120 l0 120 -405 0 -405 0 1 -252z"/></g></svg>');      
+      svgs.push('<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="100.000000pt" height="100.000000pt" viewBox="0 0 100.000000 100.000000" preserveAspectRatio="xMidYMid meet"><g transform="translate(0.000000,100.000000) scale(0.100000,-0.100000)"fill="#ffffff" stroke="none"> <path d="M80 500 l0 -500 410 0 410 0 0 101 c0 91 -2 100 -17 95 -10 -3 -104 -26 -209 -51 -183 -43 -197 -45 -342 -45 l-152 0 0 180 0 180 210 0 210 0 0 45 0 45 -210 0 -210 0 0 225 0 225 -50 0 -50 0 0 -500z"/></g></svg>');
+      svgs.push('<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="100.000000pt" height="100.000000pt" viewBox="0 0 100.000000 100.000000" preserveAspectRatio="xMidYMid meet"><g transform="translate(0.000000,100.000000) scale(0.100000,-0.100000)"fill="#ffffff" stroke="none"> <path d="M100 503 c0 -423 2 -495 14 -483 15 16 707 946 720 968 5 9 -8 12 -53 12 l-60 0 -258 -346 -258 -345 -3 144 -3 144 51 189 c28 104 52 195 55 202 3 9 -21 12 -100 12 l-105 0 0 -497z"/></g></svg>');
+      svgs.push('<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="100.000000pt" height="100.000000pt" viewBox="0 0 100.000000 100.000000" preserveAspectRatio="xMidYMid meet"><g transform="translate(0.000000,100.000000) scale(0.100000,-0.100000)"fill="#ffffff" stroke="none"> <path d="M160 500 l0 -500 60 0 59 0 258 346 258 345 2 -148 2 -148 -52 -195-53 -195 99 -3 c55 -1 101 -1 103 1 2 2 3 226 2 497 l-3 494 -322 -433 -323-433 0 436 0 436 -45 0 -45 0 0 -500z"/></g></svg>');
+      return svgs;
+    }
+
+    $("#whd").on("click", function(){
+      $("#bmc_modal").toggle();
+    })
+
+  })

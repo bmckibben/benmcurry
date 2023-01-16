@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @wiki.title
+%p
+  %b User:
+  = @wiki.user_id
+%p
+  %b Body:
+  = @wiki.body
+%p
+  %b Parent:
+  = @wiki.parent
+%p
+  %b Version:
+  = @wiki.version
+%p
+  %b Deleted:
+  = @wiki.deleted
+%p
+  %b Default sort:
+  = @wiki.default_sort
+%p
+  %b Last revision:
+  = @wiki.last_revision
+
+= link_to 'Edit', edit_wiki_path(@wiki)
+\|
+= link_to 'Back', wikis_path

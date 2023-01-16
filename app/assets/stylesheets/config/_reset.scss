@@ -1,12 +1,6 @@
-body {
-  background: linear-gradient(to bottom, black 0%, #000099 100%) no-repeat center center fixed;
-  color: #fff;
+body.interior_page_background {	
+	background: linear-gradient(to bottom, black 0%, #000099 100%) no-repeat center center fixed;
+	color: #fff;
+
 }
 
-.col-md-6 {
-	border: 1px solid #fff;
-}
-
-.col-md-3 {
-	border: 1px solid #c0c0c0;
-}
