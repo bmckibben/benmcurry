@@ -1,24 +1,17 @@
-# README
+# benmcurry
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The Ben M Curry homepage (Current production version of www.benmcurry.com)
 
-Things you may want to cover:
+origin  https://github.com/bmckibben/benmcurry.git
 
-* Ruby version
+Branches: Main
 
-* System dependencies
+Produciton DB: postgresql
 
-* Configuration
+## Rails 7 with hotwire Turbo, Jquery, and Bootstrap
 
-* Database creation
+- This application starts with Gorails tutorial [How to use jQuery & jQueryUI with Esbuild](https://gorails.com/episodes/how-to-use-jquery-with-esbuild)
 
-* Database initialization
+- Once the base site is created, I continue building with [Turbo Rails Tutorial](https://www.hotrails.dev/turbo-rails)
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Instead of using the Turbo Rails Tutorial Quote model, I am using my own Wiki model and recreating a wiki app I had previously created in Rails 5.

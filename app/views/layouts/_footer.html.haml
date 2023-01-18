@@ -1,0 +1,62 @@
+.row
+  .col-md-4.col-xs-12
+    %p{id:"copyrights"}
+      != "&copy; Ben M Curry,"
+      = Time.now.year
+      = " All rights reserved."
+      %br
+      ="v.2023.018"
+  .col-md-4.col-xs-12{align:"center"}
+    = link_to "License", "#mdlLicense",  data: {toggle: "modal"}
+    = "|"
+    = link_to "Privacy", "#mdlPrivacy",  data: {toggle: "modal"}
+
+  .col-md-4.col-xs-12 
+    %p{class:"pull-right", style:"padding-right:30px;"}
+      =link_to "Back to top", "#"
+
+.modal.fade{id:"mdlLicense"}
+  .modal-dialog
+    .modal-content
+      %button.close{"aria-label" => "Close", "data-dismiss" => "modal", type: :button, class: "btn-dialog-close" }
+        %i.fas.fa-times-circle    
+      .modal-header
+        .modal-title
+          ="License"
+      .modal-body
+        %p
+          ="Copyright &copy; " 
+          =Time.now.year
+          ="Ben M Curry"
+
+        %p
+          ="Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &ldquo;Software&ldquo;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:"
+
+        %p
+          ="The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software."
+
+        %p
+          ="THE SOFTWARE IS PROVIDED &ldquo;AS IS&rdquo;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+
+      .modal-footer
+        %button.btn.btn-default{type: :button, data:{dismiss: "modal"} }
+          = "Close"        
+
+.modal.fade{id:"mdlPrivacy"}
+  .modal-dialog
+    .modal-content
+      %button.close{"aria-label" => "Close", "data-dismiss" => "modal", type: :button, class: "btn-dialog-close" }
+        %i.fas.fa-times-circle
+      .modal-header
+        .modal-title
+          ="Privacy Policy"
+      .modal-body
+        %p
+          ="Shirley, you must be joking!"
+        %p
+          ="This is the internet. Anything that is sent via the internet has the potential to be seen by anyone with the means to see it. Those means are easy to come by."
+        %p
+          ="As for this website, We have no interest in your personal data. We do not track you. We do not store any information related to your viewing of this website. Any cookies you may receive during you visit will expire as soon as you close your browser."
+      .modal-footer
+        %button.btn.btn-default{type: :button, data:{dismiss: "modal"} }
+          = "Close"
