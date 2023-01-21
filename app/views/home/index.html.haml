@@ -11,7 +11,10 @@
       %a.nav-link{:href => "#quotes"}Quotes        
     %li.nav-item
       %a.nav-link{:href => "#contact-us"}Contact
-      
+    %li.nav-item
+      %a.nav-link{:href => wikis_path}Wiki       
+    %li.nav-item
+      %a.nav-link{:id => "whd"}WHD      
 #home.parallax-content.baner-content
   #readout    
     #num_list
@@ -85,29 +88,7 @@
                   %fieldset
                     %button#form-submit.btn{:type => "submit"} Send Message
                     #snackbar
-    .row
-      .col-md-1{style: "background-color:#ff00ff"}
-        = "Fuchsia"
-      .col-md-1{style: "background-color:#8000ff"}
-        = "Violet"
-      .col-md-1{style: "background-color:#0000ff"}
-        = "Blue"
-      .col-md-1{style: "background-color:#0080ff"}
-        = "Steel"
-      .col-md-1{style: "background-color:#00ffff"}
-        = "Cyan"
-      .col-md-1{style: "background-color:#00ff80"}
-        = "Chartreuse"
-      .col-md-1{style: "background-color:#00ff00"}
-        = "Green"
-      .col-md-1{style: "background-color:#80ff00"}
-        = "Lime"
-      .col-md-1{style: "background-color:#ffff00"}
-        = "Yellow"
-      .col-md-1{style: "background-color:#ff8000"}
-        = "Orange"
-      .col-md-1{style: "background-color:#ff0000"}
-        = "Red"
+
 %footer
   .container
     .row
@@ -170,6 +151,8 @@
       return svgs;
     }
 
-
+    $("#whd").on("click", function(){
+      $("#bmc_modal").toggle();
+    })
 
   })

@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  user_id: 1
+  body: MyText
+  parent: 1
+  version: 1
+  deleted: false
+  default_sort: 1
+  last_revision: 1
+
+two:
+  title: MyString
+  user_id: 1
+  body: MyText
+  parent: 1
+  version: 1
+  deleted: false
+  default_sort: 1
+  last_revision: 1
