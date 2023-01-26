@@ -1,0 +1,72 @@
+-# frozen_string_literal: true
+= simple_form_for(@pick) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .form-inputs.draw-table
+    .row
+      .col-md-3
+        = "Date"
+      .col-md-1  
+      .col-md-1
+        ="One"
+      .col-md-1
+        ="Two"
+      .col-md-1
+        ="Three"
+      .col-md-1
+        ="Four"
+      .col-md-1
+        ="Five"
+      .col-md-1
+        ="PowerBall"
+    .row
+      .col-md-3
+        = f.date_field :draw_date, label: false
+      .col-md-1
+        = "Number:"
+        %br
+        = "Weight:"
+        %br
+        = "Match:"
+      .col-md-1        
+        = f.text_field :b1, label: false
+        %br
+        = f.text_field :s1, label: false
+        %br
+        = f.input :m1, as: :boolean, label: false
+      .col-md-1    
+        = f.text_field :b2, label: false
+        %br
+        = f.text_field :s2, label: false
+        %br
+        = f.input :m2, as: :boolean, label: false
+      .col-md-1    
+        = f.text_field :b3, label: false
+        %br
+        = f.text_field :s3, label: false
+        %br
+        = f.input :m3, as: :boolean, label: false
+      .col-md-1    
+        = f.text_field :b4, label: false
+        %br
+        = f.text_field :s4, label: false
+        %br
+        = f.input :m4, as: :boolean, label: false
+      .col-md-1    
+        = f.text_field :b5, label: false
+        %br
+        = f.text_field :s5, label: false
+        %br
+        = f.input :m5, as: :boolean, label: false
+      .col-md-1
+        = f.text_field :powerball, label: false
+        %br
+        = f.text_field :powerscore, label: false
+        %br
+        = f.input :powermatch, as: :boolean, label: false
+    .row
+      .col-md-12
+
+    .form-actions
+      = f.button :submit

@@ -1,0 +1,45 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  draw_date: 2023-01-26 08:19:05
+  b1: 1
+  s1: 1
+  m1: false
+  b2: 1
+  s2: 1
+  m2: false
+  b3: 1
+  s3: 1
+  m3: false
+  b4: 1
+  s4: 1
+  m4: false
+  b5: 1
+  s5: 1
+  m5: false
+  powerball: 1
+  powerscore: 1
+  powermatch: false
+  won: 9.99
+
+two:
+  draw_date: 2023-01-26 08:19:05
+  b1: 1
+  s1: 1
+  m1: false
+  b2: 1
+  s2: 1
+  m2: false
+  b3: 1
+  s3: 1
+  m3: false
+  b4: 1
+  s4: 1
+  m4: false
+  b5: 1
+  s5: 1
+  m5: false
+  powerball: 1
+  powerscore: 1
+  powermatch: false
+  won: 9.99

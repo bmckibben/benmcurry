@@ -1,44 +1,72 @@
+
 %p#notice= notice
 
-%p
-  %b Draw date:
-  = @draw.draw_date
-%p
-  %b B1:
-  = @draw.b1
-%p
-  %b S1:
-  = @draw.s1
-%p
-  %b B2:
-  = @draw.b2
-%p
-  %b S2:
-  = @draw.s2
-%p
-  %b B3:
-  = @draw.b3
-%p
-  %b S3:
-  = @draw.s3
-%p
-  %b B4:
-  = @draw.b4
-%p
-  %b S4:
-  = @draw.s4
-%p
-  %b B5:
-  = @draw.b5
-%p
-  %b S5:
-  = @draw.s5
-%p
-  %b B6:
-  = @draw.powerball
-%p
-  %b S6:
-  = @draw.powerscore
+
+.row
+  .col-md-3
+    = "Date"
+  .col-md-1  
+  .col-md-1
+    ="One"
+  .col-md-1
+    ="Two"
+  .col-md-1
+    ="Three"
+  .col-md-1
+    ="Four"
+  .col-md-1
+    ="Five"
+  .col-md-1
+    ="PowerBall"
+.row
+  .col-md-3
+    = @draw.draw_date.strftime("%Y.%j")
+  .col-md-1
+    = "Number:"
+    %br
+    = "Weight:"
+  .col-md-1        
+    %b 
+      = "B1:"
+    = @draw.b1
+    %br
+    = "S1:"
+    = @draw.s1
+  .col-md-1        
+    %b 
+      = "B2:"
+    = @draw.b2
+    %br
+    = "S2:"
+    = @draw.s2
+  .col-md-1        
+    %b 
+      = "B3:"
+    = @draw.b3
+    %br
+    = "S3:"
+    = @draw.s3
+  .col-md-1        
+    %b 
+      = "B4:"
+    = @draw.b4
+    %br
+    = "S4:"
+    = @draw.s4
+  .col-md-1        
+    %b 
+      = "B5:"
+    = @draw.b5
+    %br
+    = "S5:"
+    = @draw.s5
+  .col-md-1        
+    %b 
+      = "PB:"
+    = @draw.powerball
+    %br
+    = "PS:"
+    = @draw.powerscore
 
 = link_to 'Edit', edit_draw_path(@draw)
 \|

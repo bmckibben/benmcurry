@@ -1,0 +1,50 @@
+.modal {
+	display: none;
+	min-width: 600px;
+	min-height: 300px;
+	margin: auto;
+	z-index: 13;
+	position: fixed;
+	text-align: center;
+	top: 30%;
+	font-family: Syncopate;
+	overflow: hidden;
+	.modal-content {
+		border: 2px solid #ff0;
+		border-radius: _rem(5);
+		background-color: #2b2b2b;
+		margin: 15% auto;
+		padding: _rem(34);
+		width: _rem(500);
+		color: #ff0;
+		.modal-title {
+		      font-family: syncopate, serif;
+      			font-weight: 700;
+      			font-style: normal;
+			font-size: 14pt;
+			margin: auto;
+		}
+
+	}
+	.close {
+		color: #ff0;
+		border: 2px solid #ff0;
+		float: right;
+		font-size: 2rem;
+		font-weight: 600;
+		width: 2rem;
+		z-index: 2;
+    	margin-top: -20px;
+    	margin-right: -5px;
+    	cursor: pointer;
+    	background-color:#2b2b2b;
+    	border-radius:50%;
+    	line-height: 2rem;
+		&:hover,
+		&:focus {
+			color: #ffff00;
+			text-decoration: none;
+			cursor: pointer;
+		}
+	}
+}	

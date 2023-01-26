@@ -96,11 +96,16 @@
         .primary-button
           %a{:href => "#home"} Back To Top
         %p
-          Copyright © #{Time.now.year} Ben M Curry
+          = "Copyright &copy; #{Time.now.year} Ben M Curry. All rights reserved.".html_safe
           
           \- Design:
           %a{:href => "https://templatemo.com", :rel => "nofollow noopener"}
             %em TemplateMo 
+
+          %br/
+          = "&alpha; = 0.0072973525627871".html_safe 
+
+
 :javascript
   $(document).ready(function () {
     var line_count = 0;

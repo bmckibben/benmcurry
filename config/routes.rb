@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :picks
   get 'score/index'
   get 'scores', to: "score#index", as: :scores
   resources :draws

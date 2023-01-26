@@ -1,0 +1,59 @@
+%h1 Listing picks
+
+%table
+  %thead
+    %tr
+      %th Draw date
+      %th B1
+      %th S1
+      %th M1
+      %th B2
+      %th S2
+      %th M2
+      %th B3
+      %th S3
+      %th M3
+      %th B4
+      %th S4
+      %th M4
+      %th B5
+      %th S5
+      %th M5
+      %th Powerball
+      %th Powerscore
+      %th Powermatch
+      %th Won
+      %th
+      %th
+      %th
+
+  %tbody
+    - @picks.each do |pick|
+      %tr
+        %td= pick.draw_date
+        %td= pick.b1
+        %td= pick.s1
+        %td= pick.m1
+        %td= pick.b2
+        %td= pick.s2
+        %td= pick.m2
+        %td= pick.b3
+        %td= pick.s3
+        %td= pick.m3
+        %td= pick.b4
+        %td= pick.s4
+        %td= pick.m4
+        %td= pick.b5
+        %td= pick.s5
+        %td= pick.m5
+        %td= pick.powerball
+        %td= pick.powerscore
+        %td= pick.powermatch
+        %td= pick.won
+        %td= link_to 'Show', pick
+        %td= link_to 'Edit', edit_pick_path(pick)
+        %td= link_to 'Destroy', pick, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Pick', new_pick_path

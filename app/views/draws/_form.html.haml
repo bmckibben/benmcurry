@@ -3,12 +3,12 @@
   = f.error_notification
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
-  .form-inputs
+  .form-inputs.draw-table
     .row
       .col-md-3
-        = f.date_field :draw_date, id:"drawpicker"
+        = f.date_field :draw_date
       .col-md-1        
-        = f.text_field :b1
+        = f.text_field :b1       
       .col-md-1    
         = f.text_field :b2
       .col-md-1    
@@ -22,10 +22,3 @@
 
   .form-actions
     = f.button :submit
-
-:javascript
-  $(document).ready(function () {
-
-    $("#drawpicker").datepicker();
-
-  })

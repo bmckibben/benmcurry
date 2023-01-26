@@ -1,0 +1,66 @@
+%p#notice= notice
+
+%p
+  %b Draw date:
+  = @pick.draw_date
+%p
+  %b B1:
+  = @pick.b1
+%p
+  %b S1:
+  = @pick.s1
+%p
+  %b M1:
+  = @pick.m1
+%p
+  %b B2:
+  = @pick.b2
+%p
+  %b S2:
+  = @pick.s2
+%p
+  %b M2:
+  = @pick.m2
+%p
+  %b B3:
+  = @pick.b3
+%p
+  %b S3:
+  = @pick.s3
+%p
+  %b M3:
+  = @pick.m3
+%p
+  %b B4:
+  = @pick.b4
+%p
+  %b S4:
+  = @pick.s4
+%p
+  %b M4:
+  = @pick.m4
+%p
+  %b B5:
+  = @pick.b5
+%p
+  %b S5:
+  = @pick.s5
+%p
+  %b M5:
+  = @pick.m5
+%p
+  %b Powerball:
+  = @pick.powerball
+%p
+  %b Powerscore:
+  = @pick.powerscore
+%p
+  %b Powermatch:
+  = @pick.powermatch
+%p
+  %b Won:
+  = @pick.won
+
+= link_to 'Edit', edit_pick_path(@pick)
+\|
+= link_to 'Back', picks_path

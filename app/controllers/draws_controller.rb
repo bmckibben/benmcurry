@@ -22,6 +22,11 @@ class DrawsController < ApplicationController
   # POST /draws or /draws.json
   def create
     @draw = Draw.new(draw_params)
+    @draw.s1 = get_score(draw_params["b1"])
+    @draw.s2 = get_score(draw_params["b2"])
+    @draw.s3 = get_score(draw_params["b3"])
+    @draw.s4 = get_score(draw_params["b4"])
+    @draw.s5 = get_score(draw_params["b5"])
 
     respond_to do |format|
       if @draw.save
@@ -66,5 +71,10 @@ class DrawsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def draw_params
       params.require(:draw).permit(:draw_date, :b1, :s1, :b2, :s2, :b3, :s3, :b4, :s4, :b5, :s5, :powerball, :powerscore)
+    end
+
+    def get_score(ball)
+      @score = Score.where(ball: ball.to_i).first
+      return @score.weight
     end
 end

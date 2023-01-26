@@ -17,8 +17,11 @@
       %th PB
       %th SB
       %th
+        = link_to 'New Draw', new_draw_path
       %th
+        = link_to 'New Pick', new_pick_path
       %th
+        = link_to 'Scores', scores_path
 
   %tbody
     - @draws.each do |draw|
@@ -39,7 +42,3 @@
         %td= link_to 'Show', draw
         %td= link_to 'Edit', edit_draw_path(draw)
         %td= link_to 'Destroy', draw, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Draw', new_draw_path
