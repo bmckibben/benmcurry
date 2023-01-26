@@ -1,0 +1,31 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  draw_date: 2023-01-25 09:44:13
+  b1: 1
+  s1: 1
+  b2: 1
+  s2: 1
+  b3: 1
+  s3: 1
+  b4: 1
+  s4: 1
+  b5: 1
+  s5: 1
+  b6: 1
+  s6: 1
+
+two:
+  draw_date: 2023-01-25 09:44:13
+  b1: 1
+  s1: 1
+  b2: 1
+  s2: 1
+  b3: 1
+  s3: 1
+  b4: 1
+  s4: 1
+  b5: 1
+  s5: 1
+  b6: 1
+  s6: 1

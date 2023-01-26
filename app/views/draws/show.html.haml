@@ -1,0 +1,45 @@
+%p#notice= notice
+
+%p
+  %b Draw date:
+  = @draw.draw_date
+%p
+  %b B1:
+  = @draw.b1
+%p
+  %b S1:
+  = @draw.s1
+%p
+  %b B2:
+  = @draw.b2
+%p
+  %b S2:
+  = @draw.s2
+%p
+  %b B3:
+  = @draw.b3
+%p
+  %b S3:
+  = @draw.s3
+%p
+  %b B4:
+  = @draw.b4
+%p
+  %b S4:
+  = @draw.s4
+%p
+  %b B5:
+  = @draw.b5
+%p
+  %b S5:
+  = @draw.s5
+%p
+  %b B6:
+  = @draw.powerball
+%p
+  %b S6:
+  = @draw.powerscore
+
+= link_to 'Edit', edit_draw_path(@draw)
+\|
+= link_to 'Back', draws_path

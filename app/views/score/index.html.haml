@@ -1,0 +1,8 @@
+%h1 Score#index
+%p Find me in app/views/score/index.html.haml
+- @scores.each do |score|
+	.row
+		.col-md-2
+			= score.ball
+		.col-md-2
+			= score.weight

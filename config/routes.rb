@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'score/index'
+  get 'scores', to: "score#index", as: :scores
+  resources :draws
   devise_for :users
   resources :wikis
   root "home#index"	

@@ -1,0 +1,31 @@
+-# frozen_string_literal: true
+= simple_form_for(@draw) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .form-inputs
+    .row
+      .col-md-3
+        = f.date_field :draw_date, id:"drawpicker"
+      .col-md-1        
+        = f.text_field :b1
+      .col-md-1    
+        = f.text_field :b2
+      .col-md-1    
+        = f.text_field :b3
+      .col-md-1    
+        = f.text_field :b4
+      .col-md-1    
+        = f.text_field :b5
+      .col-md-1
+        = f.text_field :powerball
+
+  .form-actions
+    = f.button :submit
+
+:javascript
+  $(document).ready(function () {
+
+    $("#drawpicker").datepicker();
+
+  })

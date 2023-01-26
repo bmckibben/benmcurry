@@ -103,13 +103,12 @@
 	position: fixed;
 	text-align: center;
 	top: 30%;
-	left: 40%;
 	font-family: Syncopate;
 	overflow: hidden;
 	.modal-content {
-		border: 2px solid #fff;
+		border: 2px solid #f00;
 		border-radius: _rem(5);
-		background-color: #fcda00;
+		background-color: #f3f5e9;
 		margin: 15% auto;
 		padding: _rem(34);
 		width: _rem(500);
@@ -133,7 +132,7 @@
     	margin-top: -40px;
     	margin-right: -5px;
     	cursor: pointer;
-    	background-color:#fcda00;
+    	background-color:#f3f5e9;
     	border-radius:50%;
     	line-height: 2rem;
 		&:hover,
