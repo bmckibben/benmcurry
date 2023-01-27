@@ -9,8 +9,8 @@
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_include_tag "application", "data-turbo-track": "reload"
   %body.interior-page-background
+    = render 'layouts/navigation'  
     .container.page-container
-      = render 'layouts/navigation'
       .main
         = yield
     %footer.interior-footer
