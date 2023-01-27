@@ -1,8 +1,9 @@
+= link_to sanitize("&larr; Back to Wikis"), wikis_path
+.header
+  %h1
+    = @wiki.title
 %p#notice= notice
 
-%p
-  %b Title:
-  = @wiki.title
 %p
   %b User:
   = @wiki.user_id
@@ -25,6 +26,3 @@
   %b Last revision:
   = @wiki.last_revision
 
-= link_to 'Edit', edit_wiki_path(@wiki)
-\|
-= link_to 'Back', wikis_path
