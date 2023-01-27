@@ -1,0 +1,5 @@
+.wiki
+	= link_to wiki.title, wiki_path(wiki)
+	.wiki__actions
+		= button_to "Delete", wiki_path(wiki), method: :delete, class:"btn btn--light"
+		= link_to "Edit", edit_wiki_path(wiki), class: "btn btn--light"
