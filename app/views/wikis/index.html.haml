@@ -20,7 +20,7 @@
       %tr
         %td= wiki.title
         %td= wiki.user_id
-        %td= wiki.body
+        %td= wiki.body.html_safe
         %td= wiki.parent
         %td= wiki.version
         %td= wiki.deleted
