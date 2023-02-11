@@ -8,9 +8,9 @@
     = csp_meta_tag
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_include_tag "application", "data-turbo-track": "reload"
-  %body.interior_page_background
-    .container
-      = render 'layouts/navigation'
+  %body.interior-page-background
+    = render 'layouts/navigation'  
+    .container.page-container
       .main
         = yield
     %footer.interior-footer

@@ -2,10 +2,14 @@
 	width:100%;
 	th {
 		width: 6%;
+		text-align: right;
 	}
 	td {
 		width: 6%;
+		text-align: right;
+		padding-right: 5px;
 	}
+
 	.col-md-1 {
 		padding: 0.5rem;
 		input[type="text"] {
@@ -15,5 +19,8 @@
 	.col-md-3 {
 		padding: 0.5rem;
 	}	
-
+	.shaded {
+		color: #0418c9;
+		background-color: #a7e3fa;
+	}
 }

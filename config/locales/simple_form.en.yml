@@ -10,6 +10,12 @@ en:
       # html: '<abbr title="required">*</abbr>'
     error_notification:
       default_message: "Please review the problems below:"
+    placeholders:
+      wiki:
+        title: Name of your wkik
+    labels:
+      wiki:
+        title: Title      
     # Examples
     # labels:
     #   defaults:
@@ -29,3 +35,9 @@ en:
     # prompts:
     #   defaults:
     #     age: 'Select your age'
+
+  helpers:
+    submit:
+      wiki:
+        create: Create Wiki
+        update: Update Wiki

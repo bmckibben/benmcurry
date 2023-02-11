@@ -1,28 +1,26 @@
 .row
   .col-md-4.col-xs-12
-    %p{id:"copyrights"}
-      != "&copy; Ben M Curry,"
-      = Time.now.year
-      = " All rights reserved."
-      %br
-      ="v.2023.026"
+    != "&copy; Ben M Curry,"
+    = Time.now.year
+    = " All rights reserved."
+    %br
+    ="v.2023.027"
             
   .col-md-4.col-xs-12{align:"center"}
-    = link_to "License", "#mdlLicense",  data: {toggle: "modal"}
+    = link_to "License", "#mdlLicense",  data: {toggle: "modal", target: "#mdlLicense"}
     = "|"
-    = link_to "Privacy", "#mdlPrivacy",  data: {toggle: "modal"}
+    = link_to "Privacy", "#mdlPrivacy",  data: {toggle: "modal", target: "#mdlPrivacy"}
 
   .col-md-4.col-xs-12 
-    %p{class:"pull-right", style:"padding-right:30px;"}
-      =link_to "Back to top", "#"
-      %br
-      = "&alpha; = 0.0072973525627871".html_safe 
+    =link_to "Back to top", "#"
+    %br
+    = "&alpha; = 0.0072973525627871".html_safe 
 
-.modal.fade{id:"mdlLicense"}
+.modal.fade{id:"mdlLicense", tabindes: "-1", role: "dialog", aria:{labelledby: "mdlLicenseLabel", hidden: "true"}}
   .modal-dialog
     .modal-content
       %button.close{"aria-label" => "Close", "data-dismiss" => "modal", type: :button, class: "btn-dialog-close" }
-        %i.fas.fa-times-circle    
+        %i.bi.bi-x-circle    
       .modal-header
         .modal-title
           ="License"
@@ -45,11 +43,11 @@
         %button.btn.btn-default{type: :button, data:{dismiss: "modal"} }
           = "Close"        
 
-.modal.fade{id:"mdlPrivacy"}
+.modal.fade{id:"mdlPrivacy", tabindes: "-1", role: "dialog", aria:{labelledby: "mdlPrivacyLabel", hidden: "true"}}
   .modal-dialog
     .modal-content
       %button.close{"aria-label" => "Close", "data-dismiss" => "modal", type: :button, class: "btn-dialog-close" }
-        %i.fas.fa-times-circle
+        %i.bi.bi-x-circle
       .modal-header
         .modal-title
           ="Privacy Policy"

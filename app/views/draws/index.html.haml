@@ -26,18 +26,24 @@
   %tbody
     - @draws.each do |draw|
       %tr
-        %td= draw.draw_date.strftime("%d %B %Y")
-        %td= draw.b1
+        %td= draw.draw_date.strftime("%d %b %y")
+        %td.shaded 
+          = draw.b1
         %td= draw.s1
-        %td= draw.b2
+        %td.shaded 
+          = draw.b2
         %td= draw.s2
-        %td= draw.b3
+        %td.shaded 
+          = draw.b3
         %td= draw.s3
-        %td= draw.b4
+        %td.shaded 
+          = draw.b4
         %td= draw.s4
-        %td= draw.b5
+        %td.shaded 
+          = draw.b5
         %td= draw.s5
-        %td= draw.powerball
+        %td.shaded 
+          = draw.powerball
         %td= draw.powerscore
         %td= link_to 'Show', draw
         %td= link_to 'Edit', edit_draw_path(draw)

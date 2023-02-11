@@ -1,6 +1,17 @@
-body.interior_page_background {	
+body.interior-page-background {	
 	background: linear-gradient(to bottom, black 0%, #000099 100%) no-repeat center center fixed;
 	color: #fff;
-
+	//background: #000000 no-repeat center center fixed;
 }
 
+.page-container {
+	min-height: 100vh; /* will cover the 100% of viewport */
+	overflow: hidden;
+	display: block;
+	position: relative;
+	padding-bottom: 6rem; /* height of your footer */
+}
+
+.btn-sm{
+	padding: 9px 24px;
+}

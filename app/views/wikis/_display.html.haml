@@ -1,0 +1,25 @@
+.panel-heading
+  .row
+    .col-md-9.wiki-tags
+      %p.wiki-title= wiki.title
+      %p.wiki-tags
+        - wiki.wiki_tags.each do |wiki_tag|
+          - if !wiki_tag.tag.nil?
+            %a.btn.btn-tag{"data-tag-id" => "#{wiki_tag.tag_id}", "data-this-id" => "#{wiki.id}", href: "javascript:void(0)"}= wiki_tag.tag.title
+    .col-md-3.wiki-actions.right
+      %i.bi.bi-plus.action-icon.wiki-here{"aria-hidden" => "false", "data-id" => "#{wiki.id}", "data-parent" => "#{wiki.title}", "data-placement" => "bottom", "data-toggle" => "tooltip", title: "Create a child wiki2."}
+      - if current_user.id == wiki.user.id or current_user.admin?
+        %i.bi.bi-pencil-fill.action-icon.wiki-edit{"aria-hidden" => "false", "data-id" => "#{wiki.id}", "data-placement" => "bottom", "data-toggle" => "tooltip", title: "Edit this wiki."}
+      %i.bi.bi-x-circle.action-icon.wiki-remove{"aria-hidden" => "false", "data-id" => "#{wiki.id}", "data-placement" => "bottom", "data-toggle" => "tooltip", title: "Remove this wiki from the page."}
+.panel-body
+  .row
+    .col-md-12.wiki-body
+      - if wiki.body.include? "{{TOC}}"
+        - wiki.body["{{TOC}}"] = nested_set(query_toc(wiki.id),'wiki-menu', wiki.id)
+      = wiki.body.html_safe
+.panel-footer
+  .row
+    .col-md-12.wiki-attributes
+      Author: #{wiki.user.id if !wiki.user.nil?} (version: #{current_user.id} #{"deleted" if wiki.deleted?}) | ID: #{wiki.id} |
+      Created:  #{wiki.created_at.in_time_zone('Indiana (East)').to_formatted_s(:stardatetime)} | Updated: #{wiki.updated_at.in_time_zone('Indiana (East)').to_formatted_s(:stardatetime)}
+      %br/

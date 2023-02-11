@@ -1,4 +1,5 @@
-= form_for @wiki do |f|
+= simple_form_for wiki, html: {class: "wiki form"} do |f|
+
   - if @wiki.errors.any?
     #error_explanation
       %h2= "#{pluralize(@wiki.errors.count, "error")} prohibited this wiki from being saved:"
@@ -31,4 +32,4 @@
     = f.label :last_revision
     = f.number_field :last_revision
   .actions
-    = f.submit 'Save'
+    = f.submit 'Save', class: "btn btn--secondary"
