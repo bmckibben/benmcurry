@@ -7,7 +7,7 @@
 	position: fixed;
 	text-align: center;
 	top: 30%;
-	font-family: Syncopate;
+	font-family: $syncopate;
 	overflow: hidden;
 	.modal-content {
 		border: 2px solid #ff0;
@@ -18,7 +18,7 @@
 		width: _rem(500);
 		color: #ff0;
 		.modal-title {
-		      font-family: syncopate, serif;
+		      font-family: $syncopate;
       			font-weight: 700;
       			font-style: normal;
 			font-size: 14pt;

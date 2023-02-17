@@ -4,39 +4,40 @@
 
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300");
 @import url("https://fonts.googleapis.com/css?family=Rokkitt:300,400,600,700,800");
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Syncopate:300,400,600,700,800");
  
-$minion: rokkitt, serif;
-$source_sans_pro: open-sans, sans-serif;
+$rokkitt: rokkitt, serif;
+$open_sans: open-sans, sans-serif;
+$syncopate: syncopate, sans-serif;
 
 // THEME FONT STYLES
 
-%minion_semibold {
-	font-family: $minion;
+%rokkitt_semibold {
+	font-family: $rokkitt;
 	font-weight: 600;
 	font-style: normal;
 }
 
-%minion_bold {
-	font-family: $minion;
+%rokkitt_bold {
+	font-family: $rokkitt;
 	font-weight: 700;
 	font-style: normal;
 }
 
-%source_sans_pro_regular {
-	font-family: $source_sans_pro;
+%open_sans_regular {
+	font-family: $open_sans;
 	font-weight: 400;
 	font-style: normal;
 }
 
-%source_sans_pro_semibold {
-	font-family: $source_sans_pro;
+%open_sans_semibold {
+	font-family: $open_sans;
 	font-weight: 600;
 	font-style: normal;
 }
 
-%source_sans_pro_bold {
-	font-family: $source_sans_pro;
+%open_sans_bold {
+	font-family: $open_sans;
 	font-weight: 700;
 	font-style: normal;
 }
@@ -44,7 +45,7 @@ $source_sans_pro: open-sans, sans-serif;
 // THEME TYPOGRAPHY
 
 %h_1, .h_1 {
-	@extend %minion_bold;
+	@extend %rokkitt_bold;
 	font-size: _rem(32);
 	letter-spacing: _rem(-0.16);
 	line-height: _rem(34);
@@ -57,7 +58,7 @@ $source_sans_pro: open-sans, sans-serif;
 }
 
 %h_2, .h_2 {
-	@extend %minion_bold;
+	@extend %rokkitt_bold;
 	font-size: _rem(26);
 	line-height: _rem(32);
 	margin: 0;
@@ -68,7 +69,7 @@ $source_sans_pro: open-sans, sans-serif;
 }
 
 %h_3, .h_3 {
-	@extend %minion_bold;
+	@extend %rokkitt_bold;
 	font-size: _rem(26);
 	line-height: _rem(32);
 	margin: 0;
@@ -79,7 +80,7 @@ $source_sans_pro: open-sans, sans-serif;
 }
 
 %h_4, .h_4 {
-	@extend %minion_bold;
+	@extend %rokkitt_bold;
 	font-size: _rem(22);
 	line-height: _rem(28);
 	margin: 0;
@@ -90,7 +91,7 @@ $source_sans_pro: open-sans, sans-serif;
 }
 
 %h_5, .h_5 {
-	@extend %minion_semibold;
+	@extend %rokkitt_semibold;
 	font-size: _rem(20);
 	line-height: _rem(22);
 	margin: 0;
@@ -101,7 +102,7 @@ $source_sans_pro: open-sans, sans-serif;
 }
 
 %h_6, .h_6 {
-	@extend %minion_semibold;
+	@extend %rokkitt_semibold;
 	font-size: _rem(22);
 	line-height: _rem(24);
 	margin: 0;
@@ -112,7 +113,7 @@ $source_sans_pro: open-sans, sans-serif;
 }
 
 %p_lg, .p_lg {
-	@extend %source_sans_pro_regular;
+	@extend %open_sans_regular;
 	font-size: _rem(16);
 	letter-spacing: 0;
 	line-height: _rem(24);
@@ -123,7 +124,7 @@ $source_sans_pro: open-sans, sans-serif;
 }
 
 %p_md, .p_md {
-	@extend %source_sans_pro_regular;
+	@extend %open_sans_regular;
 	font-size: _rem(14);
 	letter-spacing: 0;
 	line-height: _rem(24);
@@ -134,7 +135,7 @@ $source_sans_pro: open-sans, sans-serif;
 }
 
 %p_sm, .p_sm {
-	@extend %source_sans_pro_regular;
+	@extend %open_sans_regular;
 	font-size: _rem(13);
 	letter-spacing: 0;
 	line-height: _rem(19);
@@ -145,7 +146,7 @@ $source_sans_pro: open-sans, sans-serif;
 }
 
 %tag_text, .tag_text {
-	@extend %source_sans_pro_bold;
+	@extend %open_sans_bold;
 	text-transform: uppercase;
 	font-size: _rem(12);
 	letter-spacing: _rem(0.55);
@@ -154,7 +155,7 @@ $source_sans_pro: open-sans, sans-serif;
 }
 
 %tag_status, .tag_status {
-	@extend %source_sans_pro_semibold;
+	@extend %open_sans_semibold;
 	text-transform: initial;
 	font-size: _rem(12);
 	letter-spacing: _rem(0.05);
@@ -163,19 +164,19 @@ $source_sans_pro: open-sans, sans-serif;
 
 %btn_text, .btn_text,
 %menu_text, .menu_text {
-	@extend %source_sans_pro_semibold;
+	@extend %open_sans_semibold;
 	font-size: _rem(16);
 	line-height: _rem(20);
 }
 
 %submenu_text, .submenu_text {
-	@extend %source_sans_pro_semibold;
+	@extend %open_sans_semibold;
 	font-size: _rem(14);
 	line-height: _rem(30);
 }
 
 %footer_menu_title, .footer_menu_title {
-	@extend %source_sans_pro_bold;
+	@extend %open_sans_bold;
 	text-transform: uppercase;
 	font-size: _rem(14);
 	letter-spacing: _rem(0.62);
@@ -187,7 +188,7 @@ $source_sans_pro: open-sans, sans-serif;
 }
 
 %tag_text, .tag_text {
-	@extend %source_sans_pro_bold;
+	@extend %open_sans_bold;
 	text-transform: uppercase;
 	font-size: _rem(12);
 	letter-spacing: _rem(0.55);
@@ -195,7 +196,7 @@ $source_sans_pro: open-sans, sans-serif;
 }
 
 %content_subtitle, .content_subtitle {
-	@extend %source_sans_pro_bold;
+	@extend %open_sans_bold;
 	text-transform: uppercase;
 	font-size: _rem(14);
 	letter-spacing: _rem(0.62);
@@ -203,31 +204,31 @@ $source_sans_pro: open-sans, sans-serif;
 }
 
 %link_btn_text, .link_btn_text {
-	@extend %source_sans_pro_semibold;
+	@extend %open_sans_semibold;
 	font-size: _rem(16);
 	line-height: _rem(20);
 }
 
 %input_text, .input_text {
-	@extend %source_sans_pro_regular;
+	@extend %open_sans_regular;
 	font-size: _rem(16);
 	line-height: _rem(20);
 }
 
 %label_text, .label_text {
-	@extend %source_sans_pro_semibold;
+	@extend %open_sans_semibold;
 	font-size: _rem(14);
 	line-height: _rem(18);
 }
 
 %select_text, .select_text {
-	@extend %source_sans_pro_regular;
+	@extend %open_sans_regular;
 	font-size: _rem(14);
 	line-height: _rem(18);
 }
 
 %author_text, .author_text {
-	@extend %source_sans_pro_semibold;
+	@extend %open_sans_semibold;
 	font-size: _rem(12);
 	letter-spacing: 0;
 	line-height: _rem(24);
@@ -237,7 +238,7 @@ $source_sans_pro: open-sans, sans-serif;
 }
 
 %checkbox-label, .checkbox-label {
-	@extend %minion_semibold;
+	@extend %rokkitt_semibold;
 	font-size: _rem(14);
 	line-height: _rem(18);
 	margin: 0;

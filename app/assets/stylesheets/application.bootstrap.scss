@@ -2,8 +2,10 @@
 @import 'bootstrap-icons/font/bootstrap-icons';
 
 @import 'vendor/jquery-ui';
-@import 'config/reset';
+
 @import 'config/variables';
+@import 'config/typography';
+@import 'config/reset';
 
 @import "modules/main";
 @import "modules/draws";
@@ -16,3 +18,4 @@
 @import "components/nav";
 @import "components/footer";
 @import "components/modal";
+@import "components/button";

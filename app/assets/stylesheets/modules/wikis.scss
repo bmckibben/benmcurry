@@ -6,6 +6,7 @@
     :last-child{
         border-bottom: 1px solid $white;
     }
+    margin-top: 0.5rem;
 }
 
 .wiki {
@@ -34,7 +35,7 @@
 }
 
 .wiki-title{
-	font-family: Rokkitt, serif;
+	font-family: $rokkitt;
 	font-size: 3rem;
 	margin-bottom: 0;
 	line-height: 3.4rem;

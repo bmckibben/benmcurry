@@ -1,6 +1,8 @@
 .header
-	%h1 Wikis
-
-	= link_to "New Wiki", new_wiki_path
+	.row
+		.col-md-10
+			%h1 Wikis
+		.col-md-2	
+			= link_to "New Wiki", new_wiki_path, class: "btn-link"
 .wikis
 	= render @wikis

@@ -89,14 +89,14 @@
 		width: 12rem;
 		background: transparent;
 		font-size: 8pt;
-		font-family: Rokkitt;
+		font-family: $rokkitt;
 		font-kerning: none;
 		overflow: hidden;
 		span {
 			font-size:8pt;
 			font-kerning: none;
 			margin-left: 5px;
-			font-family: courier;
+			font-family: $open_sans;
 		}	
 		img {
 			width: 10px;

@@ -17,11 +17,11 @@
       %th PB
       %th SB
       %th
-        = link_to 'New Draw', new_draw_path
+        = link_to 'New Draw', new_draw_path, class: "btn-link"
       %th
-        = link_to 'New Pick', new_pick_path
+        = link_to 'New Pick', new_pick_path, class: "btn-link"
       %th
-        = link_to 'Scores', scores_path
+        = link_to 'Scores', scores_path, class: "btn-link"
 
   %tbody
     - @draws.each do |draw|
