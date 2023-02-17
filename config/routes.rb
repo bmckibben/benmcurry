@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   get 'score/index'
   get 'scores', to: "score#index", as: :scores
   resources :draws
-  devise_for :users
+  devise_for :users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   resources :wikis
   root "home#index"	
   get 'home/index'

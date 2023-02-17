@@ -1,0 +1,303 @@
+/*--------------------------------------------------------------
+# TYPOGRAPHY
+--------------------------------------------------------------*/
+
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300");
+@import url("https://fonts.googleapis.com/css?family=Rokkitt:300,400,600,700,800");
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700&display=swap');
+ 
+$minion: rokkitt, serif;
+$source_sans_pro: open-sans, sans-serif;
+
+// THEME FONT STYLES
+
+%minion_semibold {
+	font-family: $minion;
+	font-weight: 600;
+	font-style: normal;
+}
+
+%minion_bold {
+	font-family: $minion;
+	font-weight: 700;
+	font-style: normal;
+}
+
+%source_sans_pro_regular {
+	font-family: $source_sans_pro;
+	font-weight: 400;
+	font-style: normal;
+}
+
+%source_sans_pro_semibold {
+	font-family: $source_sans_pro;
+	font-weight: 600;
+	font-style: normal;
+}
+
+%source_sans_pro_bold {
+	font-family: $source_sans_pro;
+	font-weight: 700;
+	font-style: normal;
+}
+
+// THEME TYPOGRAPHY
+
+%h_1, .h_1 {
+	@extend %minion_bold;
+	font-size: _rem(32);
+	letter-spacing: _rem(-0.16);
+	line-height: _rem(34);
+	margin: 0;
+	@media only screen and (min-width: 768px) {
+		font-size: _rem(42);
+		letter-spacing: _rem(-0.2);
+		line-height: _rem(45);
+	}
+}
+
+%h_2, .h_2 {
+	@extend %minion_bold;
+	font-size: _rem(26);
+	line-height: _rem(32);
+	margin: 0;
+	@media only screen and (min-width: 768px) {
+		font-size: _rem(34);
+		line-height: _rem(32);
+	}
+}
+
+%h_3, .h_3 {
+	@extend %minion_bold;
+	font-size: _rem(26);
+	line-height: _rem(32);
+	margin: 0;
+	@media only screen and (min-width: 768px) {
+		font-size: _rem(30);
+		line-height: _rem(32);
+	}
+}
+
+%h_4, .h_4 {
+	@extend %minion_bold;
+	font-size: _rem(22);
+	line-height: _rem(28);
+	margin: 0;
+	@media only screen and (min-width: 768px) {
+		font-size: _rem(26);
+		line-height: _rem(32);
+	}
+}
+
+%h_5, .h_5 {
+	@extend %minion_semibold;
+	font-size: _rem(20);
+	line-height: _rem(22);
+	margin: 0;
+	@media only screen and (min-width: 768px) {
+		font-size: _rem(26);
+		line-height: _rem(32);
+	}
+}
+
+%h_6, .h_6 {
+	@extend %minion_semibold;
+	font-size: _rem(22);
+	line-height: _rem(24);
+	margin: 0;
+	@media only screen and (min-width: 768px) {
+		font-size: _rem(24);
+		line-height: _rem(28);
+	}
+}
+
+%p_lg, .p_lg {
+	@extend %source_sans_pro_regular;
+	font-size: _rem(16);
+	letter-spacing: 0;
+	line-height: _rem(24);
+	@media only screen and (min-width: 768px) {
+		font-size: _rem(18);
+		line-height: _rem(26);
+	}
+}
+
+%p_md, .p_md {
+	@extend %source_sans_pro_regular;
+	font-size: _rem(14);
+	letter-spacing: 0;
+	line-height: _rem(24);
+	@media only screen and (min-width: 768px) {
+		font-size: _rem(16);
+		line-height: _rem(24);
+	}
+}
+
+%p_sm, .p_sm {
+	@extend %source_sans_pro_regular;
+	font-size: _rem(13);
+	letter-spacing: 0;
+	line-height: _rem(19);
+	@media only screen and (min-width: 768px) {
+		font-size: _rem(14);
+		line-height: _rem(20);
+	}
+}
+
+%tag_text, .tag_text {
+	@extend %source_sans_pro_bold;
+	text-transform: uppercase;
+	font-size: _rem(12);
+	letter-spacing: _rem(0.55);
+	line-height: _rem(18);
+	margin-top: 5px;
+}
+
+%tag_status, .tag_status {
+	@extend %source_sans_pro_semibold;
+	text-transform: initial;
+	font-size: _rem(12);
+	letter-spacing: _rem(0.05);
+	line-height: _rem(12);
+}
+
+%btn_text, .btn_text,
+%menu_text, .menu_text {
+	@extend %source_sans_pro_semibold;
+	font-size: _rem(16);
+	line-height: _rem(20);
+}
+
+%submenu_text, .submenu_text {
+	@extend %source_sans_pro_semibold;
+	font-size: _rem(14);
+	line-height: _rem(30);
+}
+
+%footer_menu_title, .footer_menu_title {
+	@extend %source_sans_pro_bold;
+	text-transform: uppercase;
+	font-size: _rem(14);
+	letter-spacing: _rem(0.62);
+	line-height: _rem(22);
+	@media only screen and (min-width: 768px) {
+		font-size: _rem(14);
+		letter-spacing: _rem(0.71);
+	}
+}
+
+%tag_text, .tag_text {
+	@extend %source_sans_pro_bold;
+	text-transform: uppercase;
+	font-size: _rem(12);
+	letter-spacing: _rem(0.55);
+	line-height: _rem(18);
+}
+
+%content_subtitle, .content_subtitle {
+	@extend %source_sans_pro_bold;
+	text-transform: uppercase;
+	font-size: _rem(14);
+	letter-spacing: _rem(0.62);
+	line-height: _rem(22);
+}
+
+%link_btn_text, .link_btn_text {
+	@extend %source_sans_pro_semibold;
+	font-size: _rem(16);
+	line-height: _rem(20);
+}
+
+%input_text, .input_text {
+	@extend %source_sans_pro_regular;
+	font-size: _rem(16);
+	line-height: _rem(20);
+}
+
+%label_text, .label_text {
+	@extend %source_sans_pro_semibold;
+	font-size: _rem(14);
+	line-height: _rem(18);
+}
+
+%select_text, .select_text {
+	@extend %source_sans_pro_regular;
+	font-size: _rem(14);
+	line-height: _rem(18);
+}
+
+%author_text, .author_text {
+	@extend %source_sans_pro_semibold;
+	font-size: _rem(12);
+	letter-spacing: 0;
+	line-height: _rem(24);
+	@media only screen and (min-width: 768px) {
+		font-size: _rem(14);
+	}
+}
+
+%checkbox-label, .checkbox-label {
+	@extend %minion_semibold;
+	font-size: _rem(14);
+	line-height: _rem(18);
+	margin: 0;
+	@media only screen and (min-width: 768px) {
+		font-size: _rem(18);
+		line-height: _rem(20);
+	}
+}
+
+%ul, .ul {
+	padding-left: _rem(36);
+	li {
+		margin-bottom: _rem(10);
+		&:before {
+			content: '';
+			position: absolute;
+			display: block;
+			height: _rem(4);
+			width: _rem(4);
+			border-radius: 50%;
+			background-color: $gray_dk;
+			left: _rem(-26);
+			top: _rem(11);
+		}
+	}
+}
+
+h1 {
+	@extend %h_1;
+}
+
+h2 {
+	@extend %h_2;
+}
+
+h3 {
+	@extend %h_3;
+}
+
+h4 {
+	@extend %h_4;
+}
+
+h5 {
+	@extend %h_5;
+}
+
+h6 {
+	@extend %h_6;
+}
+
+p {
+	margin: 0 0 _rem(20) 0;
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}

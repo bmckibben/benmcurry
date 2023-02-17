@@ -49,3 +49,4 @@ draws = [["Jan 21, 2023",5,14,19,46,64,22],
 draws.each do |date,b1,b2,b3,b4,b5,powerball|
   Draw.create(draw_date: date, b1: b1, b2: b2, b3: b3, b4: b4, b5: b5, powerball: powerball)
 end
+User.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

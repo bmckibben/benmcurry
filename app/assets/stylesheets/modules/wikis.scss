@@ -2,11 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.wikis{
+    :last-child{
+        border-bottom: 1px solid $white;
+    }
+}
+
 .wiki {
-	border-bottom: 1px solid #fff;
+	border-top: 1px solid $white;
 	&__actions {
 		float: right;
 	}
+    :last-child{
+        border-bottom: none;
+    }    
 }
 .wiki-actions {
 	text-align: right;
@@ -192,24 +201,24 @@ ul.tree {
 }
 
 /*.nav > li > a:link {
-  color: #337ab7;
+  color: $cyan;
 }*/
 
 .nav > li > a {
-  color: #337ab7;
+  color: $cyan;
 }
 
 .nav > li > a:hover {
-  color: #66ccff;
+  color: $magenta;
 }
 
 .tree-menu {
-  color: #337ab7;
+  color: $cyan;
   font-size: 14px;
 }
 
 .wiki-menu {
-  color: #337ab7;
+  color: $cyan;
   font-size: 14px;
     display:inline;
 }

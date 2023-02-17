@@ -3,11 +3,15 @@
 
 @import 'vendor/jquery-ui';
 @import 'config/reset';
+@import 'config/variables';
 
-@import "vendor/hero-slider";
 @import "modules/main";
 @import "modules/draws";
+@import "modules/wikis";
+
 @import "vendor/owl-carousel";
+@import "vendor/hero-slider";
+
 @import "components/snackbar";
 @import "components/nav";
 @import "components/footer";

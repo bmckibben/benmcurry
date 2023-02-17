@@ -5,7 +5,7 @@ body.interior-page-background {
 }
 
 .page-container {
-	min-height: 100vh; /* will cover the 100% of viewport */
+	min-height: 95vh; /* will cover the 95% of viewport, leaving room for footer */
 	overflow: hidden;
 	display: block;
 	position: relative;
@@ -14,4 +14,14 @@ body.interior-page-background {
 
 .btn-sm{
 	padding: 9px 24px;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+  font-family: "Rokkitt", sans-serif;
+  color: #2c343b;
+  background-color: #f2f2f2;
 }
