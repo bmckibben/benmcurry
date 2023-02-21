@@ -41,8 +41,8 @@
         .row
           .col-md-12
             .service-item{id: "author-pic"}
-              = image_tag "author.jpg",  class: "author-img"
-            }
+              =link_to  path_to_image('author.jpg'), title: "Ben M Curry", data: {lightbox: "Ben M Curry"} do
+                = image_tag "author.jpg",  class: "author-img"
 #novel.tabs-content
   .container
     .row
@@ -50,7 +50,8 @@
         .row
           .col-md-12
             .service-item
-              = image_tag "book.png"    
+              =link_to  path_to_image('book.png'), title: "The Science of Miracles", data: {lightbox: "Science of Miracles"} do
+                = image_tag "book.png"  
       .col-md-6
         .left-text
           %h4 The Science of Miracles

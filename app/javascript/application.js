@@ -8,7 +8,3 @@ import "./src/jquery-ui"
 
 import "./main"
 import "./plugins"
-
-$(function() {
-  console.log("hello world");
-})
