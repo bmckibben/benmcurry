@@ -1,5 +1,5 @@
 # default and development switch between  home and work
-#home######################################################################
+#home and prod###############################################################
 default: &default
   adapter: postgresql
   encoding: unicode
