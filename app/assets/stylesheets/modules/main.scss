@@ -540,10 +540,10 @@ section {
 
 /* LIGHT BOX */
 
-body:after {
+/* body:after {
   content: image-url("close.png") image-url("loading.gif") image-url("prev.png") image-url("next.png");
   display: none;
-}
+} */
 
 body.lb-disable-scrolling {
   overflow: hidden;
