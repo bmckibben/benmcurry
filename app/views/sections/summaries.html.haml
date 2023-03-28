@@ -1,0 +1,38 @@
+.container-fluid#stories
+  .row
+    .col-md-2
+    .col-md-8.card
+      %h1 Chapter Summaries
+      - @chapters.each do |chapter|
+        .panel
+          .panel-head
+            %h3
+              = chapter.sequence
+              = ". "
+              = chapter.title
+          .panel-body
+            .row
+              .col-md-4
+                = "POV: #{chapter.throughline}"
+              .col-md-4
+                = "Draft: #{chapter.draft}" 
+              .col-md-4
+                = "Word Count: #{chapter.word_count}"  
+            .row    
+              .col-md-4.action-icon
+                - if user_signed_in? and current_user.role_cd > 0
+                  =link_to edit_section_path(chapter) do
+                    %i.fas.fa-pencil-alt
+              .col-md-4
+                = "Updated: #{chapter.updated_at.strftime("%d %b %Y")}"
+              .col-md-4
+                                  
+            .row
+              .col-md-12
+                %p
+                  = chapter.summary
+
+
+
+
+

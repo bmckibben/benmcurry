@@ -1,0 +1,20 @@
+.container-fluid#stories
+  .row
+    .col-md-2
+    .col-md-8.card
+      %h1 Chapter Notes
+      - @chapters.each do |chapter|
+        .panel
+          .panel-head
+            %h2
+              = chapter.title
+          .panel-body
+            %ol
+              - chapter.section_notes.each do |note| 
+                %li
+                  = note.note
+
+
+
+
+

@@ -217,8 +217,8 @@ $syncopate: syncopate, sans-serif;
 
 %label_text, .label_text {
 	@extend %open_sans_semibold;
-	font-size: _rem(14);
-	line-height: _rem(18);
+	font-size: _rem(12);
+	line-height: _rem(13);
 }
 
 %select_text, .select_text {

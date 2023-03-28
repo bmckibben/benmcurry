@@ -1,0 +1,26 @@
+.container-fluid#stories
+  .row
+    .col-md-12.card
+      %h1 Stories
+
+      %table.index-table
+        %thead
+          %tr
+            %th Title
+            %th Summary
+            %th Wordcount
+            %th
+            %th
+
+        %tbody
+          - @stories.each do |story|
+            %tr
+              %td= story.title
+              %td= story.short_summary
+              %td= story.wordcount
+              %td= link_to 'Chapters', chapters_path(story_id: story.id)
+              %td= link_to 'Workbook', workbook_path(story_id: story.id)
+              %td= link_to 'Print', story_manuscript_path(story_id: story.id)
+              %td= link_to 'JSON', story_download_json_path(story_id: story.id)
+
+

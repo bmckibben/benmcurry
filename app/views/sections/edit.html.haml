@@ -1,0 +1,11 @@
+.container-fluid#sections
+  .row
+    .col-md-12
+      .card
+        = link_to workbook_path(story_id: @section.story_id) do 
+          %i.bi.bi-list
+        %h3 Edit Chapter
+
+        = render 'form', section: @section
+
+.modal.fade{ role: "dialog", id: "edit_note_modal_box" }

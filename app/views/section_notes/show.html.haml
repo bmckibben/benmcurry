@@ -1,0 +1,16 @@
+%p#notice= notice
+
+%p
+  %b Note:
+  = @section_note.note
+%p
+  %b Section:
+  = @section_note.section_id
+
+= link_to 'Edit', edit_section_note_path(@section_note)
+\|
+= link_to 'Back', section_notes_path
+
+:javascript
+  $("#edit_note_modal_box").modal('hide');
+  alert("Hello Dere!")''

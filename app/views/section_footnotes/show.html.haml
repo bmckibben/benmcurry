@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Text:
+  = @section_footnote.footnote
+%p
+  %b Integer:
+  = @section_footnote.a_number
+
+= link_to 'Edit', edit_section_footnote_path(@section_footnote)
+\|
+= link_to 'Back', section_footnotes_path

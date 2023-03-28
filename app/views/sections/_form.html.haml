@@ -1,0 +1,33 @@
+= simple_form_for(section) do |f|
+  = f.error_notification
+
+  .form-inputs
+    .row
+      .col-xs-9
+        = f.input :title, class: "title" 
+    .row
+      .col-md-9.editor 
+        .row
+          .col-md-6
+            =f.input :goal, class: "form-control-sm"
+            =f.input :conflict
+            =f.input :disaster
+          .col-md-6
+            =f.input :reaction
+            =f.input :dilemma
+            =f.input :resolution
+        .row  
+          = f.input :q1, label: "How has the POV character changed?"
+          = f.input :q2, label: "How does this scene advance the main story?"
+          = f.input :q3, label: "Is this scene a story in its own right, with a beginning, a middle, and an end?"
+          = f.input :summary, class: "form-control-sm"
+      .col-md-3.attributes
+        = f.input :story_id, collection: Story.all
+        = f.input :sequence, as: :text
+        = f.input :throughline, label: "POV"
+        
+        .form-actions.control-panel
+          = f.button :submit, "Save", class: "btn btn-primary"         
+      
+
+  

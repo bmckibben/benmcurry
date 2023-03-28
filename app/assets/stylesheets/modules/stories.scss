@@ -1,0 +1,48 @@
+#stories{
+  .index-table {
+    width: 100%
+  }
+  .card {
+    color: #000;
+    background-color: #fff;
+    font-size: 12pt;
+    font-family: 'Courier New';
+    th {
+      padding: 2px 5px;
+    }
+    td {
+      padding: 2px 5px;
+    }
+    .panel-body {
+      padding: 0 0 0 15px;
+    } 
+    tr {
+      border-top: 1px solid #000;
+    } 
+    tr:first-of-type {
+      border-top: none;
+    } 
+  } 
+
+}
+
+#sections {
+  .card{
+    color: #000;
+    padding: 0.5rem;
+  }
+
+  textarea.form-control, input[type="text"].form-control, select.form-control {
+    min-height: 1rem;
+    height: 1.2rem;
+    font-size: 12pt;
+    font-family: 'Courier New'; 
+    padding: 0;   
+  }
+
+  #section_title {
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: rokkitt, serif;
+  }
+}

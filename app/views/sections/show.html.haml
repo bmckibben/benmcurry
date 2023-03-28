@@ -1,0 +1,33 @@
+.container-fluid#sections
+  .row
+    .col-md-1
+    .col-md-10.col-sm-12.card
+      %p#notice= notice
+
+      %h1
+        = @section.title
+      =link_to chapter_summaries_path(story_id: @section.story_id),style: 'margin-right:2rem;' do
+        %i.bi.bi-list 
+      - if user_signed_in? and current_user.role_cd > 0          
+        =link_to edit_section_path(@section) do
+          %i.bi.bi-pencil-fill                    
+      %p
+        %b Sequence:
+        = @section.sequence
+      %p
+        %b Summary:
+        = @section.summary
+      .section-body
+        = @section.body.html_safe
+      %p
+        %b Throughline:
+        = @section.throughline
+      %p
+        %b Resolution:
+        = @section.resolution
+      %p
+        %b Conflict:
+        = @section.conflict
+
+      =link_to "Chapters", sections_path(story_id: @section.story_id), class: "btn btn-primary" 
+

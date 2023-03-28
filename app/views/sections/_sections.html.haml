@@ -1,0 +1,66 @@
+.row    
+  - @chapters.each do |chapter|
+    .panel.card
+      .panel-head
+        .row
+          .col-md-10
+            .h5
+              = chapter.sequence
+              = ". "
+              = chapter.title
+
+      .panel-body
+        .row
+          .col-md-9.col-sm-12
+            .row
+              .col-md-6.col-sm-12
+                .label_text Goal:
+                = chapter.goal
+              .col-md-6.col-sm-12
+                .label_text Reaction:
+                = chapter.reaction
+            .row
+              .col-md-6.col-sm-12
+                .label_text Conflict:
+                = chapter.conflict
+              .col-md-6.col-sm-12
+                .label_text Dilemma:
+                = chapter.dilemma
+            .row
+              .col-md-6.col-sm-12
+                .label_text Disaster:
+                = chapter.disaster
+              .col-md-6.col-sm-12
+                .label_text Resolution:
+                = chapter.resolution
+            .row
+              .col-sm-12
+                .label_text How has the POV character changed?
+                = chapter.q1
+            .row
+              .col-sm-12
+                .label_text How does this scene advance the main story?
+                = chapter.q2
+            .row
+              .col-sm-12
+                .label_text "Is this scene a story in its own right, with a beginning, a middle, and an end?"
+                = chapter.q3                       
+          .col-md-3.col-sm-12
+            =link_to edit_section_path(chapter) do
+              %i.bi.bi-pencil-fill 
+              ="edit"
+            =link_to edit_section_path(chapter) do
+              %i.bi.bi-trash3-fill 
+              ="delete"
+            %br
+            = "Updated: #{chapter.updated_at.strftime("%d %b %Y")}"
+            %br
+            = "Draft: #{chapter.draft}" 
+            %br
+            = "Word Count: #{chapter.word_count}"  
+            %br
+            = "POV: #{chapter.throughline}"                 
+        .row
+          .col-md-12
+            %p
+              = chapter.summary

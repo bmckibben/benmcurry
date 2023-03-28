@@ -1,0 +1,35 @@
+#title-page
+  .this-page
+    .author
+      %table
+        %tr
+          %td
+            = "Ben McKibben"
+            %br
+            = "1144 Kay Drive"            
+            %br
+            = "Greenwood, Indiana"
+            %br
+            = "317.409.6295"          
+            %br
+            = "ben@mckibben.email"
+          %td.right
+            = "Word Count: #{@story.wordcount}"
+    .title
+      %h1
+        = @story.title.upcase
+      %h2
+        = @story.author
+    .tagline
+      = "Adult"
+      %br
+      = "Science Fiction"
+#manuscript
+
+  -@sections.each do |page|
+    .newpage        
+      %p{class: "center"} 
+        ="Chapter #{page.sequence.to_s}"
+      .section-body  
+        =page.body.to_s.gsub(/<sup>\d*<\/sup>/,'' ).html_safe
+

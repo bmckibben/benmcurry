@@ -1,0 +1,10 @@
+.container-fluid#workbook
+  .row
+    .col-md-10      
+      %h1 Workbook
+    .col-md-2  
+      =link_to "NEW", 
+        new_section_path(story_id: @story_id),
+        class: "btn-link" 
+              
+  = render "sections"

@@ -1,0 +1,2 @@
+class SectionNote < ApplicationRecord
+end
