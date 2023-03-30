@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get "stories/download_json", to: "stories#download_json", as: :story_download_json
   get "stories/manuscript", to: "stories#manuscript", as: :story_manuscript
   get "sections/workbook/:story_id(.:format)", to: "sections#workbook", as: :workbook
+  get "sections/edit_body/:id(.:format)", to: "sections#edit_body", as: :section_edit_body
   resources :stories
   resources :sections
 end

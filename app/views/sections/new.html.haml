@@ -4,4 +4,5 @@
 			.card
 				= link_to sanitize("&larr; Workbook"), workbook_path(story_id: @section.story_id)
 				%h3 New Chapter
-				= render 'form', section: @section
+				= turbo_frame_tag @section do
+					= render 'form', section: @section

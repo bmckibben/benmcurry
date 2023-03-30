@@ -1,0 +1,67 @@
+- section = @section
+-puts "~~~~~~were the heckawi~~~~~~~~~~~~~~~~~~~~~~~~~~"
+= turbo_frame_tag section do
+  .panel.card
+    .panel-head
+      .row
+        .col-md-10
+          .h5
+            = section.sequence
+            = ". "
+            = link_to section.title, section_path(section), data: {turbo_frame: "_top"}
+
+    .panel-body
+      .row
+        .col-md-9.col-sm-12
+          .row
+            .col-md-6.col-sm-12
+              .label_text Goal:
+              = section.goal
+            .col-md-6.col-sm-12
+              .label_text Reaction:
+              = section.reaction
+          .row
+            .col-md-6.col-sm-12
+              .label_text Conflict:
+              = section.conflict
+            .col-md-6.col-sm-12
+              .label_text Dilemma:
+              = section.dilemma
+          .row
+            .col-md-6.col-sm-12
+              .label_text Disaster:
+              = section.disaster
+            .col-md-6.col-sm-12
+              .label_text Resolution:
+              = section.resolution
+          .row
+            .col-sm-12
+              .label_text How has the POV character changed?
+              = section.q1
+          .row
+            .col-sm-12
+              .label_text How does this scene advance the main story?
+              = section.q2
+          .row
+            .col-sm-12
+              .label_text Is this scene a story in its own right, with a beginning, a middle, and an end?
+              = section.q3                       
+        .col-md-3.col-sm-12
+          =link_to edit_section_path(section) do
+            %i.bi.bi-pencil-fill 
+            ="edit"
+          =link_to section_path(section), data: {"turbo-method": :delete} do
+            %i.bi.bi-trash3-fill 
+            ="delete"
+          %br
+          = "Updated: #{section.updated_at.strftime("%d %b %Y")}"
+          %br
+          = "Draft: #{section.draft}" 
+          %br
+          = "Word Count: #{section.word_count}"  
+          %br
+          = "POV: #{section.throughline}"                 
+      .row
+        .col-md-12
+          %p
+            = section.summary

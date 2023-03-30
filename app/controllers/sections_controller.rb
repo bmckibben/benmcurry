@@ -1,7 +1,7 @@
 class SectionsController < InheritedResources::Base
 
   before_action :authenticate_user!, except: [:index]
-  before_action :set_section, only: [:show, :edit, :update, :destroy]
+  before_action :set_section, only: [:show, :edit, :update, :destroy, :edit_body]
 
   def edit_note_modal
     
@@ -67,20 +67,41 @@ class SectionsController < InheritedResources::Base
     @section.story_id = params[:story_id]
   end
 
+  def edit_body
+  end
+
   def create
     @section = Section.new(section_params)
     if @section.save
-      redirect_to workbook_path, notice: "Chapter was successfully created." 
+      #@chapters = Section.where(story_id: @section.story_id).order(sequence: :asc)
+      respond_to do |format|
+        format.html {redirect_to workbook_path(@section.story_id), notice: "Chapter was successfully created." }
+        format.turbo_stream
+      end
     else
       render :new, status: :unprocessable_entity
     end
   end
 
+  def destroy
+    puts "~~~sections_controller.destroy~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    puts params.inspect
+    puts "~~~sections_controller.destroy~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    @section.destroy
+
+    respond_to do |format|
+      format.html { redirect_to workbook_path(@section.story_id), notice: "Section was successfully destroyed." }
+      format.turbo_stream
+    end
+  end
 
   private
 
     def set_section
-      @section = Section.find(params[:id])
+      @section = Section.find(params[:id]) 
+      puts "~~~sections_controller.set_section~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+      puts params.inspect
+      puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"    
     end
 
     def section_params

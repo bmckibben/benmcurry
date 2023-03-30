@@ -1,10 +1,15 @@
 .container-fluid#workbook
-  .row
-    .col-md-10      
-      %h1 Workbook
-    .col-md-2  
-      =link_to "NEW", 
-        new_section_path(story_id: @story_id),
-        class: "btn-link" 
-              
-  = render "sections"
+
+	.row
+		.col-md-10      
+			%h1 Workbook
+		.col-md-2  
+			=link_to "NEW", 
+				new_section_path(story_id: @story_id),
+				data: {turbo_frame: dom_id(Section.new)},
+				class: "btn-link"
+				
+	= turbo_frame_tag Section.new
+	.row
+		= turbo_frame_tag "chapters" do
+			= render "sections", locals: { chapters: @chapters }  

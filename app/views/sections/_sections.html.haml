@@ -1,13 +1,13 @@
-.row    
-  - @chapters.each do |chapter|
+- @chapters.each do |section|
+  = turbo_frame_tag section do
     .panel.card
       .panel-head
         .row
           .col-md-10
             .h5
-              = chapter.sequence
+              = section.sequence
               = ". "
-              = chapter.title
+              = link_to section.title, section_path(section), data: {turbo_frame: "_top"}
 
       .panel-body
         .row
@@ -15,52 +15,55 @@
             .row
               .col-md-6.col-sm-12
                 .label_text Goal:
-                = chapter.goal
+                = section.goal
               .col-md-6.col-sm-12
                 .label_text Reaction:
-                = chapter.reaction
+                = section.reaction
             .row
               .col-md-6.col-sm-12
                 .label_text Conflict:
-                = chapter.conflict
+                = section.conflict
               .col-md-6.col-sm-12
                 .label_text Dilemma:
-                = chapter.dilemma
+                = section.dilemma
             .row
               .col-md-6.col-sm-12
                 .label_text Disaster:
-                = chapter.disaster
+                = section.disaster
               .col-md-6.col-sm-12
                 .label_text Resolution:
-                = chapter.resolution
+                = section.resolution
             .row
               .col-sm-12
                 .label_text How has the POV character changed?
-                = chapter.q1
+                = section.q1
             .row
               .col-sm-12
                 .label_text How does this scene advance the main story?
-                = chapter.q2
+                = section.q2
             .row
               .col-sm-12
-                .label_text "Is this scene a story in its own right, with a beginning, a middle, and an end?"
-                = chapter.q3                       
+                .label_text Is this scene a story in its own right, with a beginning, a middle, and an end?
+                = section.q3                       
           .col-md-3.col-sm-12
-            =link_to edit_section_path(chapter) do
+            =link_to edit_section_path(section) do
               %i.bi.bi-pencil-fill 
               ="edit"
-            =link_to edit_section_path(chapter) do
+            =link_to section_path(section), data: {"turbo-method": :delete} do
               %i.bi.bi-trash3-fill 
               ="delete"
+            =link_to section_edit_body_path(section) do
+              %i.bi.bi-file-text-fill 
+              ="body"
             %br
-            = "Updated: #{chapter.updated_at.strftime("%d %b %Y")}"
+            = "Updated: #{section.updated_at.strftime("%d %b %Y")}"
             %br
-            = "Draft: #{chapter.draft}" 
+            = "Draft: #{section.draft}" 
             %br
-            = "Word Count: #{chapter.word_count}"  
+            = "Word Count: #{section.word_count}"  
             %br
-            = "POV: #{chapter.throughline}"                 
+            = "POV: #{section.throughline}"                 
         .row
           .col-md-12
             %p
-              = chapter.summary
+              = section.summary
