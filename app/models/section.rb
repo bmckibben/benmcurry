@@ -29,4 +29,8 @@ class Section < ActiveRecord::Base
 	def word_count
 		body.to_s.gsub(/<[^>]*>/ui,'').split.size
 	end
+
+	def story_title
+		Story.find(self.story_id).title
+	end
 end
