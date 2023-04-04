@@ -16,7 +16,10 @@
           = "Summary:" 
           = @section.summary 
           %br/
-          = f.text_area :body, class: "section-body", label: false
+          .card
+            = f.rich_text_area :body, class: "section-body", label: false
+          .card
+            = f.text_area :body  
         .col-md-3.attributes
           = "Story:"
           = @section.story_title
@@ -24,6 +27,7 @@
           = "POV:"
           = @section.throughline
           = f.input :draft, as: :text
+          = f.input :story_id, as: :hidden
 
 
           .card.section-notes
