@@ -1,54 +1,57 @@
-= simple_form_for(@section) do |f|
-  = f.error_notification
+#sections
+  = simple_form_for(@section) do |f|
+    = f.error_notification
 
-  .form-inputs
-    .row
-      .col-xs-9
-        %h5
-          = @section.sequence
-          = ". "
-          = @section.title
-      .col-xs-3
-        = "Word Count #{@section.body.gsub(/<[^>]*>/ui,'').split.size}" unless @section.body.nil?
-    .row
-      .col-md-9.editor 
-        = "Summary:" 
-        = @section.summary 
-        = f.text_area :body, class: "tinymce section-body", label: false
-      .col-md-3.attributes
-        = "Story:"
-        = @section.story_id
-        = f.label :draft 
-        = f.input :draft
-        = "POV:"
-        = @section.throughline
+    .form-inputs
+      .row
+        .col-xs-9
+          %h5
+            = @section.sequence
+            = ". "
+            = @section.title
+        .col-xs-3
+          = "Word Count #{@section.body.gsub(/<[^>]*>/ui,'').split.size}" unless @section.body.nil?
+      .row
+        .col-md-9.editor 
+          = "Summary:" 
+          = @section.summary 
+          %br/
+          .card
+            = f.rich_text_area :body, class: "section-body", label: false
+          .card
+            = f.text_area :body  
+        .col-md-3.attributes
+          = "Story:"
+          = @section.story_title
+          %br/
+          = "POV:"
+          = @section.throughline
+          = f.input :draft, as: :text
+          = f.input :story_id, as: :hidden
 
-        .card.section-notes
-          .card-title Notes
-            
-          %ul.list-group.list-group-flush        
-            - @section.section_notes.each do |note|
-              %li.list-group-item
-                =note.note
-        
-        .form-actions.control-panel
-          = f.button :submit, "Save", class: "btn btn-primary"         
-          =link_to "Add Note", edit_note_modal_path(section_id: @section.id), remote: true, class: "btn btn-notes btn-primary"
-          =link_to "Add Footnote", edit_footnote_modal_path(section_id: @section.id), remote: true, class: "btn btn-primary"          
-          =link_to "Summaries", chapter_summaries_path(story_id: @section.story_id), class: "btn btn-primary" unless @section.story_id.nil?
-          %p
-            = "※※※"       
-    .row   
-      .col-md-9.footnotes
-        - @section.section_footnotes.order(:a_number).each do |footnote|
-          %sup
-            =link_to edit_footnote_modal_path(footnote_id: footnote.id), remote: true do
-              =footnote.a_number 
-          =footnote.footnote
-          %br
-      .col-md-3
 
-/ = tinymce content_css: asset_path('application.css')
+          .card.section-notes
+            .card-title Notes
+              
+            %ul.list-group.list-group-flush        
+              - @section.section_notes.each do |note|
+                %li.list-group-item
+                  =note.note
+          
+          .form-actions.control-panel
+            = f.button :submit, "Save", class: "btn btn-primary"         
+            =link_to "Add Note", edit_note_modal_path(section_id: @section.id), remote: true, class: "btn btn-notes btn-primary"
+            =link_to "Add Footnote", edit_footnote_modal_path(section_id: @section.id), remote: true, class: "btn btn-primary"          
+            =link_to "Workbook", workbook_path(story_id: @section.story_id), class: "btn btn-primary" unless @section.story_id.nil?
+      .row   
+        .col-md-9.footnotes
+          - @section.section_footnotes.order(:a_number).each do |footnote|
+            %sup
+              =link_to edit_footnote_modal_path(footnote_id: footnote.id), remote: true do
+                =footnote.a_number 
+            =footnote.footnote
+            %br
+        .col-md-3
 
 :javascript
   $( document ).ready(function() {

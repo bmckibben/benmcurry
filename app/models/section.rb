@@ -26,7 +26,13 @@ class Section < ActiveRecord::Base
 	validates :title, presence: true
 	validates :story_id, presence: true
 
+	has_rich_text :content
+
 	def word_count
 		body.to_s.gsub(/<[^>]*>/ui,'').split.size
+	end
+
+	def story_title
+		Story.find(self.story_id).title
 	end
 end
