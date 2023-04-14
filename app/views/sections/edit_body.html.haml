@@ -17,7 +17,7 @@
           = @section.summary 
           %br/
           .card
-            = f.text_area :body, class: "section-body", label: false 
+            = f.text_area :body, class: "section-body tinymce", label: false, data: { tinymce_target: 'input' }
         .col-md-3.attributes
           = "Story:"
           = @section.story_title
@@ -56,6 +56,8 @@
             =footnote.footnote
             %br
         .col-md-3
+
+= tinymce
 
 :javascript
   $( document ).ready(function() {
