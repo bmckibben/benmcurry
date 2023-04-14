@@ -17,16 +17,16 @@
           = @section.summary 
           %br/
           .card
-            = f.rich_text_area :body, class: "section-body", label: false
-          .card
-            = f.text_area :body  
+            = f.text_area :body, class: "section-body", label: false 
         .col-md-3.attributes
           = "Story:"
           = @section.story_title
           %br/
           = "POV:"
           = @section.throughline
+          %br
           = f.input :draft, as: :text
+          %br
           = f.input :story_id, as: :hidden
 
 
@@ -39,10 +39,14 @@
                   =note.note
           
           .form-actions.control-panel
-            = f.button :submit, "Save", class: "btn btn-primary"         
-            =link_to "Add Note", edit_note_modal_path(section_id: @section.id), remote: true, class: "btn btn-notes btn-primary"
-            =link_to "Add Footnote", edit_footnote_modal_path(section_id: @section.id), remote: true, class: "btn btn-primary"          
-            =link_to "Workbook", workbook_path(story_id: @section.story_id), class: "btn btn-primary" unless @section.story_id.nil?
+            .row
+              = f.button :submit, "Save", class: "btn btn-primary"
+            .row           
+              =link_to "Add Note", edit_note_modal_path(section_id: @section.id), remote: true, class: "btn btn-notes btn-primary"
+            .row  
+              =link_to "Add Footnote", edit_footnote_modal_path(section_id: @section.id), remote: true, class: "btn btn-primary"          
+            .row  
+              =link_to "Workbook", workbook_path(story_id: @section.story_id), class: "btn btn-primary" unless @section.story_id.nil?
       .row   
         .col-md-9.footnotes
           - @section.section_footnotes.order(:a_number).each do |footnote|

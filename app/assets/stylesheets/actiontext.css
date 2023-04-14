@@ -32,4 +32,6 @@
 
 .trix-editor{
 	font-size: 1rem;
+	min-height: 70vh;
+	line-height: 1.3rem;
 }
