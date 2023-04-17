@@ -9,7 +9,7 @@
             = @section.sequence
             = ". "
             = @section.title
-        .col-xs-3
+        .col-xs-10
           = "Word Count #{@section.body.gsub(/<[^>]*>/ui,'').split.size}" unless @section.body.nil?
       .row
         .col-md-9.editor 
@@ -18,7 +18,7 @@
           %br/
           .card
             = f.text_area :body, class: "section-body tinymce", label: false, data: { tinymce_target: 'input' }
-        .col-md-3.attributes
+        .col-md-2.attributes
           = "Story:"
           = @section.story_title
           %br/
