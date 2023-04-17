@@ -10,14 +10,14 @@ gem "rails", "~> 7.0.4"
 gem "sprockets-rails"
 
 # Use postgresql as the database for Active Record
-gem "mysql2"
-#gem "pg"
+#gem "mysql2"
+gem "pg"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
-# Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
-gem "jsbundling-rails"
+# Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
+gem "importmap-rails"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
@@ -26,7 +26,7 @@ gem "turbo-rails"
 gem "stimulus-rails"
 
 # Bundle and process CSS [https://github.com/rails/cssbundling-rails]
-gem "cssbundling-rails"
+# gem "cssbundling-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
@@ -53,6 +53,7 @@ gem "sassc-rails"
 gem "image_processing", "~> 1.2"
 
 #bmc mods
+gem "bootstrap"
 gem "activeadmin"
 gem "haml-rails"
 gem 'simple_form'

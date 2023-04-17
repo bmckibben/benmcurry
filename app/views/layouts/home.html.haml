@@ -21,7 +21,7 @@
     = csrf_meta_tags
     %link{:rel=>"canonical", :href=>"https://www.benmcurry.com"}/
     %link{:href => "apple-touch-icon.png", :rel => "apple-touch-icon"}/        
-  %body
+  %body{"data-turbolinks" => "false"} 
     = yield
 
     .modal{ role: "dialog", id: "bmc_modal" }
