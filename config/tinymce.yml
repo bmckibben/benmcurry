@@ -1,0 +1,6 @@
+height: 500
+menubar: false
+toolbar:
+  - fullscreen | undo redo | styleselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist outdent indent | removeformat | image | link | charmap | code | help
+plugins:
+  - insertdatetime lists media table code help wordcount

@@ -1,5 +1,4 @@
-@import 'bootstrap/scss/bootstrap';
-@import 'bootstrap-icons/font/bootstrap-icons';
+@import "bootstrap";
 
 @import 'vendor/jquery-ui';
 
@@ -22,4 +21,3 @@
 @import "components/modal";
 @import "components/button";
 @import "components/turbo_progress_bar";
-@import "actiontext";
