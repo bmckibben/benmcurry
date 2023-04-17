@@ -8,5 +8,3 @@ import "./src/jquery-ui"
 
 import "./main"
 import "./plugins"
-import "trix"
-import "@rails/actiontext"
