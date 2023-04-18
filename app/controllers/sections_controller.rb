@@ -84,9 +84,6 @@ class SectionsController < InheritedResources::Base
   end
 
   def destroy
-    puts "~~~sections_controller.destroy~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-    puts params.inspect
-    puts "~~~sections_controller.destroy~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
     @section.destroy
 
     respond_to do |format|
@@ -99,9 +96,6 @@ class SectionsController < InheritedResources::Base
 
     def set_section
       @section = Section.find(params[:id]) 
-      puts "~~~sections_controller.set_section~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-      puts params.inspect
-      puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"    
     end
 
     def section_params
