@@ -1,31 +1,31 @@
 # default and development switch between  home and work
 #home and prod###############################################################
-# default: &default
-#   adapter: postgresql
-#   encoding: unicode
-#   # For details on connection pooling, see Rails configuration guide
-#   # https://guides.rubyonrails.org/configuring.html#database-pooling
-#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-#   host: localhost
-#   port: 5432
-
-# development:
-#   <<: *default
-#   database: paxxa_development
-#   username: paxxa
-#   password: paxxa
-#work#######################################################################
 default: &default
-  adapter: mysql2
-  encoding: utf8mb4
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: bmckibben
-  password: C_satori22
-  socket: /var/run/mysqld/mysqld.sock
+  host: localhost
+  port: 5432
 
 development:
   <<: *default
-  database: paxxa_development  
+  database: paxxa_development
+  username: paxxa
+  password: paxxa
+#work#######################################################################
+# default: &default
+#   adapter: mysql2
+#   encoding: utf8mb4
+#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#   username: bmckibben
+#   password: C_satori22
+#   socket: /var/run/mysqld/mysqld.sock
+
+# development:
+#   <<: *default
+#   database: paxxa_development  
 ############################################################################  
 
 test:
