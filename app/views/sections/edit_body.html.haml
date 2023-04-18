@@ -9,17 +9,18 @@
             = @section.sequence
             = ". "
             = @section.title
-        .col-xs-3
+        .col-xs-10
           = "Word Count #{@section.body.gsub(/<[^>]*>/ui,'').split.size}" unless @section.body.nil?
       .row
-        .col-md-9.editor 
+        .col-md-10.editor 
           = "Summary:" 
           = @section.summary 
           %br/
           .card
-            .field{"data-controller" => "tinymce"}
-              = f.text_area :body, data: { tinymce_target: 'input' }, class: "tinymce", rows: 20, cols: 60
-        .col-md-3.attributes
+
+            = f.text_area :body, class: "section-body tinymce", label: false, data: { tinymce_target: 'input' }
+        .col-md-2.attributes
+
           = "Story:"
           = @section.story_title
           %br/
@@ -62,10 +63,8 @@
 
 :javascript
   $( document ).ready(function() {
-    alert("You Clicked IT!");
     $("#open-modal").click(function(){
-      
-      //$("#edit_footnote_modal_box").modal("show");
+      $("#edit_footnote_modal_box").modal("show");
     })
   })
   

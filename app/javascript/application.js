@@ -8,5 +8,3 @@ import "./src/jquery-ui"
 import "./main"
 import "./plugins"
 
-import "popper"
-import "bootstrap"

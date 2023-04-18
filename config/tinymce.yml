@@ -1,6 +1,8 @@
 toolbar:
-  - styleselect | bold italic | undo redo
-  - image | link
+  - fullscreen | undo redo | styleselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist outdent indent | removeformat 
+  - image | link | charmap | code | help
+
 plugins:
   - image
   - link
+  - insertdatetime lists media table code help wordcount
