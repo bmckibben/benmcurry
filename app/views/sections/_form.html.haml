@@ -28,7 +28,8 @@
           = f.input :throughline, label: "POV"
           
           .form-actions.control-panel
-            = f.button :submit, "Save", class: "btn btn-primary"        
+            = f.button :submit, "Save", class: "btn btn-primary"      
+            = link_to "Cancel", workbook_path(story_id: section.story_id), class: "btn btn-primary" unless @section.story_id.nil?
         
 
   

@@ -1,6 +1,6 @@
 class SectionsController < InheritedResources::Base
 
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!
   before_action :set_section, only: [:show, :edit, :update, :destroy, :edit_body]
 
   def edit_note_modal
@@ -68,6 +68,8 @@ class SectionsController < InheritedResources::Base
   end
 
   def edit_body
+
+   # binding.pry
   end
 
   def create

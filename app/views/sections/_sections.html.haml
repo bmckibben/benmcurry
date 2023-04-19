@@ -52,7 +52,7 @@
             =link_to section_path(section), data: {"turbo-method": :delete} do
               %i.bi.bi-trash3-fill 
               ="delete"
-            =link_to section_edit_body_path(section) do
+            =link_to section_edit_body_path(section), data: {turbo: :false} do
               %i.bi.bi-file-text-fill 
               ="body"
             %br

@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  alert("index document is ready");
+  
   var line_count = 0;
   var readout_height = $("#readout").height();
   var arSVG = get_svg();
@@ -53,7 +53,11 @@ $(document).ready(function () {
   }
 
   $("#whd").on("click", function(){
-    $("#bmc_modal").toggle();
+    $("#bmc_modal").fadeToggle();
+  })
+
+  $(".close").on("click", function(){
+    $(this).closest('.modal').fadeToggle();
   })
 
 })
