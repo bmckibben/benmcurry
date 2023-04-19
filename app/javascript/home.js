@@ -68,5 +68,5 @@ $(document).ready(function () {
     top_header.css({ "background-position": "center calc(50% + " + st * 0.5 + "px)" });
   });
 
-
+  // comment
 })
