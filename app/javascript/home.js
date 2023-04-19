@@ -3,11 +3,15 @@ $(document).ready(function () {
   var line_count = 0;
   var readout_height = $("#readout").height();
   var arSVG = get_svg();
-  previous_display = $("#num_list").html();
-
+  var previous_display = $("#num_list").html();
+  var new_line 
+  var r
+  var delete_pos
+  var newline
 
   //gen_random();
-  setInterval(gen_random, 500);
+  var si = setInterval(gen_random, 500);
+
   function gen_random() {
     
     if ($("#num_list").height() > (readout_height-10)){
