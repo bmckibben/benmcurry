@@ -184,6 +184,7 @@ h4, .h4 {
     }  
     p {
       color: #fff;
+      text-align: left;
     }
     ul {
       padding: 0;
@@ -457,10 +458,6 @@ section {
   padding: 30px 20px;
 }
 
-
-
-
-
 @media (min-width: 767px){
   .baner-content {
     .container {  
@@ -469,11 +466,19 @@ section {
   }
   .first-content{
     padding-left: 6rem;
-  }  
+  } 
+  
 }
 
 @media (max-width: 767px){
   
+  .service-content, .tabs-content, .contact-content, .projects-content{
+    .container {
+      margin-left:1rem;
+      max-width: 75%;
+    }
+  }
+
   .fixed-side-navbar h3 {
     display: none;
   }
@@ -501,6 +506,7 @@ section {
   .service-content {
     padding-top: 5vh;
     text-align: center;
+
   }
 
   .service-content .left-text .line-dec {
