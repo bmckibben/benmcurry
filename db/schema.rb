@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_14_104700) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_27_112122) do
   create_table "active_admin_comments", charset: "utf8mb4", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -110,6 +110,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_14_104700) do
     t.text "q1"
     t.text "q2"
     t.text "q3"
+    t.boolean "sample", default: false
     t.index ["story_id"], name: "index_sections_on_story_id"
   end
 

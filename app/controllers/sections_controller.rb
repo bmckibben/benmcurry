@@ -1,6 +1,6 @@
 class SectionsController < InheritedResources::Base
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:sample]
   before_action :set_section, only: [:show, :edit, :update, :destroy, :edit_body]
 
   def edit_note_modal
@@ -43,6 +43,11 @@ class SectionsController < InheritedResources::Base
 
   def chapters
     @sections = Section.where(story_id: params[:story_id]).order(sequence: :asc)
+  end  
+
+  def sample
+    @section = Section.where(sample: true).order(sequence: :asc).first
+    render layout: "no_menu"
   end  
     
   def notes

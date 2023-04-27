@@ -26,8 +26,6 @@ class Section < ActiveRecord::Base
 	validates :title, presence: true
 	validates :story_id, presence: true
 
-	has_rich_text :content
-
 	def word_count
 		body.to_s.gsub(/<[^>]*>/ui,'').split.size
 	end

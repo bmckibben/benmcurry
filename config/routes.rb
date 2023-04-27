@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get "stories/manuscript", to: "stories#manuscript", as: :story_manuscript
   get "sections/workbook/:story_id(.:format)", to: "sections#workbook", as: :workbook
   get "sections/edit_body/:id(.:format)", to: "sections#edit_body", as: :section_edit_body
+  get "sections/sample", to: "sections#sample", as: :section_sample
   resources :stories
   resources :sections
 end
