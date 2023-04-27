@@ -1,6 +1,6 @@
 .modal {
 	display: none;
-	min-width: 600px;
+	max-width: 75%;
 	min-height: 300px;
 	margin: auto;
 	z-index: 13;
@@ -48,3 +48,7 @@
 		}
 	}
 }	
+
+@media (min-width: 768px) {
+	min-width: 600px;
+}

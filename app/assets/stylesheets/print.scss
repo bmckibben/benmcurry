@@ -1,0 +1,100 @@
+#manuscript {
+  p {
+    font-size: 12pt; 
+    //font-family: 'Courier New'; 
+    font-family: TimesNewRoman, "Times New Roman";
+    color: #000000; 
+    background-color: transparent; 
+    font-weight: 400; 
+    font-style: normal; 
+    font-variant: normal; 
+    text-decoration: none; 
+    vertical-align: baseline; 
+    white-space: pre-wrap;
+    line-height: 2.4; 
+    text-indent: 36pt; 
+    margin-top: 0pt; 
+    margin-bottom: 0pt;
+  }
+  p:first-child{
+    text-indent: 0;
+  }    
+  h1, h2 {
+    //font-family: Rokkitt, serif;
+    font-size: 12pt;
+    font-family: TimesNewRoman, "Times New Roman";
+    text-align:center;    
+  } 
+  .section-footnote {
+    border-top: 1px solid #000
+  }
+  img.cover {
+    margin-right: auto;
+    margin-left: auto;
+  }  
+}
+#title-page {
+  .author {
+    //border: 1px solid #000;
+    border: none;
+    width: 100%;
+    padding: 1rem;
+    table {
+      width:100%;
+    }
+    td {
+      width: 50%;
+    }
+  }
+  .col-md-6 {
+    width: 50%;
+  }
+  .this-page {
+    height: 100%;
+    width: 100%;
+  }
+  .title {
+    width: 100%;
+    margin-top: 30rem;
+    margin-bottom: 30rem;
+  }  
+  // h1 {
+  //   text-align:center;
+  //   font-family: Syncopate, serif;
+  // }
+  // h2 {
+  //   text-align:center;
+  //   font-family: Syncopate, serif;
+  //   font-size: 20px;
+  // }
+  h1, h2 {
+    //font-family: Rokkitt, serif;
+    font-size: 12pt;
+    font-family: TimesNewRoman, "Times New Roman" ;  
+    text-align:center; 
+  }   
+  .tagline {
+    text-align:center;
+    width: 100%;
+  }
+  .right {
+    text-align:right;
+    vertical-align: top;
+  }
+}
+
+#manuscript {
+  .newpage {
+    page-break-before: always;
+    padding-top: 12rem;
+  //   font-family: Rokkitt, serif;
+  }
+  .center {
+    text-align: center;
+  }
+  .section-body{
+    p:first{
+      text-indent: 0;
+    }
+  }
+}    
