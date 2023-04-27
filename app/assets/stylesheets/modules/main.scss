@@ -479,6 +479,13 @@ section {
     }
   }
 
+  .banner-content{
+    .container {
+      position:relative;
+      margin-top: 45vh;
+    }
+  }
+
   .fixed-side-navbar h3 {
     display: none;
   }
