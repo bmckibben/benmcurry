@@ -458,15 +458,19 @@ section {
   padding: 30px 20px;
 }
 
-@media (min-width: 767px){
-  .baner-content {
-    .container {  
-      padding-top: 30vh;
-    }
+.baner-content {
+  .container {  
+    padding-top: 60vh;
   }
+}
+
+@media (min-width: 767px){
+
   .first-content{
     padding-left: 6rem;
   } 
+
+
   
 }
 
@@ -479,19 +483,13 @@ section {
     }
   }
 
-  .banner-content{
-    .container {
-      margin-top: 50%;
-    }
-  }
+
 
   .fixed-side-navbar h3 {
     display: none;
   }
 
-  .baner-content {
-    padding-top: 30vh;
-  }
+
 
   .baner-content h1 {
     font-size: 64px;
