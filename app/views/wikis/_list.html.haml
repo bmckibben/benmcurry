@@ -1,0 +1,3 @@
+- @wikis.each do |wiki|
+  .panel.panel-default.wiki-panel{id: "#{wiki.id}"}
+    = render "display", :wiki => wiki

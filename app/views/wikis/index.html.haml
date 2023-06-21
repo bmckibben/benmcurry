@@ -1,8 +1,9 @@
-.header
-	.row
-		.col-md-10
-			%h1 Wikis
-		.col-md-2	
-			= link_to "New Wiki", new_wiki_path, class: "btn-link"
-.wikis
-	= render @wikis
+%nav.navbar.navbar-fixed-top{style: "top:52px;"}
+  .sidebar-date.pull-right
+    Today is #{DateTime.now.in_time_zone('Indiana (East)').to_formatted_s(:stardate)}   
+    %i.fa.fa-chevron-right.sidebar-toggle{"aria-hidden" => "false", "data-placement" => "left", "data-toggle" => "tooltip", title: "Show/Hide Sidebar."}
+#row-main.row
+  #mySidenav.sidenav.sidenav-open
+    -#= render "sidebar"
+  #main.main-collapsed
+    = render "list"
