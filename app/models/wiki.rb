@@ -8,4 +8,8 @@ class Wiki < ApplicationRecord
 	#accepts_nested_attributes_for :wiki_tags, :allow_destroy => true
 	
 	attr_accessor :tags
+
+	def path
+		[2,3]
+	end
 end

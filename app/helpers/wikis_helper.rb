@@ -4,13 +4,13 @@ module WikisHelper
     current_level = 1
     first_item = true
       
-    menu = "<ul class='nav nav-list'>"
+    menu = "<ul class='wiki-toc'>"
     tree_toggler = "<i class='tree-toggler nav-header bi bi-chevron-right' aria-hidden='true'></i>"
 
     nested_set_query.each do |link|
       if !link.id.nil? and !link.path.nil?
       if current_level < link.path.length
-        menu += " <ul class='nav nav-list tree'>"
+        menu += " <ul class='wiki-toc tree'>"
       elsif current_level > link.path.length
         menu += "</li></ul>" * (current_level-link.path.length)
       elsif !first_item  
@@ -52,7 +52,7 @@ module WikisHelper
       ORDER BY my_sort")
     end  
 
-    def query_toc(id)
+    def query_toc_hold(id)
       Wiki.find_by_sql("WITH RECURSIVE category_tree(id, path, my_sort) AS (
 
       select wikis.id, ARRAY[wikis.id], ARRAY[wikis.default_sort]
@@ -73,4 +73,8 @@ module WikisHelper
             RIGHT OUTER JOIN wikis on category_tree.id = wikis.id
       ORDER BY my_sort, wikis.created_at desc")
     end 	
+
+    def query_toc(id)
+      Wiki.where.not(id: 1)
+    end
 end

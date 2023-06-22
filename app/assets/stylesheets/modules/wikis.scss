@@ -61,6 +61,19 @@
             font-size: 0.9rem;
             color: #000;
         }        
+    }
+    .wiki-toc{
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+        li {
+            position:relative;
+            display:block;
+            .tree-toggler{
+                cursor: pointer;
+                font-size: 14px;
+            }
+        }
     }    
 }
 
@@ -138,11 +151,6 @@ ul.tree {
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
     background-color: #ddd;
     border-color: #bbb #bbb transparent;
-}
-
-.tree-toggler {
-    cursor:pointer;
-    font-size: 14px;
 }
 
 #sidebarTabs {
@@ -249,9 +257,13 @@ ul.tree {
 }
 
 .wiki-menu {
-  color: $cyan;
-  font-size: 14px;
-    display:inline;
+  //color: $cyan;
+  //font-size: 14px;
+  display:inline;
+}
+
+.action-icon {
+    cursor: pointer;
 }
 
 .tag-delete {
