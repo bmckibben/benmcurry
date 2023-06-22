@@ -3,7 +3,10 @@ class WikisController < ApplicationController
 
   # GET /wikis or /wikis.json
   def index
-    @wikis = Wiki.where("(deleted is null or deleted is false) and (parent is NULL or parent = '')").order(created_at: :desc)
+    @wikis = Wiki.where("(deleted is null or deleted is false) and (parent is NULL or parent = 0)").order(created_at: :desc)
+    # @wikis.each do |wiki|
+    #   raise wiki.all_children.inspect
+    # end
   end
 
   # GET /wikis/1 or /wikis/1.json
@@ -67,4 +70,6 @@ class WikisController < ApplicationController
     def wiki_params
       params.require(:wiki).permit(:title, :user_id, :body, :parent, :version, :deleted, :default_sort, :last_revision)
     end
+
+
 end

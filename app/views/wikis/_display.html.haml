@@ -15,7 +15,7 @@
   .row
     .col-md-12.wiki-body
       - if wiki.body.include? "{{TOC}}"
-        - wiki.body["{{TOC}}"] = nested_set(query_toc(wiki.id),'wiki-menu', wiki.id)
+        - wiki.body["{{TOC}}"] = new_nested_set(wiki.all_decendents,'wiki-menu', wiki.id)
       = wiki.body.html_safe
 .panel-footer
   .row
