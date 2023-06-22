@@ -75,6 +75,6 @@ module WikisHelper
     end 	
 
     def query_toc(id)
-      Wiki.where.not(id: 1)
+      Wiki.where(parent: id)
     end
 end
