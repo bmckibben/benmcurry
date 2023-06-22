@@ -1,7 +1,7 @@
 .modal-dialog.edit-note-modal
 	.modal-content
 		%button.close{"aria-label" => "Close", "data-dismiss" => "modal", type: :button, class: "btn-dialog-close" }
-			%i.fas.fa-times-circle
+			%i.bi.bi-x-circle
 		.modal-body
 			= simple_form_for @note, remote: true do |f|
 				=f.input :note	

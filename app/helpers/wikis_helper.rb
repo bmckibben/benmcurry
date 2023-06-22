@@ -5,7 +5,7 @@ module WikisHelper
     first_item = true
       
     menu = "<ul class='nav nav-list'>"
-    tree_toggler = "<i class='tree-toggler nav-header fa fa-chevron-right' aria-hidden='true'></i>"
+    tree_toggler = "<i class='tree-toggler nav-header bi bi-chevron-right' aria-hidden='true'></i>"
 
     nested_set_query.each do |link|
       if !link.id.nil? and !link.path.nil?
