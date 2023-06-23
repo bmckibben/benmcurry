@@ -25,7 +25,7 @@ class WikisController < ApplicationController
   # POST /wikis or /wikis.json
   def create
     @wiki = Wiki.new(wiki_params)
-
+    @wiki.version = 1
     respond_to do |format|
       if @wiki.save
         format.html { redirect_to wiki_url(@wiki), notice: "Wiki was successfully created." }
