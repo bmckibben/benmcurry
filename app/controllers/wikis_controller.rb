@@ -3,7 +3,7 @@ class WikisController < ApplicationController
 
   # GET /wikis or /wikis.json
   def index
-    @wikis = Wiki.where("(deleted is null or deleted is false) and (parent is NULL or parent = 0)").order(created_at: :desc)
+    @wikis = Wiki.where("(deleted is null or deleted is false) and (parent is NULL or parent = 0)").order(default_sort: :desc)
     # @wikis.each do |wiki|
     #   raise wiki.all_children.inspect
     # end

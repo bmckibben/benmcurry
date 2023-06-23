@@ -7,19 +7,19 @@ class Wiki < ApplicationRecord
 	
 	#accepts_nested_attributes_for :wiki_tags, :allow_destroy => true
 	
-	attr_accessor :tags, :decendents
+	attr_accessor :tags, :list_level
 
-  def all_decendents(children_array = [], level = 0)
+  def all_decendents(decendents = [], level = 0)
   	parent_id = self.id
   	parent_title = self.title
-    children = Wiki.where(parent: parent_id)
-    children_array += children
+    children = Wiki.where(parent: parent_id).order(default_sort: :desc)
     level += 1
     children.each do |child|
-    	puts "level: #{level} ~~ parent: #{parent_title} ~~ child.title #{child.title} ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-     	child.all_decendents(children_array, level)
+    	child.list_level = level
+    	decendents << child #"level: #{level} ~~ parent: #{parent_title} ~~ child.title #{child.title} ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br/>"
+     	child.all_decendents(decendents, level)
     end
-    children_array
+    decendents
   end
 
 end

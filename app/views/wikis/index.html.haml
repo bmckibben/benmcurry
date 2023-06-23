@@ -1,3 +1,6 @@
+- content_for :head do
+  = javascript_import_module_tag "wikis"
+  
 %nav.navbar.navbar-fixed-top{style: "top:52px;"}
   .sidebar-date.pull-right
     Today is #{DateTime.now.in_time_zone('Indiana (East)').to_formatted_s(:stardate)}   
