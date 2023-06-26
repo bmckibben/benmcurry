@@ -15,11 +15,13 @@
   .row
     .col-md-12.wiki-body
       - if wiki.body.include? "{{TOC}}"
-        - wiki.body["{{TOC}}"] = nested_set(query_toc(wiki.id),'wiki-menu', wiki.id)
+        - wiki.body["{{TOC}}"] = nested_set(wiki.all_decendents,'wiki-menu', wiki.id)
       = wiki.body.html_safe
+      %hr
+
 .panel-footer
   .row
     .col-md-12.wiki-attributes
-      Author: #{wiki.user.id if !wiki.user.nil?} (version: #{current_user.id} #{"deleted" if wiki.deleted?}) | ID: #{wiki.id} |
+      Author: #{wiki.user.login unless wiki.user.nil?} (version: #{wiki.version || 1} #{"deleted" if wiki.deleted?}) | ID: #{wiki.id} |
       Created:  #{wiki.created_at.in_time_zone('Indiana (East)').to_formatted_s(:stardatetime)} | Updated: #{wiki.updated_at.in_time_zone('Indiana (East)').to_formatted_s(:stardatetime)}
       %br/

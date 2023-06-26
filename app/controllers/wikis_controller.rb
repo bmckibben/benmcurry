@@ -3,7 +3,10 @@ class WikisController < ApplicationController
 
   # GET /wikis or /wikis.json
   def index
-    @wikis = Wiki.where("default_sort < 0 and (deleted is null or deleted is false)").order(created_at: :desc)
+    @wikis = Wiki.where("(deleted is null or deleted is false) and (parent is NULL or parent = 0)").order(default_sort: :desc)
+    # @wikis.each do |wiki|
+    #   raise wiki.all_children.inspect
+    # end
   end
 
   # GET /wikis/1 or /wikis/1.json
@@ -22,7 +25,7 @@ class WikisController < ApplicationController
   # POST /wikis or /wikis.json
   def create
     @wiki = Wiki.new(wiki_params)
-
+    @wiki.version = 1
     respond_to do |format|
       if @wiki.save
         format.html { redirect_to wiki_url(@wiki), notice: "Wiki was successfully created." }
@@ -67,4 +70,6 @@ class WikisController < ApplicationController
     def wiki_params
       params.require(:wiki).permit(:title, :user_id, :body, :parent, :version, :deleted, :default_sort, :last_revision)
     end
+
+
 end

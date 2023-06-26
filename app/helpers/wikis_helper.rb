@@ -1,26 +1,23 @@
 module WikisHelper
+
   def nested_set(nested_set_query,link_class, parent_id)
 
     current_level = 1
     first_item = true
-      
-    menu = "<ul class='nav nav-list'>"
-    tree_toggler = "<i class='tree-toggler nav-header fa fa-chevron-right' aria-hidden='true'></i>"
-
+    menu = "<ul class='wiki-toc'>"
+    tree_toggler = "<i class='tree-toggler bi bi-caret-right-fill'></i>"
     nested_set_query.each do |link|
-      if !link.id.nil? and !link.path.nil?
-      if current_level < link.path.length
-        menu += " <ul class='nav nav-list tree'>"
-      elsif current_level > link.path.length
-        menu += "</li></ul>" * (current_level-link.path.length)
+      if current_level < link.list_level
+        menu += " <ul class='wiki-toc tree'>"
+      elsif current_level > link.list_level
+        menu += "</li></ul>" * (current_level-link.list_level)
       elsif !first_item  
         menu += "</li>"
       else  
         first_item = false
       end
-      menu += "<li>#{tree_toggler}<a href='javascript:void(0);' data-wiki-id='#{link.id}' data-parent-id='#{parent_id}' class='#{link_class}'>#{link.title}</a>"
-      current_level = link.path.length
-      end
+      menu += "<li>#{tree_toggler} <a href='javascript:void(0);' data-wiki-id='#{link.id}' data-parent-id='#{parent_id}' class='#{link_class}'>#{link.title}</a>"
+      current_level = link.list_level
     end  
 
     menu += "</li>"
@@ -52,7 +49,7 @@ module WikisHelper
       ORDER BY my_sort")
     end  
 
-    def query_toc(id)
+    def query_toc_hold(id)
       Wiki.find_by_sql("WITH RECURSIVE category_tree(id, path, my_sort) AS (
 
       select wikis.id, ARRAY[wikis.id], ARRAY[wikis.default_sort]
@@ -73,4 +70,8 @@ module WikisHelper
             RIGHT OUTER JOIN wikis on category_tree.id = wikis.id
       ORDER BY my_sort, wikis.created_at desc")
     end 	
+
+    def query_toc(id)
+      Wiki.where(parent: id)
+    end
 end
