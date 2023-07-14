@@ -7,9 +7,11 @@
           - if !wiki_tag.tag.nil?
             %a.btn.btn-tag{"data-tag-id" => "#{wiki_tag.tag_id}", "data-this-id" => "#{wiki.id}", href: "javascript:void(0)"}= wiki_tag.tag.title
     .col-md-3.wiki-actions.right
-      %i.bi.bi-plus.action-icon.wiki-here{"aria-hidden" => "false", "data-id" => "#{wiki.id}", "data-parent" => "#{wiki.title}", "data-placement" => "bottom", "data-toggle" => "tooltip", title: "Create a child wiki2."}
+      = link_to new_wiki_path do
+        %i.bi.bi-plus.action-icon.wiki-here{"aria-hidden" => "false", "data-id" => "#{wiki.id}", "data-parent" => "#{wiki.title}", "data-placement" => "bottom", "data-toggle" => "tooltip", title: "Create a child wiki."}
       - if current_user.id == wiki.user.id or current_user.admin?
-        %i.bi.bi-pencil-fill.action-icon.wiki-edit{"aria-hidden" => "false", "data-id" => "#{wiki.id}", "data-placement" => "bottom", "data-toggle" => "tooltip", title: "Edit this wiki."}
+        = link_to edit_wiki_path(wiki) do
+          %i.bi.bi-pencil-fill.action-icon.wiki-edit{"aria-hidden" => "false", "data-id" => "#{wiki.id}", "data-placement" => "bottom", "data-toggle" => "tooltip", title: "Edit this wiki."}
       %i.bi.bi-x-circle.action-icon.wiki-remove{"aria-hidden" => "false", "data-id" => "#{wiki.id}", "data-placement" => "bottom", "data-toggle" => "tooltip", title: "Remove this wiki from the page."}
 .panel-body
   .row

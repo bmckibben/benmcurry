@@ -1,3 +1,5 @@
+- content_for :head do
+	= javascript_import_module_tag "wikis"
 = link_to sanitize("&larr; Back to Wikis"), wikis_path
 .header
 	%h1 New wiki

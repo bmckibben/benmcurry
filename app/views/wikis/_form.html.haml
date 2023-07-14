@@ -1,35 +1,65 @@
-= simple_form_for wiki, html: {class: "wiki form"} do |f|
-
+%datalist#tag_list
+  - @tag_options.each do |tag|
+    %option{value: "#{tag.title}"}
+= simple_form_for(@wiki, :html => {:class => "wiki-form", :remote=>true}) do |f|
   - if @wiki.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@wiki.errors.count, "error")} prohibited this wiki from being saved:"
+      %h2
+        = pluralize(@wiki.errors.count, "error")
+        prohibited this wiki from being saved:
       %ul
         - @wiki.errors.full_messages.each do |message|
           %li= message
+  .panel-heading
+    .row
+      .col-md-10.wiki-tags
+        %p.wiki-title{style: "max-width:100%;"}
+          = f.label :title
+          = f.text_field :title, class: "form-control"
+      .col-md-2.wiki-actions.right
+        %button.btn-transparent{"data-placement" => "bottom", "data-toggle" => "tooltip", name: "commit", title: "Save changes to this wiki.", type: "submit"}
+          %i#wiki-save.far.fa-check-square.action-icon{"aria-hidden" => "false"}
+        %i#wiki-cancel.far.fa-window-close.action-icon{"aria-hidden" => "false", "data-placement" => "bottom", "data-toggle" => "tooltip", title: "Close wiki without saving."}
+        %i.fa.fa-trash.action-icon.wiki-delete{"aria-hidden" => "false", "data-id" => "#{@wiki.id}", "data-placement" => "bottom", "data-toggle" => "tooltip", title: "Inactivate this wiki."}
+  .panel-body
+    = f.label "Tags"
+    .row
+      .col-md-3
+        .input-group{style: "max-width:300px;"}
+          = f.input :tags, id: "input-tag", class: "form-control", label: false, input_html: {"aria-describedby" => "add-tag", "aria-label" => "Wiki tag", list: "tag_list", placeholder: "Type or Select Tag", type: "text"}
+          %span#add-tag.input-group-addon{"data-wiki-id" => "#{@wiki.id}"} Add
+      #tag-tray.col-md-8
+        - @wiki.wiki_tags.each do |wiki_tag|
+          - if !wiki_tag.tag.nil?
+            %a.btn.tag-delete{"data-placement" => "bottom", "data-tag" => "#{wiki_tag.id}", "data-toggle" => "tooltip", "data-wiki" => "#{@wiki.id}", href: "javascript:void(0)", title: "Remove this tag."}
+              %i.fa.fa-trash{"aria-hidden" => "false"}
+              = wiki_tag.tag.title
+        - if @new_journal
+          %span.btn.btn-tag Journal
+    .row
+      .col-md-4.col-sm-12
+        .input-group{style: "max-width:300px;"}
+          = f.label :"Show on Home Screen"
+          = f.text_field :default_sort, class: "form-control"
+    .row
+      .col-md-12.wiki-body
+        = f.label "Body"
+        %br
+        = f.text_area :body, class: "tinymce section-body", id: "wiki_body" 
+        = f.hidden_field :authenticity_token, value: form_authenticity_token
+        = f.hidden_field :parent
 
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :user_id
-    = f.number_field :user_id
-  .field
-    = f.label :body
-    = f.text_area :body
-  .field
-    = f.label :parent
-    = f.number_field :parent
-  .field
-    = f.label :version
-    = f.number_field :version
-  .field
-    = f.label :deleted
-    = f.check_box :deleted
-  .field
-    = f.label :default_sort
-    = f.number_field :default_sort
-  .field
-    = f.label :last_revision
-    = f.number_field :last_revision
-  .actions
-    = f.submit 'Save', class: "btn btn--secondary"
+  .panel-footer
+    .row
+      .col-md-12.wiki-attributes
+        Author: #{current_user.login} |
+        Created:  #{Time.now.strftime("%Y-%m-%d %R")}
+
+= tinymce content_css: asset_path('application.css')
+
+:javascript
+  $( document ).ready(function() {
+    window._token = '#{form_authenticity_token}';
+    console.log("loaded");
+  })
+
