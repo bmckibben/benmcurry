@@ -1,0 +1,32 @@
+.white-scroller.sidebar-content
+  %p{id: "sidebar-actions pull-right"}
+    = link_to new_wiki_path do
+      %i#wiki-new.bi.bi-plus.action-icon{"aria-hidden" => "false", "data-placement" => "bottom", "data-toggle" => "tooltip", title: "Add a new wiki."}
+    %i#wiki-new-journal.bi.bi-file-earmark-plus-fill.action-icon{"aria-hidden" => "false", "data-placement" => "bottom", "data-toggle" => "tooltip", title: "Add a new journal."}
+    = link_to wikis_path do
+      %i#wiki-home.bi.bi-house-fill.action-icon{"aria-hidden" => "false", "data-placement" => "bottom", "data-toggle" => "tooltip", title: "Display home wikis."}
+
+  %ul#sidebarTabs.nav.nav-tabs
+    %li.active
+      %a{"data-target" => "#menu", "data-toggle" => "tab"} Menu
+    %li
+      %a{"data-target" => "#open", "data-toggle" => "tab"} Open
+    %li
+      %a{"data-target" => "#recent", "data-toggle" => "tab"} Recent
+  .tab-content
+    #menu.tab-pane.active
+      / .well.nested-menu{style: "width:100%; padding: 8px 0;"}= @menu.html_safe
+    #open.tab-pane
+      %ul.nav.nav-list
+        - @wikis.each do |wiki_link|
+          %li
+            %a.tree-menu{"data-wiki-id" => "#{wiki_link.id}", href: "javascript:void(0);"}= wiki_link.title
+    #recent.tab-pane
+      %ul.recent-list
+        - group_date = ""
+        - @recents.each do |recent_link|
+          - if group_date != recent_link.updated_at.strftime('%F')
+            - group_date = recent_link.updated_at.strftime('%F')
+            %li.recent-group= group_date
+          %li
+            %a.tree-menu{"data-wiki-id" => "#{recent_link.id}", href: "javascript:void(0);"}= recent_link.title

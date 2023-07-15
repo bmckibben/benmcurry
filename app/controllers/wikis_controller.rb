@@ -7,6 +7,8 @@ class WikisController < ApplicationController
     # @wikis.each do |wiki|
     #   raise wiki.all_children.inspect
     # end
+    @recents = Wiki.where(updated_at: DateTime.now..1.month.ago).order(updated_at: :desc)
+    #@menu = view_context.nested_set(view_context.query_menu,'tree-menu', 0)
   end
 
   # GET /wikis/1 or /wikis/1.json
