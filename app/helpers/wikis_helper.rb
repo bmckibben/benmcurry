@@ -1,3 +1,4 @@
+module WikisHelper
   def nested_set(nested_set_query,link_class, parent_id)
 
     current_level = 1
@@ -72,3 +73,4 @@
             RIGHT OUTER JOIN wikis on category_tree.id = wikis.id
       ORDER BY my_sort, wikis.created_at desc")
     end 
+end    
