@@ -1,23 +1,23 @@
 module WikisHelper
 
   def nested_set(nested_set_query,link_class, parent_id)
-    raise nested_set_query.inspect
+    #raise nested_set_query.inspect
     current_level = 1
     first_item = true
     menu = "<ul class='wiki-toc'>"
     tree_toggler = "<i class='tree-toggler bi bi-caret-right-fill'></i>"
     nested_set_query.each do |link|
-      if current_level < link.list_level
-        menu += " <ul class='wiki-toc tree'>"
-      elsif current_level > link.list_level
-        menu += "</li></ul>" * (current_level-link.list_level)
-      elsif !first_item  
-        menu += "</li>"
-      else  
-        first_item = false
-      end
-      menu += "<li>#{tree_toggler} <a href='javascript:void(0);' data-wiki-id='#{link.id}' data-parent-id='#{parent_id}' class='#{link_class}'>#{link.title}</a>"
-      current_level = link.list_level
+      # if current_level < link.list_level
+      #   menu += " <ul class='wiki-toc tree'>"
+      # elsif current_level > link.list_level
+      #   menu += "</li></ul>" * (current_level-link.list_level)
+      # elsif !first_item  
+      #   menu += "</li>"
+      # else  
+      #   first_item = false
+      # end
+      # menu += "<li>#{tree_toggler} <a href='javascript:void(0);' data-wiki-id='#{link.id}' data-parent-id='#{parent_id}' class='#{link_class}'>#{link.title}</a>"
+      # current_level = link.list_level
     end  
 
     menu += "</li>"
@@ -47,6 +47,7 @@ module WikisHelper
       FROM category_tree 
             RIGHT OUTER JOIN wikis on category_tree.id = wikis.id
       ORDER BY my_sort")
+
     end  
 
     def query_toc_hold(id)
