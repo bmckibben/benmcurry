@@ -8,6 +8,7 @@ class WikisController < ApplicationController
     #   raise wiki.all_children.inspect
     # end
     @recents = Wiki.where(updated_at: DateTime.now..1.month.ago).order(updated_at: :desc)
+    raise view_context.query_menu.inspect
     @menu = view_context.nested_set(view_context.query_menu,'tree-menu', 0)
 
   end
