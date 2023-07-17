@@ -1,7 +1,6 @@
 module WikisHelper
 
   def nested_set(nested_set_query,link_class, parent_id)
-    raise nested_set_query.inspect
     current_level = 1
     first_item = true
     menu = "<ul class='wiki-toc'>"
