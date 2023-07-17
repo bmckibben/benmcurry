@@ -28,7 +28,7 @@ module WikisHelper
   end
 
     def query_menu
-      raise Wiki.find_by_sql("WITH RECURSIVE category_tree(id, path, my_sort) AS (
+      Wiki.find_by_sql("WITH RECURSIVE category_tree(id, path, my_sort) AS (
 
       select wikis.id, ARRAY[wikis.id], ARRAY[wikis.default_sort]
       from wikis left outer join wiki_tags on wikis.id = wiki_tags.wiki_id
@@ -43,10 +43,11 @@ module WikisHelper
       )
 
 
+
       SELECT category_tree.path, wikis.title, wikis.default_sort 
       FROM category_tree 
             RIGHT OUTER JOIN wikis on category_tree.id = wikis.id
-      ORDER BY my_sort").inspect
+      ORDER BY my_sort")
     end  
 
     def query_toc_hold(id)
