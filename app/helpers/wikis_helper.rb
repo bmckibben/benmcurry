@@ -43,7 +43,7 @@ module WikisHelper
       )
 
 
-      SELECT category_tree.*, wikis.title, wikis.default_sort 
+      SELECT category_tree.path, wikis.title, wikis.default_sort 
       FROM category_tree 
             RIGHT OUTER JOIN wikis on category_tree.id = wikis.id
       ORDER BY my_sort").inspect
