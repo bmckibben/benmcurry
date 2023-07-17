@@ -39,12 +39,7 @@ module WikisHelper
             from wikis left outer join wiki_tags on wikis.id = wiki_tags.wiki_id
             where wiki_tags.tag_id is null and (wikis.deleted is null or wikis.deleted is false)
 
-            UNION ALL
-            SELECT wiki_tags.wiki_id as id, list_level || wiki_tags.wiki_id, my_sort || wikis.default_sort
-            FROM category_tree
-            JOIN wiki_tags ON wiki_tags.tag_id=category_tree.id
-            JOIN wikis ON wikis.id=wiki_tags.wiki_id
-            WHERE NOT wiki_tags.wiki_id = ANY(list_level)
+
           )
         "
       )

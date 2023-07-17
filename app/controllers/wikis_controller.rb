@@ -4,9 +4,6 @@ class WikisController < ApplicationController
   # GET /wikis or /wikis.json
   def index
     @wikis = Wiki.where("(deleted is null or deleted is false) and (parent is NULL or parent = 0)").order(default_sort: :desc)
-    # @wikis.each do |wiki|
-    #   raise wiki.all_children.inspect
-    # end
     @recents = Wiki.where(updated_at: DateTime.now..1.month.ago).order(updated_at: :desc)
     raise view_context.query_menu.inspect
     @menu = view_context.nested_set(view_context.query_menu,'tree-menu', 0)
