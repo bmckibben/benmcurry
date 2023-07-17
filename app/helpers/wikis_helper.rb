@@ -33,14 +33,11 @@ module WikisHelper
     def query_menu
       Wiki.find_by_sql(
         "
-          WITH RECURSIVE category_tree(id, list_level, my_sort) AS 
-          (
+
             select wikis.id, ARRAY[wikis.id], ARRAY[wikis.default_sort]
             from wikis left outer join wiki_tags on wikis.id = wiki_tags.wiki_id
             where wiki_tags.tag_id is null and (wikis.deleted is null or wikis.deleted is false)
 
-
-          )
         "
       )
 
