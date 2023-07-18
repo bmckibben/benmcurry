@@ -46,7 +46,18 @@ draws = [["Jan 21, 2023",5,14,19,46,64,22],
 ["Oct 26, 2022",19,36,37,46,56,24],
 ["Oct 24, 2022",18,23,35,45,54,16]]
 
-draws.each do |date,b1,b2,b3,b4,b5,powerball|
-  Draw.create(draw_date: date, b1: b1, b2: b2, b3: b3, b4: b4, b5: b5, powerball: powerball)
-end
-User.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+# draws.each do |date,b1,b2,b3,b4,b5,powerball|
+#   Draw.create(draw_date: date, b1: b1, b2: b2, b3: b3, b4: b4, b5: b5, powerball: powerball)
+# end
+
+
+User.create!(email: 'ben@mckibben.email', password: 'Satori69', password_confirmation: 'Satori69') if Rails.env.development?
+
+# wikis = [
+# ["A", 1, "A", nil, "1", "1", ]
+# ]
+
+# wikis.each do |title,user_id,body,parent,version,integer,deleted,default_sort,last_revision|
+
+# end
+
