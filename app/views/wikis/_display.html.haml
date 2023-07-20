@@ -16,11 +16,11 @@
 .panel-body
   .row
     .col-md-12.wiki-body
-      - if wiki.body.include? "{{TOC}}"
-        - wiki.body["{{TOC}}"] = nested_set(wiki.all_decendents,'wiki-menu', wiki.id)
       = wiki.body.html_safe
-      %hr
-
+  .row
+    .col-md-12.wiki-body
+      .h4 Children
+      = nested_set(wiki.all_decendents,'wiki-menu', wiki.id).html_safe   
 .panel-footer
   .row
     .col-md-12.wiki-attributes

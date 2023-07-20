@@ -16,6 +16,9 @@
 	}
     :last-child{
         border-bottom: none;
+    }
+    .top-parent {
+        border-top: 1px solid $white;
     }    
 }
 .wiki-actions {
@@ -30,8 +33,6 @@
 }
 
 .wiki-panel {
-	margin-right: 4rem;
-	margin-left: 7rem;
     margin-bottom: 1.5rem;
     background-color: #fff;
     border: none;
@@ -69,12 +70,13 @@
         li {
             position:relative;
             display:block;
-            .tree-toggler{
-                cursor: pointer;
-                font-size: 14px;
-            }
+
         }
     }  
+    .tree-toggler{
+        cursor: pointer;
+        font-size: 14px;
+    }    
     .form-control {
         display: block;
         width: 100%;
@@ -156,7 +158,11 @@
     -moz-transition: margin 0.3s ease;
     -o-transition: margin 0.3s ease;
     transition: margin 0.3s ease;
-    width: 16%;   
+    width: 16%;
+    .nested-menu {
+        width:100%; 
+        padding: 8px 0;
+    }   
 }
 
 .sidebar-date {
@@ -172,6 +178,9 @@
 
 .sidebar-content {
     width: 100%;
+    .tab-content{
+        margin-top: 10px;
+    }
 }
 
 .sidebar-actions {
@@ -212,8 +221,11 @@ ul.tree {
     color: #555;  
     border-radius: 6px 6px 0 0; 
     cursor: pointer;
-
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-bottom: 1px solid transparent;
 }
+
 
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
     background-color: #ddd;

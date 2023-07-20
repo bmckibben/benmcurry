@@ -1,28 +1,3 @@
-= link_to sanitize("&larr; Back to Wikis"), wikis_path
-.header
-  %h1
-    = @wiki.title
-%p#notice= notice
-
-%p
-  %b User:
-  = @wiki.user_id
-%p
-  %b Body:
-  = @wiki.body
-%p
-  %b Parent:
-  = @wiki.parent
-%p
-  %b Version:
-  = @wiki.version
-%p
-  %b Deleted:
-  = @wiki.deleted
-%p
-  %b Default sort:
-  = @wiki.default_sort
-%p
-  %b Last revision:
-  = @wiki.last_revision
+.panel.panel-default.wiki-panel{id: "#{@wiki.id}"}
+  = render "display", :wiki => @wiki
 

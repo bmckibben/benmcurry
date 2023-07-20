@@ -15,17 +15,20 @@
       %a{"data-target" => "#recent", "data-toggle" => "tab"} Recent
   .tab-content
     #menu.tab-pane.active
-      .well.nested-menu{style: "width:100%; padding: 8px 0;"}
-
-        - @menu_seeds each do |seed}
-          "<i class='tree-toggler bi bi-caret-right-fill'></i> 
-          = seed.title
-          = seed.all_decendents
+      .well.nested-menu
+        %ul.wiki.toc
+          - @menu_seeds.each do |seed|
+            %li.top-parent
+              %i.tree-toggler.bi.bi-caret-right-fill
+              %a.tree-menu{"data-wiki-id" => "#{seed.id}", "data-parent-id" => "#{seed.parent}", href: "/wikis/#{seed.id}"}
+                = seed.title
+              = nested_set(seed.all_decendents,'tree-menu', seed.id).html_safe
     #open.tab-pane
       %ul.nav.nav-list
         - @wikis.each do |wiki_link|
           %li
-            %a.tree-menu{"data-wiki-id" => "#{wiki_link.id}", href: "javascript:void(0);"}= wiki_link.title
+            %a.tree-menu{"data-wiki-id" => "#{wiki_link.id}", href: "javascript:void(0);"}
+              = wiki_link.title
     #recent.tab-pane
       %ul.recent-list
         - group_date = ""
@@ -34,4 +37,5 @@
             - group_date = recent_link.updated_at.strftime('%F')
             %li.recent-group= group_date
           %li
-            %a.tree-menu{"data-wiki-id" => "#{recent_link.id}", href: "javascript:void(0);"}= recent_link.title
+            %a.tree-menu{"data-wiki-id" => "#{recent_link.id}", href: "javascript:void(0);"}
+              = recent_link.title

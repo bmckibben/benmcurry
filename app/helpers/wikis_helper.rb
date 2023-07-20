@@ -3,8 +3,11 @@ module WikisHelper
 
     current_level = 1
     first_item = true
-      
-    menu = "<ul class='wiki toc'>"
+    if link_class == "tree-menu"  
+      menu = "<ul class='tree'>"
+    else
+      menu = "<ul class='toc'>"
+    end  
     tree_toggler = "<i class='tree-toggler bi bi-caret-right-fill'></i>"
 
     nested_set_query.each do |link|
@@ -18,7 +21,7 @@ module WikisHelper
       else  
         first_item = false
       end
-      menu += "<li>#{tree_toggler}<a href='javascript:void(0);' data-wiki-id='#{link.id}' data-parent-id='#{parent_id}' class='#{link_class}'>#{link.title}</a>"
+      menu += "<li>#{tree_toggler}<a href='/wikis/#{link.id}' data-wiki-id='#{link.id}' data-parent-id='#{parent_id}' class='#{link_class}'>#{link.title}</a>"
       current_level = link.list_level
       end
     end  
@@ -28,42 +31,6 @@ module WikisHelper
 
     return menu
 
-  end
-
-    def query_menu
-      # pg version
-      Wiki.find_by_sql("WITH RECURSIVE category_tree(id, list_level, my_sort) AS (
-
-      select wikis.id, ARRAY[wikis.id], ARRAY[wikis.default_sort]
-      from wikis left outer join wiki_tags on wikis.id = wiki_tags.wiki_id
-      where wiki_tags.tag_id is null and (wikis.deleted is null or wikis.deleted is false)
-
-      UNION ALL
-      SELECT wiki_tags.wiki_id as id, list_level || wiki_tags.wiki_id as integer, my_sort || wikis.default_sort
-      FROM category_tree
-      JOIN wiki_tags ON wiki_tags.tag_id=category_tree.id
-      JOIN wikis ON wikis.id=wiki_tags.wiki_id
-      WHERE NOT wiki_tags.wiki_id = ANY(list_level)
-      )
-
-      SELECT category_tree.*, wikis.title, wikis.default_sort 
-      FROM category_tree 
-            RIGHT OUTER JOIN wikis on category_tree.id = wikis.id
-      ORDER BY my_sort")
-    end
-
-  def menu_set(decendents = [], level = 0, this_id = 4)
-    parent = Wiki.find(this_id)
-    parent_id = this_id
-    parent_title = parent.title
-    children = Wiki.where(parent: parent_id).order(default_sort: :desc)
-    level += 1
-    children.each do |child|
-      child.list_level = level
-      decendents << child 
-      menu_set(decendents, level, child.id)
-    end
-    decendents
   end
 
 end    
