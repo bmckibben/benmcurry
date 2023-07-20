@@ -52,7 +52,7 @@ module WikisHelper
       ORDER BY my_sort")
     end
 
-  def menu_set(decendents = [], level = 0, this_id = 8)
+  def menu_set(decendents = [], level = 0, this_id = 4)
     parent = Wiki.find(this_id)
     parent_id = this_id
     parent_title = parent.title
