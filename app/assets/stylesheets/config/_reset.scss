@@ -10,6 +10,12 @@ body.interior-page-background {
 	display: block;
 	position: relative;
 	padding-bottom: 6rem; /* height of your footer */
+	max-width: fit-content;
+}
+
+.container{
+	margin-right: auto;
+	margin-left: auto;
 }
 
 .btn-sm{

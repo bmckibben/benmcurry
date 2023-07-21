@@ -4,38 +4,21 @@
       %i#wiki-new.bi.bi-plus.action-icon{"aria-hidden" => "false", "data-placement" => "bottom", "data-toggle" => "tooltip", title: "Add a new wiki."}
     %i#wiki-new-journal.bi.bi-file-earmark-plus-fill.action-icon{"aria-hidden" => "false", "data-placement" => "bottom", "data-toggle" => "tooltip", title: "Add a new journal."}
     = link_to wikis_path do
-      %i#wiki-home.bi.bi-house-fill.action-icon{"aria-hidden" => "false", "data-placement" => "bottom", "data-toggle" => "tooltip", title: "Display home wikis."}
+      %i#wiki-menu.bi.bi-house-fill.action-icon{"aria-hidden" => "false", "data-placement" => "bottom", "data-toggle" => "tooltip", title: "Display home wikis."}
 
   %ul#sidebarTabs.nav.nav-tabs.nav-fill{role:"tablist"}
     %li.nav-item{role:"presentation"}
-      %button.nav-link.active{id:"home-tab", "data-bs-toggle"=>"tab", "data-bs-target"=>"#home", type:"button", role:"tab", "aria-controls"=>"home", "aria-selected"=>"true"}
+      %button.nav-link.active{id:"menu-tab", "data-bs-toggle"=>"tab", "data-bs-target"=>"#menu", type:"button", role:"tab", "aria-controls"=>"menu", "aria-selected"=>"true"}
         = "Menu"
     %li.nav-item{role:"presentation"}
-      %button.nav-link.active{id: "profile-tab", "data-bs-toggle"=>"tab", "data-bs-target"=>"#profile", type:"button", role:"tab", "aria-controls"=>"profile", "aria-selected"=>"true"}
+      %button.nav-link{id: "open-tab", "data-bs-toggle"=>"tab", "data-bs-target"=>"#open", type:"button", role:"tab", "aria-controls"=>"open", "aria-selected"=>"true"}
         = "Open"
     %li.nav-item{role:"presentation"}
-      %button.nav-link.active{id: "contact-tab", "data-bs-toggle"=>"tab", "data-bs-target"=>"#contact", type:"button", role:"tab", "aria-controls"=>"contact", "aria-selected"=>"true"}
+      %button.nav-link{id: "recent-tab", "data-bs-toggle"=>"tab", "data-bs-target"=>"#recent", type:"button", role:"tab", "aria-controls"=>"recent", "aria-selected"=>"true"}
         = "Recent"
+
   #myTabContent.tab-content
-    #home.tab-pane.fade.show.active{role: "tabpanel", "aria-labelledby"=>"home-tab"}
-      = "Home content"
-    #profile.tab-pane.fade{role: "tabpanel", "aria-labelledby"=>"profile-tab"}
-      = "Profile content"
-    #contact.tab-pane.fade{role:"tabpanel", "aria-labelledby"=>"contact-tab"}
-      = "Contact content"
-
-
-
-
-  %ul#sidebarTabs.nav.nav-tabs
-    %li.nav-item
-      %a.nav-link.active{"data-target" => "#menu", "data-toggle" => "tab", "href" => "#"} Menu
-    %li
-      %a.nav-link{"data-target" => "#open", "data-toggle" => "tab", "href" => "#"} Open
-    %li
-      %a.nav-link{"data-target" => "#recent", "data-toggle" => "tab", "href" => "#"} Recent
-  .tab-content
-    #menu.tab-pane.active
+    #menu.tab-pane.fade.show.active{role: "tabpanel", "aria-labelledby"=>"menu-tab"}
       .well.nested-menu
         %ul.wiki.toc
           - @menu_seeds.each do |seed|
@@ -44,13 +27,12 @@
               %a.tree-menu{"data-wiki-id" => "#{seed.id}", "data-parent-id" => "#{seed.parent}", href: "/wikis/#{seed.id}"}
                 = seed.title
               = nested_set(seed.all_decendents,'tree-menu', seed.id).html_safe
-    #open.tab-pane
+    #open.tab-pane.fade{role: "tabpanel", "aria-labelledby"=>"open-tab"}
       %ul.nav.nav-list
         - @wikis.each do |wiki_link|
           %li
             %a.tree-menu{"data-wiki-id" => "#{wiki_link.id}", href: "javascript:void(0);"}
-              = wiki_link.title
-    #recent.tab-pane
+    #recent.tab-pane.fade{role:"tabpanel", "aria-labelledby"=>"recent-tab"}
       %ul.recent-list
         - group_date = ""
         - @recents.each do |recent_link|
@@ -60,3 +42,9 @@
           %li
             %a.tree-menu{"data-wiki-id" => "#{recent_link.id}", href: "javascript:void(0);"}
               = recent_link.title
+
+
+
+ 
+
+           

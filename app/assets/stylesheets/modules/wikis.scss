@@ -179,7 +179,10 @@
 .sidebar-content {
     width: 100%;
     .tab-content{
-        margin-top: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: #fff;
+        border-bottom-radius: 1rem;
     }
 }
 
@@ -215,13 +218,13 @@ ul.tree {
 }
 
 .nav-tabs > li > a {
-    font-size: 1rem;
+    font-size: 0.7rem;
     line-height: 1;
     background-color: #bbb;
     color: #555;  
     border-radius: 6px 6px 0 0; 
     cursor: pointer;
-    padding: 10px;
+    padding: 5px;
     border: 1px solid #bbb;
     border-bottom: 1px solid transparent;
 }
@@ -266,7 +269,10 @@ ul.tree {
   width:300px;
   padding-right: 2rem;
 }
-
+.main {
+//  margin-left: 5%;
+//  margin-right: 5%;
+}
 .main-open  {
     margin-right: 0;
 }
