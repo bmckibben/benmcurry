@@ -11,9 +11,8 @@
     = tinymce_assets
     = yield :head    
   %body.interior-page-background
-    = render 'layouts/navigation'  
-    .container.page-container
-      .main
-        = yield
+    = render 'layouts/navigation' 
+    .main
+      = yield
     %footer.interior-footer
       = render 'layouts/footer'
