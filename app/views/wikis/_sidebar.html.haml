@@ -6,13 +6,34 @@
     = link_to wikis_path do
       %i#wiki-home.bi.bi-house-fill.action-icon{"aria-hidden" => "false", "data-placement" => "bottom", "data-toggle" => "tooltip", title: "Display home wikis."}
 
+  %ul#sidebarTabs.nav.nav-tabs.nav-fill{role:"tablist"}
+    %li.nav-item{role:"presentation"}
+      %button.nav-link.active{id:"home-tab", "data-bs-toggle"=>"tab", "data-bs-target"=>"#home", type:"button", role:"tab", "aria-controls"=>"home", "aria-selected"=>"true"}
+        = "Menu"
+    %li.nav-item{role:"presentation"}
+      %button.nav-link.active{id: "profile-tab", "data-bs-toggle"=>"tab", "data-bs-target"=>"#profile", type:"button", role:"tab", "aria-controls"=>"profile", "aria-selected"=>"true"}
+        = "Open"
+    %li.nav-item{role:"presentation"}
+      %button.nav-link.active{id: "contact-tab", "data-bs-toggle"=>"tab", "data-bs-target"=>"#contact", type:"button", role:"tab", "aria-controls"=>"contact", "aria-selected"=>"true"}
+        = "Recent"
+  #myTabContent.tab-content
+    #home.tab-pane.fade.show.active{role: "tabpanel", "aria-labelledby"=>"home-tab"}
+      = "Home content"
+    #profile.tab-pane.fade{role: "tabpanel", "aria-labelledby"=>"profile-tab"}
+      = "Profile content"
+    #contact.tab-pane.fade{role:"tabpanel", "aria-labelledby"=>"contact-tab"}
+      = "Contact content"
+
+
+
+
   %ul#sidebarTabs.nav.nav-tabs
-    %li.active
-      %a{"data-target" => "#menu", "data-toggle" => "tab"} Menu
+    %li.nav-item
+      %a.nav-link.active{"data-target" => "#menu", "data-toggle" => "tab", "href" => "#"} Menu
     %li
-      %a{"data-target" => "#open", "data-toggle" => "tab"} Open
+      %a.nav-link{"data-target" => "#open", "data-toggle" => "tab", "href" => "#"} Open
     %li
-      %a{"data-target" => "#recent", "data-toggle" => "tab"} Recent
+      %a.nav-link{"data-target" => "#recent", "data-toggle" => "tab", "href" => "#"} Recent
   .tab-content
     #menu.tab-pane.active
       .well.nested-menu
