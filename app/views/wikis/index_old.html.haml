@@ -1,5 +1,6 @@
 - content_for :head do
   = javascript_import_module_tag "wikis"
+
 .container-fluid#workbook
   %nav.navbar.navbar-fixed-top{style: "top:52px;"}
     .sidebar-date.pull-right
@@ -9,4 +10,4 @@
     .col-md-10#main
       = render "list"
     .col-md-2#mySidenav
-      = render "sidebar" 
+      = render "sidebar"    
