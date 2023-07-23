@@ -1,6 +1,9 @@
 module WikisHelper
   def nested_set(nested_set_query,link_class, parent_id)
 
+    if nested_set_query.empty?
+      return "&nbsp;"
+    end  
     current_level = 1
     first_item = true
     if link_class == "tree-menu"  
