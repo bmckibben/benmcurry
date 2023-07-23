@@ -22,11 +22,15 @@
       .well.nested-menu
         %ul.wiki.toc
           - @menu_seeds.each do |seed|
+            - decendents = nested_set(seed.all_decendents,'tree-menu', seed.id)
             %li.top-parent
-              %i.tree-toggler.bi.bi-caret-right-fill
+              - if decendents.include? "&nbsp"
+                = decendents.html_safe
+              -else
+                %i.tree-toggler.bi.bi-caret-right-fill
               %a.tree-menu{"data-wiki-id" => "#{seed.id}", "data-parent-id" => "#{seed.parent}", href: "/wikis/#{seed.id}"}
                 = seed.title
-              = nested_set(seed.all_decendents,'tree-menu', seed.id).html_safe
+              = decendents.html_safe
     #open.tab-pane.fade{role: "tabpanel", "aria-labelledby"=>"open-tab"}
       %ul.nav.nav-list
         - @wikis.each do |wiki_link|
