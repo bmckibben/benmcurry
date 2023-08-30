@@ -1,32 +1,32 @@
 # default and development switch between  home and work
 #home and prod###############################################################
-# default: &default
-#   adapter: postgresql
-#   encoding: unicode
-#   # For details on connection pooling, see Rails configuration guide
-#   # https://guides.rubyonrails.org/configuring.html#database-pooling
-#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-#   host: localhost
-#   port: 5432
-
-# development:
-#   <<: *default
-#   database: paxxa_development
-#   username: paxxa
-#   password: paxxa
-#work#######################################################################
 default: &default
   adapter: postgresql
   encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   host: localhost
   port: 5432
 
 development:
   <<: *default
-  database: paxxa_development  
+  database: paxxa_development
   username: paxxa
   password: paxxa
+#work#######################################################################
+# default: &default
+#   adapter: postgresql
+#   encoding: unicode
+#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#   host: localhost
+#   port: 5432
+
+# development:
+#   <<: *default
+#   database: paxxa_development  
+#   username: paxxa
+#   password: paxxa
 ############################################################################  
 
 test:
