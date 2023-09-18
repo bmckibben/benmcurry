@@ -3,6 +3,6 @@ class HomeMailer < ActionMailer::Base
     @email = email
     @message = message
     @name = name
-    mail subject: 'email for Ben Curry', to: "contact@BenMCurry.email", reply_to: @email
+    mail subject: 'email for Ben Curry', to: "contact@BenMCurry.com", reply_to: @email
   end
 end
