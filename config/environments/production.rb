@@ -102,7 +102,7 @@ Rails.application.configure do
     domain: "www.benmcurry.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: ENV["GMAIL_SMTP_USERNAME"],
+    user_name: ENV["GMAIL_SMTP_USER"],
     password: ENV["GMAIL_SMTP_PASSWORD"]
   }
   # Do not dump schema after migrations.
