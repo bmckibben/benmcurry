@@ -44,7 +44,7 @@
             .row
               = f.button :submit, "Save", class: "btn btn-primary"
             .row           
-              =link_to "Add Note", edit_note_modal_path(section_id: @section.id), remote: true, class: "btn btn-notes btn-primary"
+              =link_to "Add Note", edit_note_modal_path(section_id: @section.id), data: { turbo_frame: "edit_note_modal" }, class: "btn btn-notes btn-primary"
             .row  
               =link_to "Add Footnote", edit_footnote_modal_path(section_id: @section.id), remote: true, class: "btn btn-primary"          
             .row  
