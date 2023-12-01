@@ -12,10 +12,7 @@ class SectionsController < InheritedResources::Base
   	else
   		@note = @section.section_notes.build()
   	end
-    respond_to do |format|
-      format.html {render not_found}
-      format.js {render 'edit_note_modal'}
-    end     
+    render 'edit_note_modal'
   end
 
   def edit_footnote_modal
