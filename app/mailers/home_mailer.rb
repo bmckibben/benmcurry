@@ -3,6 +3,7 @@ class HomeMailer < ActionMailer::Base
     @email = email
     @message = message
     @name = name
+    attachments["robot.txt"] = File.read(File.join(Rails.root, 'public', 'robots.txt'))
     mail subject: 'email for Ben Curry', to: "contact@BenMCurry.com", reply_to: @email, from: @email
   end
 end
