@@ -1,10 +1,9 @@
-.container-fluid#sections
-	.row
-		.col-md-4
-		.col-md-4
-			.card
-				%h1 Chapter Note
-
-				= render 'form'
-
-
+= turbo_frame_tag "section_note_modal" do
+	.container-fluid#sections
+		.row
+			.col-md-4
+			.col-md-4
+				.card
+					%h1 Chapter Note
+					.modal-body
+						= render 'form'

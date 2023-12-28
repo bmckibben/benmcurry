@@ -8,16 +8,16 @@ class SectionNotesController < InheritedResources::Base
   def create
     
     @note = SectionNote.new(section_note_params)
-    respond_to do |format|
+    # respond_to do |format|
 
-      if @note.save
-        format.html 
-        format.js { render  "sections/close_modal"}
-      else
-        format.html 
-        format.js { render "home/error_alert", locals: {message: "Note save error"} }
-      end
-    end
+    #   if @note.save
+    #     format.html 
+    #     format.js { render  "sections/close_modal"}
+    #   else
+    #     format.html 
+    #     format.js { render "home/error_alert", locals: {message: "Note save error"} }
+    #   end
+    # end
   end
 
   private

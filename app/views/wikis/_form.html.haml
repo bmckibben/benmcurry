@@ -18,9 +18,9 @@
           = f.text_field :title, class: "form-control"
       .col-md-2.wiki-actions.right
         %button.btn-transparent{"data-placement" => "bottom", "data-toggle" => "tooltip", name: "commit", title: "Save changes to this wiki.", type: "submit"}
-          %i#wiki-save.far.fa-check-square.action-icon{"aria-hidden" => "false"}
-        %i#wiki-cancel.far.fa-window-close.action-icon{"aria-hidden" => "false", "data-placement" => "bottom", "data-toggle" => "tooltip", title: "Close wiki without saving."}
-        %i.fa.fa-trash.action-icon.wiki-delete{"aria-hidden" => "false", "data-id" => "#{@wiki.id}", "data-placement" => "bottom", "data-toggle" => "tooltip", title: "Inactivate this wiki."}
+          %i#wiki-save.bi.bi-check-square.action-icon{"aria-hidden" => "false"}
+        %i#wiki-cancel.bi.bi-x-square.action-icon{"aria-hidden" => "false", "data-placement" => "bottom", "data-toggle" => "tooltip", title: "Close wiki without saving."}
+        %i.bi.bi-trash.action-icon.wiki-delete{"aria-hidden" => "false", "data-id" => "#{@wiki.id}", "data-placement" => "bottom", "data-toggle" => "tooltip", title: "Inactivate this wiki."}
   .panel-body
     = f.label "Tags"
     .row
@@ -32,7 +32,7 @@
         - @wiki.wiki_tags.each do |wiki_tag|
           - if !wiki_tag.tag.nil?
             %a.btn.tag-delete{"data-placement" => "bottom", "data-tag" => "#{wiki_tag.id}", "data-toggle" => "tooltip", "data-wiki" => "#{@wiki.id}", href: "javascript:void(0)", title: "Remove this tag."}
-              %i.fa.fa-trash{"aria-hidden" => "false"}
+              %i.bi.bi-trash{"aria-hidden" => "false"}
               = wiki_tag.tag.title
         - if @new_journal
           %span.btn.btn-tag Journal

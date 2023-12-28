@@ -28,4 +28,5 @@ Rails.application.routes.draw do
   get "sections/sample", to: "sections#sample", as: :section_sample
   resources :stories
   resources :sections
+  resources :section_notes
 end

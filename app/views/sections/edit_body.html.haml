@@ -44,7 +44,7 @@
             .row
               = f.button :submit, "Save", class: "btn btn-primary"
             .row           
-              =link_to "Add Note", edit_note_modal_path(section_id: @section.id), data: { turbo_frame: "edit_note_modal" }, class: "btn btn-notes btn-primary"
+              =link_to "Add Note", new_section_note_path(section_id: @section.id), data: { turbo_frame: "new_section_note_modal" }, class: "btn btn-notes btn-primary"
             .row  
               =link_to "Add Footnote", edit_footnote_modal_path(section_id: @section.id), remote: true, class: "btn btn-primary"          
             .row  
@@ -59,8 +59,13 @@
             %br
         .col-md-3
 
+.modal{data_controler: "section_note_modal", data_action:"turbo:frame-load->new_section_note_modal#open turbo:submit-end->new_section_note_modal#close"}
+  .modal-dialog
+    .modal-content
+      = turbo_frame_tag  "new_section_note_modal"
+
 = tinymce
-= turbo_frame_tag "edit_note_modal", target: "_top"
+
 :javascript
   $( document ).ready(function() {
     $("#open-modal").click(function(){
