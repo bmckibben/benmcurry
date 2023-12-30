@@ -9,3 +9,6 @@
 
 // import TinymceController from "./tinymce_controller"
 // application.register("tinymce", TinymceController)
+
+// import ModalController from "./modal_controller"
+// application.register("modal", ModalController)
