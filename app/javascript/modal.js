@@ -12,5 +12,8 @@ $(document).ready(function () {
     $("#footer_modal").fadeToggle();
   }) 
 
-  console.log("~~~~~~~~~~~~~~~~~~modal.js loaded")
+  $(".footer_modal_close").on("click", function(){
+    $("#footer_modal").fadeToggle();
+  })
+
 })
