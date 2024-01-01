@@ -1,7 +1,8 @@
-%h1 Editing section_footnote
-
-= render 'form'
-
-= link_to 'Show', @section_footnote
-\|
-= link_to 'Back', section_footnotes_path
+= turbo_frame_tag "modal" do
+	.container-fluid#sections
+		.row
+			.col-md-12
+				.card
+					%h4 Chapter Footnote
+					.modal-body
+						= render 'section_footnotes/form', section_footnote: @section_footnote

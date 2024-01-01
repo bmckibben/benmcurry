@@ -49,14 +49,14 @@
             .row           
               =link_to "Add Note", new_section_note_path(section_id: @section.id), class: "btn btn-notes btn-primary", data: {turbo_frame: "modal"}, id:"btn_add_note"
             .row  
-              =link_to "Add Footnote", edit_footnote_modal_path(section_id: @section.id), remote: true, class: "btn btn-primary"          
+              =link_to "Add Footnote", new_section_footnote_path(section_id: @section.id), class: "btn btn-primary",  data: {turbo_frame: "modal"}, id:"btn_add_footnote"          
             .row  
               =link_to "Workbook", workbook_path(story_id: @section.story_id), class: "btn btn-primary" unless @section.story_id.nil?
       .row   
         .col-md-9.footnotes
           - @section.section_footnotes.order(:a_number).each do |footnote|
             %sup
-              =link_to edit_footnote_modal_path(footnote_id: footnote.id), remote: true do
+              =link_to edit_section_footnote_path(footnote_id: footnote.id), data: {turbo_frame: "modal"}, class:"btn_edit_footnote" do
                 =footnote.a_number 
             =footnote.footnote
             %br
