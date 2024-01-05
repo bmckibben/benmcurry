@@ -53,7 +53,7 @@ $(document).ready(function () {
   }
 
   $("#whd").on("click", function(){
-    $("#bmc_modal").fadeToggle();
+    $("#whd_modal").fadeToggle();
   })
 
   $(".close").on("click", function(){

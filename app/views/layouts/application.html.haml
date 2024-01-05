@@ -9,6 +9,7 @@
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
     = tinymce_assets
+    = javascript_import_module_tag "modal"
     = yield :head    
   %body.interior-page-background
     = render 'layouts/navigation' 
@@ -17,3 +18,6 @@
         = yield
     %footer.interior-footer
       = render 'layouts/footer'
+
+
+  

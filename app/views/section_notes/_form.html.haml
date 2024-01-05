@@ -1,13 +1,11 @@
 -# frozen_string_literal: true
 
 
-= simple_form_for(@section_note) do |f|
+= simple_form_for(section_note) do |f|
   = f.error_notification
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
   .form-inputs
-    = f.input :section_id, collection: @section_options.collect {|chapter| [chapter.title, chapter.id]}, include_blank: true, input_html: {class: "form-control"}
-
-
-    = f.input :note
+    = f.input :note, label: false
+    = f.hidden_field :section_id, value: @section_id
   .form-actions
     = f.button :submit, class: "btn btn-primary btn-submit"

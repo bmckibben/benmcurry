@@ -16,6 +16,7 @@ class WikisController < ApplicationController
   # GET /wikis/new
   def new
     @wiki = Wiki.new
+    @tag_options = Wiki.where(parent: nil)
   end
 
   # GET /wikis/1/edit

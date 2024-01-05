@@ -6,18 +6,31 @@ class SectionNotesController < InheritedResources::Base
 	# end
   
   def create
-    
-    @note = SectionNote.new(section_note_params)
-    respond_to do |format|
+    @section_note = SectionNote.new(section_note_params)
 
-      if @note.save
-        format.html 
-        format.js { render  "sections/close_modal"}
-      else
-        format.html 
-        format.js { render "home/error_alert", locals: {message: "Note save error"} }
-      end
+    if @section_note.save
+      #@chapters = Section.where(story_id: @section.story_id).order(sequence: :asc)
+
+      respond_to do |format|
+       format.html {redirect_to edit_section_body_path(@section_note.section_id), notice: "Note was successfully created." }
+       format.turbo_stream
+     end
+    else
+      render :new, status: :unprocessable_entity
     end
+    
+  end
+
+  def new
+    @section_note = SectionNote.new
+    @section_id = params[:section_id]
+  end
+
+  def show
+    @section_note = SectionNote.find(params[:id])
+  end
+
+  def edit
   end
 
   private

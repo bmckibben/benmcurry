@@ -1,4 +1,4 @@
-.modal {
+#whd_modal.modal {
 	display: none;
 	max-width: 75%;
 	min-height: 300px;
@@ -48,6 +48,36 @@
 		}
 	}
 }	
+
+#footer_modal.modal{
+	padding-left: 0;
+	padding-right: 0;
+	background-color: rgba(0,0,0,0.5);
+	.close{
+		font-size: 1.5rem;
+		font-weight: bold;
+		color: #000;
+		background-color: #fff;
+		border-radius: 20px;
+		.bi-x-circle{
+			float: right;
+			cursor: pointer;
+		}
+	}
+	.modal-dialog{
+		margin-top:10rem;
+	}
+	.card{
+		border:none;
+	}
+	#section_footnote_a_number{
+		line-height: 0.75;
+	}
+	#section_footnote_footnote{
+		height: 5rem;
+		padding: 10px;
+	}
+}
 
 @media (min-width: 768px) {
 	min-width: 600px;

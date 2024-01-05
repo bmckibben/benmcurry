@@ -16,8 +16,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  get "sections/edit_note_modal", to: "sections#edit_note_modal", as: :edit_note_modal 
-  get "sections/edit_footnote_modal", to: "sections#edit_footnote_modal", as: :edit_footnote_modal   
+  #get "sections/edit_note_modal", to: "sections#edit_note_modal", as: :edit_note_modal 
+  #get "sections/edit_footnote_modal", to: "sections#edit_footnote_modal", as: :edit_footnote_modal   
   get "sections/notes/:story_id(.:format)", to: "sections#notes", as: :chapter_notes
   get "sections/summaries/:story_id(.:format)", to: "sections#summaries", as: :chapter_summaries
   get "sections/chapters/:story_id(.:format)", to: "sections#chapters", as: :chapters
@@ -28,4 +28,6 @@ Rails.application.routes.draw do
   get "sections/sample", to: "sections#sample", as: :section_sample
   resources :stories
   resources :sections
+  resources :section_notes
+  resources :section_footnotes
 end

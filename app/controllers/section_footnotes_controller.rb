@@ -3,31 +3,43 @@ class SectionFootnotesController < InheritedResources::Base
   before_action :set_footnote, only: [:update]
 
   def create
-    
-    @footnote = SectionFootnote.new(section_footnote_params)
-    respond_to do |format|
-      if @footnote.save
-        format.html 
-        format.js { render  "sections/close_modal"}
-      else
-      	raise @footnote.errors.inspect
-        format.html 
-        format.js { render "home/error_alert", locals: {message: "Note save error"} }
-      end
+    @section_footnote = SectionFootnote.new(section_footnote_params)
+
+    if @section_footnote.save
+      #@chapters = Section.where(story_id: @section.story_id).order(sequence: :asc)
+
+      respond_to do |format|
+       format.html {redirect_to edit_section_body_path(@section_note.section_id), notice: "Note was successfully created." }
+       format.turbo_stream
+     end
+    else
+      render :new, status: :unprocessable_entity
     end
+    
+  end
+
+  def new
+    @section_footnote = SectionFootnote.new
+    @section_id = params[:section_id]
+  end
+
+  def show
+    @section_footnote = SectionFootnote.find(params[:id])
+  end
+
+  def edit
+    @section_footnote = SectionFootnote.find(params[:footnote_id])
+    @section_id = @section_footnote.section_id
   end
 
   def update
-
-    respond_to do |format|
-      if @footnote.update(section_footnote_params)
-        format.html 
-        format.js { render  "sections/close_modal"}
-      else
-        raise @footnote.errors.inspect
-        format.html 
-        format.js { render "home/error_alert", locals: {message: "Note save error"} }
+    if @footnote.update(section_footnote_params)
+      respond_to do |format|
+       format.html {redirect_to edit_section_body_path(@section_note.section_id), notice: "Note was successfully created." }
+       format.turbo_stream
       end
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 

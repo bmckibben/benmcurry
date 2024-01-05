@@ -12,10 +12,7 @@ class SectionsController < InheritedResources::Base
   	else
   		@note = @section.section_notes.build()
   	end
-    respond_to do |format|
-      format.html {render not_found}
-      format.js {render 'edit_note_modal'}
-    end     
+    render 'edit_note_modal'
   end
 
   def edit_footnote_modal
@@ -81,6 +78,7 @@ class SectionsController < InheritedResources::Base
     @section = Section.new(section_params)
     if @section.save
       #@chapters = Section.where(story_id: @section.story_id).order(sequence: :asc)
+
       respond_to do |format|
         format.html {redirect_to workbook_path(@section.story_id), notice: "Chapter was successfully created." }
         format.turbo_stream
