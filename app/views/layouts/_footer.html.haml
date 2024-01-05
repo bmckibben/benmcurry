@@ -4,7 +4,7 @@
     = Time.now.year
     = " All rights reserved."
     %br
-    ="v.2023.173"
+    ="v.2024.005"
             
   .col-md-4.col-xs-12{align:"center"}
     = link_to "License", "#mdlLicense",  data: {toggle: "modal", target: "#mdlLicense"}
@@ -20,6 +20,6 @@
 .modal#footer_modal
   .modal-dialog
     .modal-content
-      %span.close{"aria-label" => "Close", "data-dismiss" => "modal" }
+      %span.close
         %i.bi.bi-x-circle   
       = turbo_frame_tag "modal" 

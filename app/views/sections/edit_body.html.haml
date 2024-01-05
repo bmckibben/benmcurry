@@ -52,7 +52,8 @@
               =link_to "Add Footnote", new_section_footnote_path(section_id: @section.id), class: "btn btn-primary",  data: {turbo_frame: "modal"}, id:"btn_add_footnote"          
             .row  
               =link_to "Workbook", workbook_path(story_id: @section.story_id), class: "btn btn-primary" unless @section.story_id.nil?
-      .row   
+      .row
+        .col-md-1   
         .col-md-9.footnotes
           - @section.section_footnotes.order(:a_number).each do |footnote|
             %sup
@@ -60,7 +61,7 @@
                 =footnote.a_number 
             =footnote.footnote
             %br
-        .col-md-3
+        .col-md-2
 
 = tinymce
 

@@ -16,4 +16,8 @@ $(document).ready(function () {
     $("#footer_modal").fadeToggle();
   })
 
+  $(".close").on("click", function(){
+    $(this).closest('.modal').fadeToggle();
+  })
+
 })
