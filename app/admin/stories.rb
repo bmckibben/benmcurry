@@ -1,4 +1,4 @@
-ActiveAdmin.register Stories do
+ActiveAdmin.register Story do
 
 
 end
