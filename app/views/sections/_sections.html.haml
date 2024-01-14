@@ -49,9 +49,6 @@
             =link_to edit_section_path(section) do
               %i.bi.bi-pencil-fill 
               ="edit"
-            =link_to section_path(section), data: {"turbo-method": :delete} do
-              %i.bi.bi-trash-fill 
-              ="delete"
             =link_to section_edit_body_path(section), data: {turbo: :false} do
               %i.bi.bi-file-text-fill 
               ="body"
