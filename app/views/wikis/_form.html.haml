@@ -1,7 +1,8 @@
-%datalist#tag_list
-  - @tag_options.each do |tag|
-    %option{value: "#{tag.title}"}
-= simple_form_for(@wiki, :html => {:class => "wiki-form", :remote=>true}) do |f|
+- unless @tag_options.nil?
+  %datalist#tag_list
+    - @tag_options.each do |tag|
+      %option{value: "#{tag.title}"}
+= simple_form_for(@wiki, :html => {:class => "wiki-form wiki-panel", :remote=>true}) do |f|
   - if @wiki.errors.any?
     #error_explanation
       %h2

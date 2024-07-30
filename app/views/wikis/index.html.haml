@@ -6,7 +6,7 @@
       Today is #{DateTime.now.in_time_zone('Indiana (East)').to_formatted_s(:stardate)}   
       %i.bi.bi-chevron-right.sidebar-toggle{"aria-hidden" => "false", "data-placement" => "left", "data-toggle" => "tooltip", title: "Show/Hide Sidebar."}
   .row#row-main
-    .col-md-9#main
+    .col-md-10#main
       = render "list"
-    .col-md-3#mySidenav
+    .col-md-2#mySidenav
       = render "sidebar" 

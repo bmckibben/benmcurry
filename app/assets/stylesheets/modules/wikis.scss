@@ -10,7 +10,7 @@
 }
 
 .wiki {
-	border-top: 1px solid $white;
+	//border-top: 1px solid $white;
 	&__actions {
 		float: right;
 	}
@@ -18,7 +18,7 @@
         border-bottom: none;
     }
     .top-parent {
-        border-top: 1px solid $white;
+        //border-top: 1px solid $white;
     }    
 }
 .wiki-actions {
@@ -51,6 +51,9 @@
     .wiki-body {
         padding: 15px;
         font-size: 1.5rem;
+    }
+    .panel-body{
+        padding: 0 1rem;
     }
     .panel-footer {
         padding: 10px 15px;
@@ -129,6 +132,9 @@
 	font-size: 2rem;
 	margin-bottom: 0;
 	line-height: 3.4rem;
+    label {
+        font-size: 1rem;
+    }
 }
 
 .collapsed {
@@ -181,8 +187,10 @@
     .tab-content{
         padding-top: 10px;
         padding-bottom: 10px;
-        background-color: #fff;
         border-bottom-radius: 1rem;
+    }
+    .nav-item {
+        background-color: #bbb;
     }
 }
 
@@ -231,8 +239,14 @@ ul.tree {
 
 
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
-    background-color: #ddd;
+    background-color: #ddd ;
     border-color: #bbb #bbb transparent;
+    border-bottom: none;
+}
+
+.nav-link.active {
+    background-color: #ddd !important;
+    border-bottom: none;
 }
 
 #sidebarTabs {
@@ -329,7 +343,7 @@ ul.tree {
 }
 
 /*.nav > li > a:link {
-  color: $cyan;
+  color: $cyan_dk;
 }*/
 
 .nav > li > a {
@@ -341,12 +355,12 @@ ul.tree {
 }
 
 .tree-menu {
-  color: $cyan;
-  font-size: 14px;
+  color: $cyan_dk;
+  font-size: 18px;
 }
 
 .wiki-menu {
-  //color: $cyan;
+  //color: $cyan_dk;
   //font-size: 14px;
   display:inline;
 }
