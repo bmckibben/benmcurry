@@ -1,6 +1,6 @@
 ActiveAdmin.register Story do
 
-	permit_params :title, :subtitle, :abbreviated_title, :shorte_summary, :long_summary, :word_count
+	permit_params :title, :subtitle, :abbreviated_title, :short_summary, :long_summary, :word_count, :cover_image, :author
 
 end
 
