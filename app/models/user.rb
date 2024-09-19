@@ -6,7 +6,8 @@ class User <ApplicationRecord
 
   has_many :wikis
   
-  def admin
+  def admin?
   	true
-  end      
+  end    
+
 end
