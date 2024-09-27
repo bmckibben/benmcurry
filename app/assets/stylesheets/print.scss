@@ -19,12 +19,19 @@
   p:first-child{
     text-indent: 0;
   }    
-  h1, h2 {
+  h1 {
     //font-family: Rokkitt, serif;
     font-size: 12pt;
-    font-family: TimesNewRoman, "Times New Roman";
-    text-align:center;    
+    font-family: TimesNewRoman, "Times New Roman"; 
+    text-align:center;   
   } 
+  h2 {
+    text-align:left;
+    font-size: 14pt;
+    font-family: TimesNewRoman, "Times New Roman";    
+    font-weight: bold;
+    font-style: italic;
+  }
   .section-footnote {
     border-top: 1px solid #000
   }

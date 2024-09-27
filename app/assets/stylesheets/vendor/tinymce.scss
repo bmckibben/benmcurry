@@ -1,4 +1,4 @@
-.mce-content-body {
+#tinymce.mce-content-body {
   p {
     font-size: 12pt; 
     font-family: 'Courier New'; 
@@ -15,4 +15,11 @@
     margin-top: 0pt; 
     margin-bottom: 0pt;
   }
+  h2 {
+    text-align:left;
+    font-size: 14pt;
+    font-family: TimesNewRoman, "Times New Roman";    
+    font-weight: bold;
+    font-style: italic;
+  }  
 }
