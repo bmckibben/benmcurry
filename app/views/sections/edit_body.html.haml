@@ -19,7 +19,7 @@
           = "Summary:" 
           = @section.summary 
           %br/
-          .card
+          .card.card__editor
 
             = f.text_area :body, class: "section-body tinymce", label: false, data: { tinymce_target: 'input' }
         .col-md-2.attributes
