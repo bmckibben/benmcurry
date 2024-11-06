@@ -10,7 +10,8 @@
             %th Summary
             %th Wordcount
             %th
-            %th
+            %th 
+              = Time.now.strftime "%Y.%j"
 
         %tbody
           - @stories.each do |story|

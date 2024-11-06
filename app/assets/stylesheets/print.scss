@@ -16,9 +16,11 @@
     margin-top: 0pt; 
     margin-bottom: 0pt;
   }
-  p:first-child{
-    text-indent: 0;
-  }    
+  .section-body {
+    p:first-child{
+      text-indent: 0;
+    }
+  }      
   h1 {
     //font-family: Rokkitt, serif;
     font-size: 12pt;

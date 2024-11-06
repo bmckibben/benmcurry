@@ -26,3 +26,32 @@
     font-style: italic;
   }  
 }
+
+.mce-content-body {
+  color: #fff !important; 
+  background-color: #000 !important; 
+  font-family: 'Courier New' !important; 
+  p {
+    font-size: 12pt; 
+    font-family: 'Courier New'; 
+    //color: #000000; 
+    //background-color: transparent; 
+    font-weight: 400; 
+    font-style: normal; 
+    font-variant: normal; 
+    text-decoration: none; 
+    vertical-align: baseline; 
+    white-space: pre-wrap;
+    line-height: 2.4; 
+    text-indent: 36pt; 
+    margin-top: 0pt; 
+    margin-bottom: 0pt;
+  }
+  h2 {
+    text-align:left;
+    font-size: 14pt;
+    font-family: TimesNewRoman, "Times New Roman";    
+    font-weight: bold;
+    font-style: italic;
+  }  
+}
