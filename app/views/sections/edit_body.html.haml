@@ -67,14 +67,15 @@
 = tinymce skin: "tinymce-5-dark"
 
 :javascript
-  // jQuery(document).ready(function(){
-  //   // $(".mce-content-body").css({"color": "#fff", "background-color": "#000", "font-family": "Courier New"})
-  // })  
+
+  window.frames['section_body_ifr'].onload = function(){
+    change_edit_style();
+  }
+
   function change_edit_style() {
-    //style = document.getElementById("section_body_ifr").contentDocument.querySelector("mce-content-body")//.style //.background = "#000";
-    style = "Did it Work?"
+
     window.frames['section_body_ifr'].contentDocument.getElementById('tinymce').style.background = "#000";
     window.frames['section_body_ifr'].contentDocument.getElementById('tinymce').style.color = "#fff";
     window.frames['section_body_ifr'].contentDocument.getElementById('tinymce').style.fontFamily = "Courier New";
-    alert(style);
+    
   }
