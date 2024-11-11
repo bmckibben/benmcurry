@@ -52,6 +52,8 @@
               =link_to "Add Footnote", new_section_footnote_path(section_id: @section.id), class: "btn btn-primary",  data: {turbo_frame: "modal"}, id:"btn_add_footnote"          
             .row  
               =link_to "Workbook", workbook_path(story_id: @section.story_id), class: "btn btn-primary" unless @section.story_id.nil?
+            .row 
+              =link_to 'Black Background', 'javascript:void(0)', id: 'add-make',  class: "btn btn-primary", onclick: 'change_edit_style()'
       .row
         .col-md-1   
         .col-md-9.footnotes
