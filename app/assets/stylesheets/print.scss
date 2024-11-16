@@ -1,4 +1,7 @@
 #manuscript {
+  p.no-indent{
+    text-indent: 0;
+  }
   p {
     font-size: 12pt; 
     //font-family: 'Courier New'; 
@@ -33,7 +36,25 @@
     font-family: TimesNewRoman, "Times New Roman";    
     font-weight: bold;
     font-style: italic;
+    & + p {
+      text-indent: 0;
+    }
   }
+  h6 {
+    font-size: 12pt; 
+    //font-family: 'Courier New'; 
+    font-family: TimesNewRoman, "Times New Roman";
+    color: #000000;     
+    text-align: center;
+    & + p {
+      text-indent: 0;
+    }    
+  }
+  .break {
+    & + p {
+      text-indent: 0;
+    }
+  }  
   .section-footnote {
     border-top: 1px solid #000
   }
