@@ -5,11 +5,12 @@ body.interior-page-background {
 }
 
 .page-container {
-	min-height: 95vh; /* will cover the 95% of viewport, leaving room for footer */
+	min-height: 90vh; /* will cover the 95% of viewport, leaving room for footer */
 	overflow: hidden;
 	display: block;
 	position: relative;
-	padding-bottom: 6rem; /* height of your footer */
+	padding-bottom: 7rem; /* height of your footer */
+	padding-top: 1rem;
 	//max-width: fit-content;
 }
 

@@ -1,6 +1,5 @@
 .container-fluid#sections
-  .row
-    .col-md-1
+  .row.container-card
     .col-md-2.scroller-container.rounded-left
       =link_to new_section_path do
         %i.bi.bi-plus-square
@@ -9,7 +8,7 @@
         %a{href: "#chapter-#{item.id}", class: "scrollLink"}
           =item.title
         %br
-    .col-md-8.scroller-container.rounded-right
+    .col-md-10.scroller-container.rounded-right
       -@sections.each do |page| 
         .section-page{id: "chapter-#{page.id}", data:{page: page.id}}
           .row
@@ -18,7 +17,7 @@
                 =page.title
             .col-md-1.action-icon
               - if user_signed_in? and current_user.role_cd > 0
-                =link_to edit_section_path(page) do
+                =link_to section_edit_body_path(page) do
                   %i.bi.bi-pencil-fill
           .row
             .col-md-12
