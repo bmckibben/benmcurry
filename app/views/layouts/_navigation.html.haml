@@ -9,20 +9,11 @@
 				%li
 					=link_to 'Stories', stories_path					
 				%li
-					=link_to 'Wiki', wikis_path	
-				%li.nav-item.dropdown
-					%a.dropdown-toggle{href:"#", role:"button", data:{bs:{toggle:"dropdown"}}}
-						= "Lotto"
-					%ul.dropdown-menu
-						%li
-							=link_to 'Draws', draws_path
-						%li
-							=link_to 'Scores', scores_path	
-						%li
-							=link_to 'Picks', picks_path								
+					=link_to 'World Pizza', "https://worldpiz.herokuapp.com/"
 				-if user_signed_in?
 					%li
 						=link_to 'Sign out', destroy_user_session_path, method: :delete 
 				-else
 					%li
 					=link_to 'Login', new_user_session_path
+
