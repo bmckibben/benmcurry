@@ -15,3 +15,9 @@
 // For example, to change the default status-tag color:
 //
 //   .status_tag { background: #6090DB; }
+
+body.body {	
+	background: linear-gradient(to bottom, black 0%, #000099 100%) no-repeat center center fixed !important;
+	color: #fff;
+	//background: #000000 no-repeat center center fixed;
+}
