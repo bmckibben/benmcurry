@@ -20,6 +20,6 @@ class HomeController < ApplicationController
   end
 
   def maint
-    render layout: "application"
+    render layout: "samudi"
   end
 end
