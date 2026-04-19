@@ -124,8 +124,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f6f6', end
 }
 
 .samudi {
-    background-image: url('Samudi.png');
-    height: 100%;
+    background: url('Samudi.png') no-repeat center center;
+    height: 800px;
     width: 100%;
 }
 
@@ -389,10 +389,6 @@ section {
   border:4px solid rgb(45,119,175);
 }
 
-.tabgroup div  {
-
-}
-
 .tabgroup p {
   background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
@@ -502,9 +498,6 @@ section {
     font-family: $syncopate;
   }
 
-  .baner-content em {
-  }
-
   .baner-content span {
     font-size: 24px;
   }
@@ -539,12 +532,6 @@ section {
 
   }
 
-}
-
-@media (min-width: 1200px) {
-  .container {
-   // max-width: 1170px;
-  }
 }
 
 /* LIGHT BOX */
